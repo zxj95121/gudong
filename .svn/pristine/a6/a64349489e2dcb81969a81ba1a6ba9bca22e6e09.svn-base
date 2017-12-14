@@ -1,0 +1,25 @@
+<?php
+namespace app\index\controller;
+use app\common\model\UserModel;
+
+use app\common\service\Wechat;
+use think\Controller;
+use think\Session;
+
+
+class Oauth extends Controller
+{
+    protected $_layout = null;
+
+    /**
+     * 初始化
+     */
+    public function _initialize()
+    {
+	}
+
+	public function getUserInfo()
+	{
+		var_dump($this->request->param());
+	}
+}

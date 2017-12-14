@@ -1,0 +1,157 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	/*font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:none；
+}
+/* @font-face {font-family:"myFont fan";src: url('./NotoSansHans-DemiLight.ttf'); */
+}
+body, div, span, i, em, h2, h3, h4, h5, h6, h1, b, big, small, ul, li, a, img {
+  margin: 0;
+  padding: 0;
+  border:none;
+  /*font-weight:lighter;*/
+  font-size:1rem;
+  font-weight:400;
+  color:#323232;
+	-webkit-tap-highlight-color: transparent;
+	/*font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;*/
+}
+input,button,textarea,text{
+	outline: none;
+	/*font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;*/
+}
+li{
+  list-style:none;
+  }
+a{
+  text-decoration:none;
+  }
+.clear-fix:after{
+	content:' ';
+	width:0;
+	height:0;
+	clear:both;
+	display:block;
+}
+em,i{
+	font-style:normal;
+}
+/*************head********************/
+#head{
+	width:100%;
+	height:2.93rem;
+	background:#92a6c7;
+	position:relative;
+}
+#head img{
+	width: 1.4rem;
+    height: 1.2rem;
+    position: absolute;
+    margin-left: 0.6rem;
+    top: 1rem;
+}
+#head span{
+	font-size: 1.2rem;
+    position: absolute;
+    top: 1.3rem;
+    left: 11.6rem;
+    color: #e4ffff;
+}
+#head .img{
+	width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 12.6rem;
+}
+#head .asd{
+	width: 1rem;
+    height: 1rem;
+    position: absolute;
+    left: 22rem;
+    top: 1.2rem;
+}
+.wraper .tp{
+	width:100%;
+	height:7.2rem;
+}
+.wraper ul>li{
+	width: 8rem;
+    height: 2.1rem;
+	float:left;
+	overflow:hidden;
+	text-align:center;
+	border-bottom:1px solid #e4e3e8;
+	border-left:1px solid #e4e3e8;
+	/*background:red;*/
+	padding: 0.4rem 0;
+}
+.wraper ul>li a{
+	font-size:0.85rem;
+	color: gray;
+}
+.wraper ul>li .active {
+       	color:#343530;
+       }
+.fet .gtn{
+	width:100%;
+	/*margin-top:3.24rem;
+	border:1px solid red;*/
+	overflow: hidden;
+}
+.fet .gtn .box{
+	width: 100%;
+    height: 7rem;
+    /* border-bottom: 1px solid red; */
+    background:#dee2ee;
+}
+.fet .gtn a li{
+	float:left;
+	text-align:center;
+	width: 42%;
+    height: 10.5rem;
+    border: 1px solid #dfe1f0;
+   /* padding: 1rem 0;*/
+    margin: 1rem 0.95rem;
+}
+.fet .gtn li img{
+	max-width: 100%;
+    max-height: 7rem;
+    background: #dfe1ed;
+}
+.fet .gtn li p{
+	margin-top: 0.1rem;
+	font-size:0.65rem;
+}
+.fet .gtn li span{
+	/*font-size:0.65rem;*/
+	/*color:#aaa8ab;*/
+}
+.foot{
+	 margin-top: 1rem;
+    margin-left: 1rem;
+    width: 91%;
+    background: #f1f1fb;
+    border: 0px solid green;
+    text-align: center;
+    border-radius:0.3rem;
+}
+.foot a{
+	font-size:0.8rem;
+	color: #86848f;
+}
+ul li img:hover{
+    transform:scale(1.1);
+}

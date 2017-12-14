@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/proMoment.css">
+</head>
+<body>
+	<header class="gd-header">
+		<div id="gd-head">
+			<i class="glyphicon glyphicon-chevron-left i_prev_url"></i>
+			<div class="gd-head-center">
+				<div class="gd-header-nav">
+					<span class="gd-head-title">我的进化</span>
+				</div>
+			</div>
+			<div class="gd-head-right">+in记</div>
+		</div>
+	</header>
+
+	<div id="content">
+		<textarea placeholder="我的进化论"></textarea>
+		<div class="div-photo">
+			
+			<div class="pdiv addphoto">
+				<img src="/static/index/images/carema_200.png">
+				<span>照片</span>
+			</div>
+		</div>
+
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">孤芳自赏
+		        <span class="mui-badge mui-switch">
+		  			<div class="mui-switch-handle"></div>
+				</span>
+		    </li>
+		</ul>
+		
+		<input type="file" style="height: 0px;opacity: 0;" id="file" accept="image/*" multiple="9"/>
+	</div>
+
+	<script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/new/proMoment.js?v=2"></script>
+
+	
+</body>
+</html>

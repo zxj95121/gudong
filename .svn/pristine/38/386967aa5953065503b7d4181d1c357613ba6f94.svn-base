@@ -1,0 +1,776 @@
+<?php
+namespace app\index\controller;
+
+use app\common\model\ActivityModel;
+use app\common\model\CollectionModel;
+use app\common\model\CommentModel;
+use app\common\model\MomentModel;
+use app\common\model\UserModel;
+use app\common\model\UserSubModel;
+use app\common\model\AddFaceInfoModel;
+use app\common\model\ProvinceModel;
+use app\common\model\CityModel;
+use app\common\model\AreaModel;
+
+use app\common\service\helperService;
+use think\Db;
+use think\Validate;
+use think\Session;
+
+class Index extends Base
+{
+    public function _initialize()
+    {
+        parent::_initialize();
+    }
+
+
+//
+//    /**
+//     * 启动页
+//     */
+//    public function start(){
+//        return $this->fetch($this->_layout . "/index/start");
+//    }
+//
+//    public function removeSession(){
+//        var_dump($_SESSION);
+//        Session::clear();
+//        var_dump($_SESSION);
+//    }
+
+
+
+    public function login(){
+
+        return $this->fetch($this->_layout . "/index/login");
+    }
+    /**
+     * 首页
+     */
+    public function index(){
+        $uid = Session::get('uid');
+        $identity = UserModel::getIdentity($uid);
+        if ($identity == 0) {
+            return $this->redirect('/index/index/login');
+        }
+        return $this->redirect('/index/index/zhanshi');
+        return $this->fetch($this->_layout . "/index/index");
+    }
+
+
+    //用户信息展示页
+    public function userShow()
+    {
+        $request = $this->request->param();
+        $uid = $request['uid'];
+
+        $userObj = UserModel::get($uid);
+        $moment_count = MomentModel::where('user_id', $uid)
+            ->where('status', 1)
+            ->where(function ($query) {
+                $query->where('see', 1)
+                    ->whereOr(function ($q) {
+                        $q->where('see', 0)
+                            ->where('user_id', Session::get('uid'));
+                    });
+            })
+            ->count();
+
+        //$commentObj['user_id']表示说说的用户的id
+        $num['sub_num'] = UserSubModel::getUSN($uid);
+        $num['fan_num'] = UserSubModel::getUFN($uid);
+        $num['moment_num'] = $moment_count;
+
+        $this->assign('num', $num);
+
+        $this->assign('userObj', $userObj);
+
+
+        //获取说说
+        $moments = MomentModel::where(['user_id'=>$uid, 'status'=>1])
+            ->where(function ($query) {
+                $query->where('see', 1)
+                    ->whereOr(function ($q) {
+                        $q->where('see', 0)
+                            ->where('user_id', Session::get('uid'));
+                    });
+            })
+            ->order('add_ts desc')
+            ->paginate(2, false, ['query'=>['uid'=>$uid]]);
+
+        $data = array();
+        foreach ($moments as $key => $value) {
+            $data[$key]['basic'] = MomentModel::getMomentDetail($value['moment_id']);
+            $data[$key]['comment'] = CommentModel::getOneMomentComment($value['moment_id']);
+        }
+        $this->assign('moments', $data);
+        $this->assign('uid', Session::get('uid'));
+
+        //用户身份
+        $identity = UserModel::getIdentity(Session::get('uid'));
+        $this->assign('identity', $identity);
+        $this->assign('page', $moments->render());
+        // $this->assign('moment_count', $moment_count);
+
+        return $this->fetch($this->_layout . '/index/userShow');
+    }
+
+    //用户说说详情页
+    public function userMomentShow()
+    {
+        $request = $this->request->param();
+        $uid = $request['uid'];
+
+        $userObj = UserModel::get($uid);
+        $this->assign('userObj', $userObj);
+
+        //查说说列表
+        $momentModel = new MomentModel();
+        $momentList = $momentModel->where('user_id', $uid)
+            ->where('status', 1)
+            ->order('add_ts desc')
+            ->select();
+
+        foreach($momentList as &$val){
+            // $img = eval($val['img']);
+            $data =substr(stripslashes($val['img']), 1, -1);
+            $val['img'] = substr(explode(',', $data)[0], 1, -1);
+
+            $val['add_ts'] = date('Y-m-d H:i:s', $val['add_ts']);
+        }
+
+        $this->assign('momentList',$momentList);
+
+        return $this->fetch($this->_layout . '/index/userMomentShow');
+    }
+
+
+
+    /**
+     * 校友(活动)总体展示
+     * @return mixed
+     */
+    public function zhanshi(){
+
+        // $activityModel = new ActivityModel();
+        // $activityList = $activityModel->getMulti(['status'=>1]);
+
+        // foreach($activityList as &$val){
+        //     $val['img'] =json_decode($val['img']);
+        // }
+        // $this->assign('activityList',$activityList);
+
+        // if (Session::get('uid'))
+        // $userObj = UserModel::getAllUser(Session::get('uid'));
+
+        $momentsObj = MomentModel::where(['m.status' => 1])
+            ->where(function ($query) {
+                $query->where('m.see', 1)
+                    ->whereOr(function ($q) {
+                        $q->where('m.see', 0)
+                            ->where('m.user_id', Session::get('uid'));
+                    });
+            })
+            ->alias('m')
+            ->join('user u', 'u.user_id = m.user_id', 'right')
+            ->where('u.status', 1)
+            ->order('m.add_ts desc')
+            ->paginate(4);
+
+        // $this->assign('mPages', $momentsObj->render());
+
+        $data = array();
+        foreach ($momentsObj as $value) {
+            $data[] = MomentModel::getMomentDetail($value['moment_id']);
+        }
+        $this->assign('momentsObj', $data);
+
+        // start <------------   这是获取用户列表，和最新说说的第一张图片 ------------>
+        // $userObj = UserModel::all(['status' => 1]);
+        // $schoolFriends = array();
+        // foreach ($userObj as $key => $value) {
+        //     $schoolFriends[$key]['user_id'] = $value['user_id'];
+        //     $schoolFriends[$key]['user_name'] = $value['user_name'];
+        //     $schoolFriends[$key]['newImg'] = MomentModel::getNewImg($value['user_id']);
+        // }
+        // else
+            // $userObj = UserModel::all(['status'=>1]);
+
+        // $this->assign('userObj', $schoolFriends);
+        // over <------------   这是获取用户列表，和最新说说的第一张图片 ------------>
+
+
+        $identity = UserModel::getIdentity(Session::get('uid'));
+        $this->assign('identity', $identity);
+
+        // return $this->fetch($this->_layout . "/index/zhanshi");
+        return $this->fetch($this->_layout . "/index_new/zhanshi");
+    }
+
+    public function nextZhanshi(){
+        $momentsObj = MomentModel::where(['m.status' => 1])
+            ->where(function ($query) {
+                $query->where('m.see', 1)
+                    ->whereOr(function ($q) {
+                        $q->where('m.see', 0)
+                            ->where('m.user_id', Session::get('uid'));
+                    });
+            })
+            ->alias('m')
+            ->join('user u', 'u.user_id = m.user_id', 'right')
+            ->where('u.status', 1)
+            ->order('m.add_ts desc')
+            ->paginate(4);
+
+        $data = array();
+        foreach ($momentsObj as $value) {
+            $data[] = MomentModel::getMomentDetail($value['moment_id']);
+        }
+        $this->assign('momentsObj', $data);
+        echo $this->fetch($this->_layout . "/index_new/zhanshi_load");
+    }
+
+    /*我的说说翻页*/
+    public function nextMyMoment()
+    {
+        $momentsObj = MomentModel::where(['m.status' => 1])
+            ->where('m.user_id', Session::get('uid'))
+            ->alias('m')
+            ->join('user u', 'u.user_id = m.user_id', 'right')
+            ->where('u.status', 1)
+            ->order('m.add_ts desc')
+            ->paginate(4);
+
+        $data = array();
+        foreach ($momentsObj as $value) {
+            $data[] = MomentModel::getMomentDetail($value['moment_id']);
+        }
+        $this->assign('momentsObj', $data);
+        echo $this->fetch($this->_layout . "/index_new/zhanshi_load_my");
+    }
+
+
+    /**
+     * 校友(活动)详情展示
+     * @return mixed
+     */
+    public function xiaoyou(){
+        $params = $this->request->param();
+        if ($params['activity_id'] < 10) {
+            exit;
+        }
+
+        $activityModel = new ActivityModel();
+        $activity = $activityModel->getOne(['status'=>1,'activity_id'=>$params['activity_id']]);
+        $activity['img'] = stripslashes($activity['img']);//反转义
+
+        $commentModel = new CommentModel();
+        $comment = $commentModel->getCount(['status'=>1,'activity_id'=>$params['activity_id']]);
+
+        $collectionModel = new CollectionModel();
+        $collection = $collectionModel->getCount(['status'=>1,'activity_id'=>$params['activity_id']]);
+
+//        $userModel = new UserModel();
+//        $user = $userModel->getOne(['status'==1,'activity_id'=>$params['activity_id']]);
+
+
+        $activity['img'] =json_decode($activity['img']);
+        $activity =helperService::modelDataToArr($activity);
+        $this->assign('activity',$activity);
+
+        $this->assign('comment',$comment);
+        $this->assign('collection',$collection);
+
+        $uid = Session::get('uid');
+
+        $identity = UserModel::getIdentity($uid);
+
+        $this->assign('uid', $uid);
+        $this->assign('identity', $identity);
+//        $this->assign('user',$user);
+
+        //找评论
+        $aid = $activity['activity_id'];
+        $commentObj = CommentModel::getOneActivityComment($aid);
+        // var_dump($commentObj);
+        $this->assign('commentObj', $commentObj);
+        $this->assign('aid', $aid);
+
+
+        //查找当前用户对该活动的点赞和收藏状态
+        $operates = ActivityModel::getOneOperateStatus($uid, $aid);
+        $this->assign('operates', $operates);
+
+        return $this->fetch($this->_layout . "/index/xiaoyou");
+    }
+
+
+
+
+
+    /**
+     * 说说总体展示
+     * @return mixed
+     */
+    public function momentShow(){
+
+        $momentModel = new MomentModel();
+        $momentList = $momentModel->getMomentInfo(['moment.status'=>1]);
+
+        foreach($momentList as &$val){
+            $val['img'] =json_decode($val['img']);
+        }
+        $this->assign('momentList',$momentList);
+//        var_dump($momentList);exit;
+        return $this->fetch($this->_layout . "/index/momentShow");
+    }
+
+    /**
+     * 说说详情界面
+     * @return mixed
+     */
+    public function moment(){
+        $params = $this->request->param();
+
+        $moment = Db::table('moment')
+            ->alias('moment')
+            ->join('user user','moment.user_no = user.user_no')
+            ->where(['moment.status'=>1,'moment_id'=>$params['moment_id']])
+            ->find();
+
+         $commentModel = new CommentModel();
+         $comment = $commentModel->getCount(['status'=>1,'moment_id'=>$params['moment_id']]);
+
+        $collectionModel = new CollectionModel();
+         $collection = $collectionModel->getCount(['status'=>1,'moment_id'=>$params['moment_id']]);
+
+         $moment['img'] =json_decode($moment['img']);
+         $moment =helperService::modelDataToArr($moment);
+
+         $this->assign('moment',$moment);
+         $this->assign('comment',$comment);
+         $this->assign('collection',$collection);
+
+        return $this->fetch($this->_layout . "/index/moment");
+    }
+
+
+
+    /**
+     * 评论展示
+     * @return mixed
+     */
+    public function pinglun(){
+          $params = $this->request->param();
+
+        $commentModel = new CommentModel();
+        $commentList = $commentModel->getCommentInfo(['comment.status'=>1,'activity_id'=>$params['activity_id']]);
+
+        $this->assign('commentList',$commentList);
+//        var_dump($commentList);exit;
+        return $this->fetch($this->_layout . "/index/pinglun");
+    }
+
+    /**
+     * 说说评论展示
+     * @return mixed
+     */
+    public function moment_comment(){
+        $params = $this->request->param();
+
+
+        $commentModel = new CommentModel();
+        $McommentList = $commentModel->getCommentInfo(['comment.status'=>1,'moment_id'=>$params['moment_id']]);
+
+        $this->assign('McommentList',$McommentList);
+//        var_dump($McommentList);exit;
+        return $this->fetch($this->_layout . "/index/moment_comment");
+    }
+
+    /**
+     * 支付
+     */
+    public function payment(){
+
+
+        return $this->fetch($this->_layout . "/index/payment");
+    }
+
+
+    /**
+     * 个人信息
+     */
+    public function info(){
+        $params = $this->request->param();
+        if(!empty($params)){
+            $info = $this->getInfo($params);
+            $info = helperService::modelDataToArr($info);
+            $this->assign('info',$info);
+        }
+
+        // var_dump($info);
+
+        return $this->fetch($this->_layout . "/index/info");
+    }
+
+    /**
+     * 获取信息
+     * @param $params
+     * @return array|false|\PDOStatement|string|\think\Model
+     */
+    public function getInfo($params){
+        $userModel = new UserModel();
+        if(!empty($params['user_id'])){
+            $res = $userModel->getOne(['user_id'=>$params['user_id']]);
+            $this->assign('info',$res);
+            return $res;
+        }
+    }
+
+
+    /**
+     * 保存用户个人信息
+     */
+    public function save_info(){
+        $params = $this->request->param();
+        $file_header_img = $this->request->file('photo');
+        $header_img = null;
+        if($file_header_img){
+            $upload = $file_header_img->move(ROOT_PATH . 'public' . DS . 'uploads');
+            if($upload){
+                $header_img = DS."uploads".DS.$upload->getSaveName();
+            }else{
+                $this->error($upload->getError(),null,'',3);
+                echo '<script>alert("修改失败，请重试!");window.location.href="'.url('index/index/info').'?user_id='.$params['user_id'].'";</script>';
+                exit;
+            }
+
+            $image = \think\Image::open('.'.$header_img);
+            $image->thumb(150, 150)->save('.'.$header_img);
+        }
+
+        $data = [
+            'user_name' => $params['user_name'],
+            'gender' => $params['gender'],
+            'birthday' => strtotime($params['birthday'])
+        ];
+        if (isset($header_img)) {
+            $data['header_img'] = $header_img;
+        }
+        $userModel = new UserModel();
+        $userModel->saveData(array_filter($data), ['user_id' => $params['user_id']]);
+        /*return $this->redirect('index/index/center');*/
+        return $this->redirect('index/index_new/center');
+    }
+
+
+    /**
+     * 个人中心
+     */
+    public function center(){
+        // $user_id =175;
+        $user_id = Session::get('uid');
+
+        $momentsObj = MomentModel::where(['m.status' => 1])
+            ->where('m.user_id', Session::get('uid'))
+            ->alias('m')
+            ->join('user u', 'u.user_id = m.user_id', 'right')
+            ->where('u.status', 1)
+            ->order('m.add_ts desc')
+            ->paginate(4);
+
+        $data = array();
+        foreach ($momentsObj as $value) {
+            $data[] = MomentModel::getMomentDetail($value['moment_id']);
+        }
+        $this->assign('momentsObj', $data);
+
+        $userModel=  new UserModel();
+        $user =  $userModel->getOne(['status'=>1,'user_id'=>$user_id]);
+        $user =helperService::modelDataToArr($user);
+        $this->assign('user',$user);
+
+//        var_dump($user);exit;
+
+        $identity = UserModel::getIdentity($user_id);
+        $this->assign('identity', $identity);
+
+        $addFace = AddFaceInfoModel::get(['type' => 'invite']);
+        $this->assign('invite_yanzhi', $addFace->num);
+
+        $userObj = UserModel::getAllMessage($user_id);
+        $this->assign('userObj', $userObj);
+        // echo ''.rand(1,111111).'<br />';
+        // var_dump($userObj);
+        // exit;
+
+
+        // return $this->fetch($this->_layout . "/index/center");
+        return $this->fetch($this->_layout . "/index_new/center");
+
+        // return $this->fetch($this->_layout . "/index/center");
+    }
+
+
+
+
+    /**
+     * 我的评论
+     * @return mixed
+     */
+    public function MyComment(){
+        $params = $this->request->param();
+
+        $commentModel = new CommentModel();
+        $commentList = $commentModel->getCommentInfo(['comment.status'=>1,'user_id'=>$params['user_id']]);
+
+        $this->assign('commentList',$commentList);
+//        var_dump($commentList);exit;
+        return $this->fetch($this->_layout . "/index/MyComment");
+    }
+
+
+    /**
+     * 我的收藏
+     * @return mixed
+     */
+    public function MyCollection(){
+
+        $params = $this->request->param();
+
+        $collectionModel = new CollectionModel();
+        $collectionList = $collectionModel->getCollectionInfo(['collection.status'=>1,'collected_user_no'=>$params['user_id']]);
+//        var_dump($collectionList);exit;
+        foreach($collectionList as &$val){
+            $val['img'] =json_decode($val['img']);
+        }
+        $this->assign('collectionList',$collectionList);
+//        var_dump($momentList);exit;
+        return $this->fetch($this->_layout . "/index/MyCollection");
+    }
+
+
+    /**
+     * 评论操作
+     */
+    public function post_comment(){
+        $params = $this->request->param();
+        $rule = [
+            'user_no'=>'number',
+            'content|评论内容'=>'require|max:200',
+
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+
+        $commentModel = new CommentModel();
+        $data = [
+            'user_no'=>$params['user_no'],
+            'content' => $params['content'],
+            'add_ts' =>time(),
+            'status' =>1,
+
+        ];
+        $res = $commentModel->saveData($data);
+        if ($res!==false) {
+            $this->redirect($params['backUrl']);
+        } else {
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('###') . "'</script>");
+        }
+
+    }
+
+
+
+
+    /**
+     * 点赞操作
+     */
+//    public function thumb(){
+//        $params = $this->request->param();
+//        $rule = [
+//            'user_no'=>'number',
+//            'content|评论内容'=>'require|max:200',
+//
+//        ];
+//        $validate = new Validate($rule);
+//        if(!$validate->check($params)){
+//            $this->error($validate->getError(),null,'',3);
+//        }
+//        $momentModel = new MomentModel();
+//        $commentModel = new ActivityModel();
+//        $data = [
+//            'content' => $params['content'],
+//
+//        ];
+//        $res = $commentModel->saveData($data, ['user_no' => $params['user_no']]);
+//        if ($res!==false) {
+//            $this->redirect($params['backUrl']);
+//        } else {
+//            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('###') . "'</script>");
+//        }
+//    }
+
+
+
+    /**
+     * 收藏操作
+     */
+    public function collection(){
+        $params = $this->request->param();
+        $rule = [
+            'user_no'=>'number',
+            'content|评论内容'=>'require|max:200',
+
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+        $collectionModel = new CollectionModel();
+        $data = [
+            'content' => $params['content'],
+
+        ];
+        $res = $collectionModel->saveData($data);
+        if ($res!==false) {
+            $this->redirect($params['backUrl']);
+        } else {
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('###') . "'</script>");
+        }
+    }
+
+
+    /**
+     * 发布说说
+     */
+    public function post_moment(){
+        $params = $this->request->param();
+        $rule = [
+            'user_no'=>'number',
+            'content|评论内容'=>'require|max:200',
+
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+
+
+        //处理多图
+        $momentModel = new MomentModel();
+        $one=$momentModel->getOne(['moment_id'=>$params['moment_id']]);
+        $imgContent=[];
+        if(isset($params['headerImage'])){
+            $imgContent = $params['headerImage'];
+        }
+
+        $img=$this->set_img($imgContent,$one['img']);
+
+        $commentModel = new CommentModel();
+        $data = [
+            'user_no'=>$params['user_no'],
+            'content' => $params['content'],
+            'add_ts' =>time(),
+            'status' =>1,
+            'img' =>$img,
+
+        ];
+        $res = $commentModel->saveData($data);
+        if ($res!==false) {
+            $this->redirect($params['backUrl']);
+        } else {
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('###') . "'</script>");
+        }
+
+    }
+
+    /**
+     * 多图拼接
+     * @param $images 前台上传图片
+     * @param $img_have  后台查询图片
+     * @return string
+     */
+    private function set_img($images,$img_have){
+        $img_data = [];
+
+        if(!empty($img_have)){
+            $image_arr = json_decode($img_have);
+            foreach($image_arr as &$item){
+                $img_data[]=$item;
+            }
+        }
+
+        foreach($images as $imgBase64){
+            $res = helperService::uploadBase64Img($imgBase64);
+            if($res === false){
+                continue;
+            }
+            $img = base64_decode($res['imgBase64']);
+            $img_path = "./uploads/img/".time().rand(1000,9999).".{$res['ext']}";
+            file_put_contents($img_path, $img);
+            $img_data[] = $img_path;
+        }
+
+        return json_encode($img_data);
+
+    }
+
+    //代码生成的跑了一个省市区三级联动
+    // public function set()
+    // {
+    //     return $this->fetch($this->_layout . '/index/set');
+    // }
+
+    // public function setData()
+    // {
+    //     $request = $this->request->param();
+    //     $data = json_decode($request['str'], true);
+    //     foreach ($data as $value) {
+    //         // var_dump($value['text']);
+    //         // var_dump($value['value']);
+    //         // var_dump($value['text']);
+    //         $flight = new ProvinceModel();
+    //         $flight->number = $value['value'];
+    //         $flight->name = $value['text'];
+    //         $flight->save();
+
+    //         $pid = $flight->id;
+
+    //         $dd = $value['children'];
+
+    //         foreach ($dd as $va) {
+    //             // var_dump($va['value']);
+    //             // var_dump($va['text']);
+
+    //             $flight2 = new CityModel();
+    //             $flight2->pid = $pid;
+    //             $flight2->number = $va['value'];
+    //             $flight2->name = $va['text'];
+    //             $flight2->save();
+
+    //             $cid = $flight2->id;
+
+    //             if (isset($va['children'])) {
+    //                 $d = $va['children'];
+    //                 foreach ($d as $v) {
+    //                     $flight3 = new AreaModel();
+    //                     $flight3->cid = $cid;
+    //                     $flight3->number = $v['value'];
+    //                     $flight3->name = $v['text'];
+    //                     $flight3->save();
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     echo '<pre>';
+        
+    //     echo '</pre>';
+    // }
+}
+
+

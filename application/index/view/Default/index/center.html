@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- <link href="/static/index/css/style.css" type="text/css" rel="stylesheet"> -->
+    <link href="/static/index/css/common.css" type="text/css" rel="stylesheet">
+	
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <title></title>
+    <style>
+       .backg{
+           	position: absolute;
+            top:0;
+           	width: 100%;
+           	height: 40.63rem;
+            opacity: 0.4;
+        }
+        .mui-ellipsis span{
+            cursor: pointer;
+        }
+    </style>
+    <link href="/static/index/css/pinglun.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link href="/static/index/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/static/index/bootstrap/css/basic.css" type="text/css" rel="stylesheet">
+</head>
+<body style="background:#f2f2f2;">
+<div id="head">
+    <!--<img src="images/pinglun.jpg" style="" class="backg">-->
+    <!--<img src="/static/index/images/timg10.png" alt="" />-->
+    <span>我的进化in记</span>
+</div>
+	<!--<img src="images/timg15.png" style="" class="backg">-->
+
+    <div class="mui-content" style="margin-bottom: 12px;">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="/index/index/info?user_id={$user['user_id']}" class="">
+                    <img class="mui-media-object mui-pull-left" style="border-radius: 50%;height: 60px;width: 60px;max-width: 60px;margin-left: 0.8rem;line-height: 60px;" src="{$user['header_img']}">
+                    <div class="mui-media-body" style="height: 60px;line-height: 20px;">
+                        {$user['user_name']}
+                        <p class="mui-ellipsis">
+                            <span>研值：{$user['yanzhi']}</span>
+                        </p>
+                        <p class="mui-ellipsis">
+                            <span>{if condition="$identity == 0"}游客<span onclick="window.location.href='/index/index/login';" class="label label-success" style="margin-left: 1em;">成为注册会员</span>{elseif condition="$identity == 2" /}注册会员<span onclick="window.location.href='/index/user/payVip';" class="label label-success" style="margin-left: 1em;">成为付费会员</span>{else /}付费会员{/if}</span>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="mui-table-view" style="margin-bottom: 1rem;">
+        <li class="mui-table-view-cell">我的邀请码<span style="font-size: 12px;color: #B4B4B4;">(每邀请一个用户送{$invite_yanzhi}研值)</span> <span class="mui-badge mui-badge-primary">{$user['ycode']}</span></li>
+    </ul>
+
+<div class="con-body">
+
+    <a href="{:url('index/moment/myMoment')}">
+		<div class="item">
+			<img src="/static/index/images/user-icon03.png">
+			<span style="margin-left: 1rem;font-size: 1rem;">我的说说</span>
+			<i class=" fa-angle-right" style="float: right; "></i>
+		</div>
+    </a>
+    <a href="{:url('index/moment/myComment')}">
+		<div class="item">
+			<img src="/static/index/images/user-icon05.png">
+			<span style="margin-left: 1rem;font-size: 1rem;">我的评论</span>
+			<i class="fa-angle-right" style="float: right; "></i>
+		</div>
+    </a>
+    <a href="{:url('index/moment/myCollect')}">
+		<div class="item">
+			<img src="/static/index/images/user-icon01.png">
+			<span style="margin-left: 1rem;font-size: 1rem;">我的收藏</span>
+		    <i class=" fa-angle-right" style="float: right; "></i>
+		</div>
+    </a>
+
+
+</div>
+    {include file="common/foot" /}
+</body>
+<script>
+
+
+</script>
+</html>
+

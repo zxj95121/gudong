@@ -1,0 +1,152 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>学员列表</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <form action="{:url('admin/human/student')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                        <input type="text" maxlength="100" name="student_no" value="{$student_no}" style="height:24px;font-size:12px;" placeholder="-请输入学生学号-"/>
+                                    </div>
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                    <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-请选择状态-" tabindex="1">
+                                        <option value=""></option>
+                                        <option value="1" {if $status == 1}selected{/if}>在读</option>
+                                        <option value="2" {if $status == 2}selected{/if}>休学</option>
+                                        <!--<option value="3" {if $gender == 3}selected{/if}>未知</option>-->
+                                    </select>
+                                    </div>
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                    <select class="select_info chosen" data-with-diselect="1" name="action" data-placeholder="-请选择月底是否到期学生-" tabindex="1">
+                                        <option value=""></option>
+                                        <option value="1" {if $action == 1}selected{/if}>是</option>
+                                        <option value="2" {if $action == 2}selected{/if}>否</option>
+                                    </select>
+                                    </div>
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                    <select class="select_info chosen" data-with-diselect="1" name="store" data-placeholder="-请选择门店-" tabindex="1">
+                                        <option value=""></option>
+                                        {foreach $allStore as $store}
+                                        <option value="{$store['store_name']}" {if $storeId == $store['store_id']}selected{/if} >{$store['store_name']}</option>
+                                        {/foreach}
+                                    </select>
+                                    </div>
+
+
+                                    <div style="float:right;">
+
+                                        <input type="button" onclick="" class="btn red" value="微信提醒"/>
+                                        <input type="button" class="btn red" value="短信提醒"/>
+                                        <input type="button" onclick="editStudent(0)" class="btn green" value="添　加"/>
+                                        <input type="submit" class="btn green" value="搜　索"/>
+                                    </div>
+                                </form>
+                            </div>
+                            <div style="height: 30px;"></div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>学号</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>头像</th>
+                                    <th>总消耗</th>
+                                    <th>所在门店</th>
+                                    <th>到期时间</th>
+                                    <th>学生消耗</th>
+                                    <th>详情</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $studentList as $key=>$student}
+                                <tr class="odd gradeX">
+                                    <td>{$key+1}</td>
+                                    <td>{$student['student_no']}</td>
+                                    <td>{$student['student_name']}</td>
+                                    <td>{$student['student_sex'] == 1?'男':($student['student_sex'] == 2?'女':'未知')}</td>
+                                    <td>
+                                        {if !empty($student['student_headerImg'])}
+                                        <img src="{$student['student_headerImg']}" onclick="showImg(this)">
+                                        {else/}
+                                        <img src="/static/admin/image/notKnow.jpg">
+                                        {/if}
+                                    </td>
+                                    <td>{$student['expend_count']}</td>
+                                    <td>{$student['store_name']}</td>
+                                    <td>{$student['end_time']}</td>
+                                    <td>
+                                        <input type="button" onclick="studentExpendAll({$student['student_no']})" class="btn yellow" value="消耗详情"/>
+                                    </td>
+                                    <td><a href = "{:url('human/downloadimg')}?student_no={$student['student_no']}">点击扫码下载</a></td>
+                                    <td>
+                                        <span class="btn {if $student['status']==2}red{else}green{/if}">
+                                            {$student.status|showStatus=###,'在读,休学:1,2'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="btn blue"  onclick="editStudent({$student['student_id']})" style="cursor: pointer;">
+                                            <i class="fa icon-edit"></i>
+                                        </span>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    function editStudent(student_id){
+        window.location.href = "{:url('human/editStudent')}?student_id="+student_id;
+    }
+    function studentExpendAll(student_no){
+        window.location.href = "{:url('human/allExpendStudent')}?student_no="+student_no;
+    }
+
+    function showImg(obj){
+        var img_src = $(obj).attr('src');
+        $('#myModal').find('img').attr('src',img_src);
+        $('#myModal').modal('show');
+    }
+</script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:700px;margin-left: -350px;top:10%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:16px;">
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    头像预览
+                </h4>
+            </div>
+            <div class="modal-body">
+                <img src="" style="width:100%;max-height: 300px;"/>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+{include file='Default/common/footer'}

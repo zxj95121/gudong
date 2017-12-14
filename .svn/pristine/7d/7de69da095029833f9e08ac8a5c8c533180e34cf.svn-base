@@ -1,0 +1,16 @@
+var validator_custom = function () {
+    return {
+        init: function (rules,messages) {
+            jQuery.validator.addMethod("id_card", function(value, element) {
+                var idcard = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+                return this.optional(element) || (idcard.test(value));
+            }, "请输入一个有效的身份证号");
+            jQuery.validator.addMethod("phone", function(value, element) {
+                var tel = /^\d{3,4}-?\d{7,9}$/; //电话号码格式010-12345678
+                return this.optional(element) || (tel.test(value));
+            }, "请输入一个有效的联系电话");
+
+        }
+    };
+
+}();

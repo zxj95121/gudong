@@ -1,0 +1,78 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid" style="margin-top: 10px;">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>会员评价列表</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <form action="{:url('admin/Comment/index')}" id='searchForm' method='get'>
+
+                                    <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-请选择状态-" tabindex="1">
+                                        <option value=""></option>
+                                        <option value="1" {if isset($status)}{if $status == 1}selected{/if}{/if}>正常</option>
+                                        <option value="2" {if isset($status)}{if $status == 2}selected{/if}{/if}>异常</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                {include file='Default/common/table/table_thead'}
+                                <tbody>
+                                {foreach $list as $key=>$info}
+                                <tr class="odd gradeX">
+                                    <td>{$key}</td>
+                                    <td>{$info['user_name']}</td>
+                                    <td>{$info['commented_user_name']}</td>
+                                    <td data-content="{$info['content']}" class="showContent">{$info['content']|mb_substr=###,0,10,'utf-8'}</td>
+                                    <td>{:date('Y-m-d H:i:s',$info['add_ts'])}</td>
+                                    <td>{$info['status']|showstatus=###,'正常,异常:1,2'}</td>
+                                    <td>
+
+                                        <div class="btn-group">
+                                            <a class="btn green" href="#" data-toggle="dropdown">
+                                                操作<i class="icon-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" style="text-align: left">
+                                                <li><a href="{:url('admin/Comment/update_status',['comment_id'=>$info['comment_id']])}">
+                                                    {if $info['status']==1}禁用{else/}解除{/if}</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file='Default/common/footer'}
+
+<script>
+    $('.chosen[name="user_no"]').change(function () {
+        return $('#searchForm').submit();
+    })
+
+    $('.chosen[name="status"]').change(function () {
+        return $('#searchForm').submit();
+    })
+
+</script>

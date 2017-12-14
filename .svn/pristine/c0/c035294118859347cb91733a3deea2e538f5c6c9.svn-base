@@ -1,0 +1,171 @@
+body{
+	background: #FFF;
+}
+.gd-bg{
+	width: 100%;
+	height: 12rem;
+	background-image: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=677501059,788868070&fm=27&gp=0.jpg');
+	background-size: 100%;
+	background-position: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	color: #FFF;
+}
+.gd-bg i{
+	margin-right: 0.5rem;
+	margin-top: 0.5rem;
+}
+.gd-header{
+	margin-top: 0.5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background: #FFF;
+}
+.gd-header-left{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 2rem;
+}
+.gd-header-left img{
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	margin-bottom: 2.5rem;
+	margin-left: 0.7rem;
+}
+.gd-header-right img{
+	height: 2.2rem;
+	margin-right: 0.5rem;
+}
+.gd-header-nickname{
+	color: #343434;
+	font-size: 1.2rem;
+	margin-left: 0.5rem;
+}
+.gd-header-sex{
+	width: 1.3rem;
+	height: 1.3rem;
+	background: #7EBFDB;
+	border-radius: 50%;
+}
+.gd-header-sex img{
+	position: relative;
+	top: 15%;
+	left: 15%;
+	margin: 0px;
+	width: 70%;
+	height: 70%;
+}
+
+.gd-message-wrapper{
+	background: #FFF;
+	width: 100%;
+}
+.gd-message{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 1.6rem;
+	padding-bottom: 0.5rem;
+	margin: 0 auto;
+}
+.gd-message-child{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+}
+.gd-message-child span{
+	height: 1.4rem;
+}
+.gd-message-child span:nth-of-type(1){
+	color: #343434;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+.gd-message-child span:nth-of-type(2){
+	color: #808080;
+	font-size: 1.2rem;
+}
+
+/*四个表格*/
+.gd-type{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+.gd-type-child{
+	width: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+	padding: 0.6rem 0px;
+	border-top: 1px solid #D5D5D5;
+	border-bottom: 1px solid #D5D5D5;
+}
+.gd-type-child:nth-of-type(n+2){
+	border-left: 1px solid #D5D5D5;
+}
+.gd-type-child img{
+	height: 1.6rem;
+}
+
+/*说说部分*/
+.center-content{
+	width: 100%;
+}
+.cc-header{
+	height: 3.2rem;
+	padding: 0px 0.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #F3F3F3;
+}
+.cc-header-ctime{
+	color: #000;
+	font-size: 1.8rem;
+}
+.cc-header-xtime, .cc-header-see-icon, .cc-header-position-icon{
+	margin-left: 0.5rem;
+}
+.cc-header-see{
+	margin-left: 0.3rem;
+}
+.cc-header-xtime, .cc-header-see-icon, .cc-header-see, .cc-header-position-icon, .cc-header-position{
+	color: #7d7d7d;
+	font-size: 1rem;
+	position: relative;
+	top: 0.3rem;
+}
+.cc-header-position-icon, .cc-header-position{
+	color: #4d79a7;
+}
+
+/*//说说部分*/
+.moment-content{
+	padding-top: 0.8rem;
+}
+
+/*后期删*/
+.center-content:nth-last-child(-n+3){
+	/*min-height: 20rem;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5rem;
+	display: none;
+}

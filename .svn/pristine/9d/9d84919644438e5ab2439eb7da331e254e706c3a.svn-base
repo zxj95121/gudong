@@ -1,0 +1,213 @@
+window.load_all = false;
+window.load_city = false;
+window.load_sex = false;
+
+var swiper = new Swiper('.swiper-container-father', {
+	passiveListeners : false,
+	touchMoveStopPropagation : false,
+	mousewheelControl: true,
+    on:{
+    	slideChangeTransitionEnd: function(){
+      		var activeIndex = this.activeIndex;
+      		slideDeal(activeIndex);
+      		$('.gd-header-nav').removeClass('gd-header-nav-active');
+      		$('.gd-header-nav').eq(activeIndex).addClass('gd-header-nav-active');
+    	},
+  	},
+});
+
+window.currentPage = 1;
+
+
+/*----------------------------------------加载更多---------------------------------------*/
+window.loading = false;
+$('#content1').unbind("scroll").bind("scroll", function(e){
+    var sum = this.scrollHeight; 
+    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+    	if (window.load_all) {
+    		return false;
+    	}
+    	$('#PullUp').show();
+    	if (!window.loading) {
+    		window.loading = true;
+	    	$.ajax({
+	    		url: '/index/index/nextZhanshi',
+	    		dataType: 'html',
+	    		type: 'get',
+	    		data: {
+	    			// page: window.currentPage+1,
+	    			mid: $('#content1 .moment:last').attr('mid')
+	    		},
+	    		success: function(data) {
+	    			var sp = data.split('&&&&--');
+	    			$('#PullUp').before(sp[1]);
+	    			if (sp[0] == 0) {
+	    				layer.msg('没有更多说说了!');
+	    				window.load_all = true;
+	    			}
+	    			$('#PullUp').hide();
+	    			setHeadImgWidth();
+	    			// window.currentPage = window.currentPage+1;
+	    			window.loading = false;
+	    		}
+	    	})
+	    	// $('#content1').load('/index/index/nextZhanshi?page='+(window.currentPage+1), function(){
+	    	// 	$('#PullUp').hide();
+	    	// 	window.loading = false;
+	    	// });
+	    }
+    }
+});
+
+
+// window.sexCurrentPage = 1;
+window.loading_sex = false;
+/*--------------------------------------同性加载情况-------------------------------------------*/
+$('#content3').unbind("scroll").bind("scroll", function(e){
+    var sum = this.scrollHeight; 
+    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+    	// if (sexCurrentPage >= window.max_sex) {
+    	// 	$('#PullUp_sex').hide();
+    	// 	return false;
+    	// }
+    	if (window.load_sex) {
+    		return false;
+    	}
+    			
+    	$('#PullUp_sex').show();
+    	if (!window.loading_sex) {
+    		window.loading_sex = true;
+    		
+	    	$.ajax({
+	    		url: '/index/index/nextZhanshi_sex',
+	    		dataType: 'html',
+	    		type: 'get',
+	    		data: {
+	    			// page: window.sexCurrentPage+1
+	    			mid: $('#content3 .moment:last').attr('mid')
+	    		},
+	    		success: function(data) {
+	    			var sp = data.split('&&&&--');
+		    		$('#PullUp_sex').before(sp[1]);
+		    		// window.max_sex = parseInt(sp[0]);
+		    		if (sp[0] == 0) {
+	    				layer.msg('没有更多说说了!');
+	    				window.load_sex = true;
+	    			}
+
+	    			$('#PullUp_sex').hide();
+	    			setHeadImgWidth();
+	    			// window.sexCurrentPage = window.sexCurrentPage+1;
+	    			window.loading_sex = false;
+	    		}
+	    	})
+	    }
+    }
+});
+
+
+// window.cityCurrentPage = 1;
+window.loading_city = false;
+/*--------------------------------------同城加载情况-------------------------------------------*/
+$('#content2').unbind("scroll").bind("scroll", function(e){
+    var sum = this.scrollHeight; 
+    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+    	// if (cityCurrentPage >= window.max_city){
+  			// $('#PullUp_city').hide();
+    	// 	return false;
+    	// }
+    	if (window.load_city) {
+    		return false;
+    	}
+    	$('#PullUp_city').show();
+    	if (!window.loading_city) {
+    		window.loading_city = true;
+    		
+	    	$.ajax({
+	    		url: '/index/index/nextZhanshi_city',
+	    		dataType: 'html',
+	    		type: 'get',
+	    		data: {
+	    			// page: window.cityCurrentPage+1
+	    			mid: $('#content2 .moment:last').attr('mid')
+	    		},
+	    		success: function(data) {
+	    			var sp = data.split('&&&&--');
+		    		$('#PullUp_city').before(sp[1]);
+		    		// window.max_city = parseInt(sp[0]);
+		    		if (sp[0] == 0) {
+	    				layer.msg('没有更多说说了!');
+	    				window.load_city = true;
+	    			}
+	    			$('#PullUp_city').hide();
+	    			setHeadImgWidth();
+	    			// window.cityCurrentPage = window.cityCurrentPage+1;
+	    			window.loading_city = false;
+	    		}
+	    	})
+	    }
+    }
+});
+
+
+/*导航栏要有点击效果*/
+$(document).on('click', '.gd-header-nav', function(){
+	var activeIndex = $(this).index('.gd-header-nav');
+	$('.gd-header-nav').removeClass('gd-header-nav-active');
+    $('.gd-header-nav').eq(activeIndex).addClass('gd-header-nav-active');
+    swiper.slideTo(activeIndex, 500, function(){
+    	slideDeal(activeIndex);
+    });//切换到第一个slide，速度为1秒
+})
+
+function slideDeal(activeIndex){
+	if(activeIndex == 2 && $('#content3 .moment').length == 0) {
+		$('#PullUp_sex').show();
+		$.ajax({
+			url: '/index/index/nextZhanshi_sex',
+			dataType: 'html',
+			type: 'get',
+			data: {
+				mid: 1000000000
+			},
+			success: function(data) {
+				var sp = data.split('&&&&--');
+				$('#PullUp_sex').before(sp[1]);
+				// window.max_sex = parseInt(sp[0]);
+				if (sp[0] == 0) {
+    				layer.msg('没有更多说说了!');
+    				window.load_sex = true;
+    			}
+				$('#PullUp_sex').hide();
+				setHeadImgWidth();
+			}
+		})
+	}
+	if(activeIndex == 1 && $('#content2 .moment').length == 0) {
+		$('#PullUp_city').show();
+		$.ajax({
+			url: '/index/index/nextZhanshi_city',
+			dataType: 'html',
+			type: 'get',
+			data: {
+				mid: 1000000000
+			},
+			success: function(data) {
+				var sp = data.split('&&&&--');
+				$('#PullUp_city').before(sp[1]);
+				// window.max_city = parseInt(sp[0]);
+				if (sp[0] == 0) {
+    				layer.msg('没有更多说说了!');
+    				window.load_city = true;
+    			}
+				$('#PullUp_city').hide();
+				setHeadImgWidth();
+			}
+		})
+	}
+}
+
+
+function setHeadImgWidth(){
+	$('.moment-header-img').css('width', '4rem');
+}

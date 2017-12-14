@@ -1,0 +1,84 @@
+{include file="Default/common/header"}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="icon-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="0">0</div>
+                            <div class="desc">
+                                投诉建议
+                            </div>
+                        </div>
+                        <a class="more" href="#">
+                            去查看 <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat green">
+                        <div class="visual">
+                            <i class="icon-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="0">0</div>
+                            <div class="desc">预约订单</div>
+                        </div>
+                        <a class="more" href="#">
+                            去查看 <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="span4 responsive" data-tablet="span4" data-desktop="span4">
+                    <div class="dashboard-stat yellow">
+                        <div class="visual">
+                            <i class="icon-bar-chart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="0"> 0 </div>
+                            <div class="desc">会员注册量</div>
+                        </div>
+                        <a class="more" href="#">
+                            去查看 <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-calendar"></i>数据统计</div>
+                    <div class="tools">
+                        <a href="" class="collapse"></a>
+                        <a href="" class="remove"></a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span6" id="main" style="height: 500px;"></div>
+                        <div class="span6" id="ec" style="height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左边饼图  end-->
+            <!-- 右边树状图-->
+            <!-- 右边树状图  end-->
+        </div>
+
+        <!-- END DASHBOARD STATS -->
+        <div class="clearfix"></div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+</div>
+
+
+<!-- END PAGE -->
+
+</div>
+{include file="Default/common/footer"}

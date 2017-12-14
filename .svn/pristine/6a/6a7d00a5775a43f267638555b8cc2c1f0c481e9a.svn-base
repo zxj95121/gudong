@@ -1,0 +1,252 @@
+/*说说部分*/
+.moment{
+	background: #FFF;
+	margin-top: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.moment:first-child{
+	margin-top: 0px;
+}
+
+.moment-header{
+	height: 5.6rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.moment-header-img{
+	height:4rem;
+	width: 4rem;
+	border-radius: 50%;
+	margin-left: 0.8rem;
+	margin-right: 0.8rem;
+}
+
+.moment-header-right{
+	height: 4rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 0.2rem;
+}
+
+.moment-header-right-top{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.moment-header-right-top-left{
+	display: flex;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 1.5rem;
+	color: #343434;
+}
+.moment-nickname{
+
+}
+.moment-subscribe{
+	margin-left: 0.8rem;
+	cursor: pointer;
+}
+.moment-subscribe button{
+	font-size: 1.2rem;
+	padding: 0.1rem 1rem;
+}
+
+.moment-header-right-top-right{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+	font-size: 1.28rem;
+	color: #3778B0;
+	margin-right: 0.8rem;
+}
+.moment-position-icon{
+	position: relative;
+	top: 0.3rem;
+}
+
+.moment-header-right-bottom{
+	font-size: 1.2rem;
+	color: #ADADAD;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-top: 0.2rem;
+}
+.moment-see-icon{
+	margin: 0 0.32rem 0 0.8rem;
+	display: none;
+}
+.moment-see{
+	display: none;
+}
+
+/*说说内容部分*/
+.moment-content{
+	margin-left: 0.8rem;
+	padding-right: 0.8rem;
+	color: #343434;
+	font-size: 1.3rem;
+	/*padding-top: 0.8rem;*/
+	padding-bottom: 0.8rem;
+}
+
+/*说说图片*/
+.moment-image{
+	width: 100%;
+	cursor: pointer;
+}
+.moment-image img{
+	width: 100%;
+}
+
+/*操作部分*/
+.moment-operate{
+	width: 100%;
+	color: #A4A4A4;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #FFF;
+	height: 3.68rem;
+	/*padding: 0.7em 0.3em 0.7em 0.5em;*/
+	padding: 1.12rem 0.48rem 1.12rem 0.8rem;
+}
+.moment-operate>div{
+	cursor: pointer;
+}
+.moment-operate img{
+	cursor: pointer;
+	width: 1.92rem;
+	display: inline-block;
+	margin-right: 0.96rem;
+}
+.moment-operate span{
+	color: #5281B6;
+	position: relative;
+	top: 0.2rem;
+}
+.moment-operate .moment-operate-num{
+	font-size: 1.6rem;
+}
+
+.moment-operate-left{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 85%;
+}
+.moment-operate-left > div:nth-of-type(n+2) {
+	margin-left: 1.6rem;
+}
+.moment-cicles{
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+/*.moment-operate-left > div:nth-last-child(1) {
+	margin-left: 2em;
+}*/
+
+/*评论部分*/
+.moment-comments{
+	color: ##343434;
+	padding-left: 0.8rem;
+	font-size: 1.3rem;
+	word-spacing: 0.3px;
+	/*letter-spacing: 0.3px;*/
+	padding-bottom: 1.6rem;
+	line-height: 1.8rem;
+}
+.moment-comments-hide{
+	display: none;
+}
+
+.moment-comments-seeAll{
+	font-size: 1.5rem;
+	color: #3b3b3c;
+	cursor: pointer;
+}
+.moment-comments-nickname{
+	font-size: 1.5rem;
+}
+.moment-comments-word-reply, .moment-comments-content{
+	font-size: 1.4rem;
+	color: #656565;
+	cursor: pointer;
+}
+.moment-comments-word-reply{
+	margin: 0.6rem;
+}
+
+.gdp{
+	width: 100%;
+	height: 100%;
+	color: #2F2E33;
+	position: fixed;
+	top: 0px;
+	z-index: 1000;
+}
+.gdp-wrapper{
+	width: 100%;
+	height: 100%;
+	z-index: 1001;
+	position: relative;
+}
+.gdp-wp{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background: #CFCFCF;
+	z-index: 1002;
+	width: 100%;
+}
+.gd-popover-operate{
+	width: 100%;
+	height: 3.8rem;
+	font-size: 1.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #FFF;
+	border-top: 0.1rem solid #BFBFBF;
+}
+.gd-popover-cancle{
+	margin-top: 0.3rem;
+	width: 100%;
+	height: 3.8rem;
+	font-size: 1.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #EFEEF3;
+}
+
+/*正在刷新按钮*/
+#PullUp{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 2.7rem;
+}
+#pullUp-msg{
+	font-size: 1.4rem;
+	margin-left: 0.4rem;
+}

@@ -1,0 +1,43 @@
+<!-- <div class="navBar" id=footer>
+    <ul class="clear-fix">
+        <li style="width: 50%;">
+        	<a href="/index/index/zhanshi.html">
+        		<img src="/static/index/images/home.png" style="vertical-align: inherit;">
+        		<span>校友/活动</span>
+        	</a>
+        </li>
+        <li class="navBar-active" style="width: 50%;">
+        	<a href="/index/index/center.html">
+        		<img src="/static/index/images/emo.png" style="vertical-align: inherit;">
+        		<span>个人中心</span>
+        	</a>
+        </li>
+    </ul>
+</div> -->
+<nav class="mui-bar mui-bar-tab" style="z-index: 9999;background: white;height: 4.2rem;">
+    <a class="mui-tab-item nav-a-bottom" id="yi" href="/index/index/zhanshi.html?c=0#user" style="border-right: 1px solid #eee;cursor: pointer;">
+        <span class="mui-tab-label" style="color: #666;
+    font-size: 1.4rem;
+    font-weight: 400;">艺</span>
+    </a>
+    <a class="mui-tab-item nav-a-bottom" id="dao" href="/index/index/zhanshi.html?c=2#activity" style="border-right: 1px solid #eee;cursor: pointer;">
+        <span class="mui-tab-label" style="color: #666;
+    font-size: 1.4rem;
+    font-weight: 400;">道</span>
+    </a>
+    <a class="mui-tab-item nav-a-bottom" id="jia" href="/index/index/center.html" style="cursor: pointer;">
+        <span class="mui-tab-label" style="color: #666;
+    font-size: 1.4rem;
+    font-weight: 400;">家</span>
+    </a>
+</nav>
+<style>
+	.mui-tab-item{
+		height: 4.2rem !important;
+	}
+</style>
+<script type="text/javascript">
+    mui('body').on('tap','.nav-a-bottom',function(){
+        document.location.href=this.href;
+    });
+</script>

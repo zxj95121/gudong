@@ -1,0 +1,72 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>角色列表</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <div style="float:right;margin-bottom:20px;">
+                                   <input type="button" onclick="editRole(0)" class="btn green" value="添　加"/>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>角色名称</th>
+                                    <th>角色状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $roleList as $key=>$role}
+                                <tr class="odd gradeX">
+                                    <td>{$key+1}</td>
+                                    <td>{$role['role_name']}</td>
+                                    <td>
+                                        <span class="btn {if $role['status']==1}green{else}red{/if}">
+                                            {$role.status|showStatus=###,'正常,关闭:1,2'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="btn blue"  onclick="editRole({$role['role_id']})" title="编辑" style="cursor: pointer;">
+                                            <i class="fa icon-edit"></i>
+                                        </span>
+                                        <span class="btn green"  onclick="relUserMenu({$role['role_id']})" title="编辑" style="cursor: pointer;">
+                                            <i class="fa icon-user"></i>
+                                        </span>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function editRole(role_id){
+        window.location.href = "{:url('power/editRole')}?role_id="+role_id;
+    }
+    function relUserMenu(role_id){
+        window.location.href = "{:url('power/relUserMenu')}?role_id="+role_id;
+    }
+</script>
+{include file='Default/common/footer'}

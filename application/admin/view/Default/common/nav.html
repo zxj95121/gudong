@@ -1,0 +1,42 @@
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li>
+                <div class="sidebar-toggler hidden-phone"></div>
+            </li>
+
+            {foreach $_SideMenu as $menu}
+            <li>
+                <a href="javascript:void(0);">
+                    <i class="icon-{$menu['icon']}"></i>
+                    <span class="title">{$menu['menu_name']}</span>
+                    <span class="arrow "></span>
+                </a>
+                {if isset($menu['child'])}
+                <ul class="sub-menu">
+                    {foreach $menu['child'] as $child}
+                    <li>
+                        <a href="{$child['url_path']}">
+                            <!--<i class="icon-gift"></i>-->
+                            {$child['menu_name']}
+                        </a>
+                    </li>
+                    {if($child['controller_name'] == $controller_name)}
+                    <input type="hidden" class="menu_show">
+                    <script>
+                        $(".menu_show").parents('.sub-menu').show();
+                        $(".menu_show").parents('li').siblings().removeClass('active');
+                        $(".menu_show").parents('li').addClass('active').addClass('open');
+                    </script>
+                    {/if}
+                    {/foreach}
+                </ul>
+                {/if}
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $('body').addClass('page-sidebar-closed'); 
+</script>

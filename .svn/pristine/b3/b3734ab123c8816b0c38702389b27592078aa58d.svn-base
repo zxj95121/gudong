@@ -1,0 +1,59 @@
+a:link{
+	text-decoration: none;
+	color: #007aff;
+}
+a:visited{
+	text-decoration: none;
+	color: #007aff;
+}
+a:hove{
+	text-decoration: none;
+	color: #007aff;
+}
+a:active{
+	text-decoration: none;
+	color: #007aff;
+}
+.navBar{
+	width:100%;
+	height:3.5rem;
+	background:#fff;
+	position:fixed;
+	bottom:0;
+	box-shadow:1px -1px 4px #ccc;
+    z-index: 9999;
+}
+.navBar ul{
+	width: 100%;
+	height: 100%;
+	padding-left: 0px;
+}
+.navBar li{
+	float:left;
+	width:33.3%;
+	text-align:center;
+	cursor: pointer;
+}
+.navBar li img{
+	width:1.2rem;
+	height:1.2rem;
+	margin-top:0.6rem;
+}
+.navBar li span{
+	display:block;
+	font-size:0.6rem;
+	color:#666;
+}
+li{
+	list-style-type: none;
+}
+
+
+/*mui 的ui*/
+#muiContent .mui-table-view{
+	margin-top: 0px;
+}
+#muiContent .mui-table-view :before{
+	height: 0px;
+	border: 0px solid transparent;
+}

@@ -1,0 +1,37 @@
+<div >
+        <div class="dataTables_paginate paging_bootstrap pagination " style='margin: 0px auto;text-align: center;'>
+            {$page}
+        </div>
+</div>
+
+<style>
+    .pagination{
+        padding-top: 20px;
+    }
+    .pagination a,.pagination a:hover,.pagination a:active,.pagination a:visited{
+        text-decoration: none;
+        color:#999;
+        display: inline-block;
+        width:30px;
+        height: 30px;
+        line-height: 30px;
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-left:0;
+        background: #f5f5f5;
+    }
+    .pagination a:first-child{
+        border-left:1px solid #ddd;
+        border-top-left-radius:5px!important;
+        border-bottom-left-radius:5px!important;
+    }
+    .pagination a:last-child{
+        border-top-right-radius:5px!important;
+        border-bottom-right-radius:5px!important;
+    }
+    .pagination .active,.pagination .active:hover{
+        background: #35aa47!important;
+        color: #fff !important;
+    }
+</style>

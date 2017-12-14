@@ -1,0 +1,140 @@
+<?php
+namespace app\admin\controller;
+use app\common\model\GiftModel;
+use app\common\model\StoreModel;
+use app\common\model\UserModel;
+use app\common\service\helperService;
+use think\Db;
+use think\Session;
+use think\Validate;
+
+class Gift extends Base{
+    /**
+     * 礼物首页
+     * @return mixed
+     */
+    public function index(){
+        $params = $this->request->param();
+
+        $where = [
+//            'user_no'=>isset($params['user_no'])?$params['user_no']:'',
+        ];
+        $where = array_filter($where);
+
+        $page = isset($params['page'])?intval($params['page']):1;
+        $pageSize = 10;
+
+        $order = 'add_ts desc';
+        $giftModel = new GiftModel();
+        $res = $giftModel->getPage($page,$pageSize,$where,false,$order);
+        $totalCount = $giftModel->getPage(0,0,$where,true,$order);
+        $pageString = helperService::createPage($totalCount,
+            $page ,'Gift/index',$params,$pageSize);
+
+        $this->assign('page',$pageString);
+        $this->assign('list',$res);
+
+        $userModel = new UserModel();
+        $userList  = $userModel->getMulti(['status'=>1,'mobile'=>['neq','']]);
+        $this->assign('userList',$userList);
+
+        $arr_title = ['序号','礼物名称','礼物介绍','礼物图片','添加时间','状态'];
+        $this->assign('my_rule',$arr_title);
+
+        $this->assign('user_no',isset($params['user_no'])?$params['user_no']:'');
+
+        return $this->fetch($this->_layout.'/'.$this->controller_name.'/'.$this->action_name);
+    }
+
+
+    /**
+     * 编辑信息
+     */
+    public function operation_info()
+    {
+        $params = $this->request->param();
+        if(!empty($params)){
+            $info = $this->getInfo($params);
+            $this->assign('info',$info);
+        }
+
+        $this->showFileUpload('file','admin',['img'=>'礼物图片:']);
+
+        return $this->fetch($this->_layout . '/' . $this->controller_name . '/' . $this->action_name);
+    }
+
+    /**
+     * 保存信息
+     */
+    public function save_info(){
+        $params = $this->request->param();
+//        var_dump($params);exit;
+        $rule = [
+            'id'=>'number',
+            'name|礼物名称'=>'require|max:100',
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+
+
+        $giftModel = new GiftModel();
+        $data = [
+            'name' => $params['name'],
+            'cotent' => $params['cotent'],
+            'img' => $params['img'],
+            'status' => $params['status']
+        ];
+
+
+        if (!empty($params['id'])) {
+            $res = $giftModel->saveData($data, ['id' => $params['id']]);
+
+        } else {
+            $data['add_ts']=time();
+            $res = $giftModel->saveData($data);
+        }
+        if ($res!==false) {
+            $this->redirect($params['backUrl']);
+        } else {
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('admin/Gift/index') . "'</script>");
+        }
+    }
+
+
+    /**
+     *修改状态
+     */
+    public function update_status(){
+        $params = $this->request->param();
+        $giftModel = new GiftModel();
+        $info = $this->getInfo($params);
+        if($info['status']==1){
+            $status = 2;
+        }else{
+            $status = 1;
+        }
+        $res = $giftModel->saveData(['status'=>$status],['id'=>$params['id']]);
+        if($res){
+            $this->redirect('admin/Gift/index');
+        }else{
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='".url('admin/Gift/index')."'</script>");
+        }
+    }
+
+
+    /**
+     * 获取信息
+     * @param $params
+     * @return array|false|\PDOStatement|string|\think\Model
+     */
+    public function getInfo($params){
+        $giftModel = new GiftModel();
+        if(!empty($params['id'])){
+            $res = $giftModel->getOne(['id'=>$params['id']]);
+            $this->assign('info',$res);
+            return $res;
+        }
+    }
+}

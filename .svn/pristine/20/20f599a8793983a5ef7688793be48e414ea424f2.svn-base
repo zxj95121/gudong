@@ -1,0 +1,212 @@
+{include file='Default/common/header'}
+        <style>
+            .modal-body span{
+                width: 25%;
+                display: block;
+                float: left;
+            }
+            .modal-body font{
+                width: 75%;
+                display: block;
+                float: left;
+            }
+        </style>
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+<!--             <a href="{:url('admin/Activity/operation_info')}" class="btn green"><i class="icon-plus"></i>添加活动</a> -->
+            <div class="row-fluid" style="margin-top: 10px;">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>研值送礼设置</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                    <a class="brand" href="#">分类</a>
+                                    <ul class="nav">
+                                        <li class="dateType active"><a href="#" dtype="0">本周研值配置</a></li>
+                                        <li class="dateType"><a href="#" dtype="1">下周研值配置</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <form action="/admin/Activity/sendGiftAjax" method="post" id="thisweek" class="form-horizontal weekForm" enctype="multipart/form-data">
+                                <div class="control-group">
+                                    <label class="control-label">本周时间<span class="required"></span></label>
+                                    <div class="controls">
+                                        <input type="text" value="2017.01.02-2017.01.09" name="" class="span6 m-wrap" readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">研值数量：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="number" value="" name="number" class="span6 m-wrap" placeholder="请输入数字">
+                                    </div>
+                                </div>
+
+                                <table class="table">
+                                    <tr>
+                                        <td>文竹</td>
+                                        <td>xiyfidnfdskafj付款了的萨芬的阿斯蒂芬看看三分</td>
+                                        <td><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3690643755,2166527622&fm=27&gp=0.jpg" style="max-height: 200px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>文竹</td>
+                                        <td>xiyfidnfdskafj付款了的萨芬的阿斯蒂芬看看三分</td>
+                                        <td><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3690643755,2166527622&fm=27&gp=0.jpg" style="max-height: 200px;"></td>
+                                    </tr>
+                                </table>
+
+                                <div class="control-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls" style="max-width: 400px;">
+                                        <button class="btn-block btn-primary addGiftBtn" type="button">添加礼品</button>
+                                    </div>
+                                </div>
+
+                                <div class="addGift" style="display: none;">
+                                    <div class="control-group">
+                                        <label class="control-label">礼品名称：<span class="required">*</span></label>
+                                        <div class="controls">
+                                            <input type="text" value="" name="" class="span6 m-wrap giftName">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">礼品介绍：<span class="required">*</span></label>
+                                        <div class="controls">
+                                            <input type="text" value="" name="" class="span6 m-wrap giftContent">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label"></label>
+                                        <div class="controls" style="max-width: 400px;">
+                                            <input type="file" name="" class="giftImage">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label"></label>
+                                        <div class="controls" style="max-width: 400px;">
+                                            <input type="button" value="确认添加" name="" class="confirmAdd">
+                                            <input type="button" value="取消添加" class="cancleAdd" name="">
+                                        </div>
+                                    </div>
+                                </div>  
+
+                                <div class="control-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls" style="max-width: 400px;">
+                                        <input type="submit" name="submit" value="确认提交配置" style="width: 160px;height: 37px;background: green;color: #fff;border-color: 1px solid green;">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <form action="/admin/Activity/sendGiftAjax" method="post" id="nextweek" class="form-horizontal weekForm" enctype="multipart/form-data" style="display: none;">
+                                <div class="control-group">
+                                    <label class="control-label">下周时间<span class="required"></span></label>
+                                    <div class="controls">
+                                        <input type="text" value="2017.01.02-2017.01.09" name="" class="span6 m-wrap" readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">研值数量：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="number" value="" name="number" class="span6 m-wrap" placeholder="请输入数字">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls" style="max-width: 400px;">
+                                        <button class="btn-block btn-primary addGiftBtn" type="button">添加礼品</button>
+                                    </div>
+                                </div>
+
+                                <div class="addGift" style="display: none;">
+                                    <div class="control-group">
+                                        <label class="control-label">礼品名称：<span class="required">*</span></label>
+                                        <div class="controls">
+                                            <input type="text" value="" name="" class="span6 m-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">礼品介绍：<span class="required">*</span></label>
+                                        <div class="controls">
+                                            <input type="text" value="" name="" class="span6 m-wrap">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label"></label>
+                                        <div class="controls" style="max-width: 400px;">
+                                            <input type="file" name="">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label"></label>
+                                        <div class="controls" style="max-width: 400px;">
+                                            <input type="button" value="确认添加" class="confirmAdd" name="">
+                                            <input type="button" value="取消添加" class="cancleAdd" name="">
+                                        </div>
+                                    </div>
+                                </div>  
+
+
+                                <div class="control-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls" style="max-width: 400px;">
+                                        <input type="submit" name="submit" value="确认提交配置" style="width: 160px;height: 37px;background: green;color: #fff;border-color: 1px solid green;">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{include file='Default/common/footer'}
+<script>
+    $('.dateType').click(function(data) {
+        var index = $(this).index('.dateType');
+
+        $(this).addClass('active');
+        var another = (parseInt(index)+1)%2;
+        console.log(another);
+        $('.dateType').eq(another).removeClass('active');
+        $('.weekForm').eq(another).hide();
+        $('.weekForm').eq(index).show();
+    })
+
+    $('.addGiftBtn').click(function(){
+        $(this).parents('.weekForm').find('.addGift').show();
+    });
+
+    $('.cancleAdd').click(function(){
+        $(this).parents('.weekForm').find('.addGift').hide();
+    });
+
+    //确认添加按钮
+    $('.confirmAdd').click(function(){
+        var dom = $(this).parents('.weekForm');
+        var giftName = dom.find('.giftName').val();
+        var giftContent = dom.find('.giftContent').val();
+        var giftImage = dom.find('.giftImage')[0].files[0];
+        var url = window.URL.createObjectURL(giftImage);
+        console.log(url);
+    })
+</script>

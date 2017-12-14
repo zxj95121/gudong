@@ -1,0 +1,78 @@
+{foreach name="momentsObj" item="value" key="key" }
+<div class="moment" uid="{$value['user_id']}" mid="{$value['moment_id']}" iscollect="{$value['is_collect']}">
+	<div class="cc-header">
+		<div class="cc-header-ctime">
+			{$value['add_ts']}
+		</div>
+		<div class="cc-header-xtime">
+			{:date('H:i', $value['add_ts_pre'])}
+		</div>
+		<div class="cc-header-see-icon glyphicon glyphicon-eye-open"></div>
+		<div class="cc-header-see">43</div>
+		<!-- <div class="cc-header-position-icon glyphicon glyphicon-map-marker"></div> -->
+		<!-- <div class="cc-header-position">合肥</div> -->
+	</div>
+	<div class="moment-content"><!-- 文字内容 -->
+		{$value['content']}
+	</div>
+
+	<div class="moment-image"><!-- 图片部分 -->
+		<img src="http://gudong.ahamu.cn{$value['img']}">
+	</div>
+
+	<div class="moment-operate"><!-- 底部操作部分 -->
+		<div class="moment-operate-left">
+			<!-- <div class="moment-thumb">
+				<img src="/static/index/images/thumb_48.png">
+				<span class="moment-operate-num">2</span>
+			</div> -->
+			<!-- <div class="moment-thumb-num"></div> -->
+			<div class="moment-thumb">
+				<img src="/static/index/images/love_32{if condition="$value['is_thumb']"}_green{/if}.png">
+				<span class="moment-operate-num">{$value['thumb_num']}</span>
+			</div>
+			<div class="moment-comment">
+				<img src="/static/index/images/comment_48.png">
+				<span class="moment-operate-num">{$value['comment_num']}</span>
+			</div>
+			<!-- <div class="moment-comment-num"></div> -->
+			<div class="moment-share">
+				<img src="/static/index/images/share_48.png">
+			</div>
+		</div>
+		<div class="moment-cicles">
+			<img src="/static/index/images/circle_48.png">
+		</div>
+	</div>
+
+	<div class="moment-comments"><!-- 评论部分 -->
+		{if condition="$value['comment_num'] > 10"}
+		<div class="moment-comments-seeAll" status="1" num="{$value['comment_num']}">
+			查看全部{$value['comment_num']}条评论
+		</div>
+		{else /}
+		<div class="moment-comments-seeAll" status="0" style="display: none;" num="{$value['comment_num']}">
+		</div>
+		{/if}
+		{foreach $value['comments'] as $kc =>$vc}
+		{if condition="$kc <= 9"}
+		<div class="moment-comments-first gd-mc" uid="{$vc['user_id']}" cid="{$vc['id']}">
+			<span class="moment-comments-nickname">{$vc['user_name']}</span><span>:</span><span class="moment-comments-content">{$vc['content']}</span>
+		</div>
+		{else /}
+			{if condition="!$vc['comment_id']"}
+			<div class="moment-comments-first gd-mc moment-comments-hide" uid="{$vc['user_id']}" cid="{$vc['id']}">
+				<span class="moment-comments-nickname">{$vc['user_name']}</span>
+				<span>:</span>
+				<span class="moment-comments-content">{$vc['content']}</span>
+			</div>
+			{else /}
+			<div class="moment-comments-second gd-mc moment-comments-hide" uid="{$vc['user_id']}" cid="{$vc['id']}">
+				<span class="moment-comments-nickname">{$vc['user_name']}</span><span class="moment-comments-word-reply">回复</span><span class="moment-comments-nickname">{$vc['usered_name']}</span><span>:</span><span class="moment-comments-content">{$vc['content']}</span>
+			</div>
+			{/if}
+		{/if}
+		{/foreach}
+	</div>
+</div>
+{/foreach}

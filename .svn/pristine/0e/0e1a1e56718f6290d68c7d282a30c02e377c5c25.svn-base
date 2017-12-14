@@ -1,0 +1,28 @@
+public function getMarketingPage($page,$pageSize,$condition=[],$is_count = false,$order=''){
+        $this->alias('marketing')
+            ->join('T_USER user','user.user_no=marketing.user_no')
+            ->join('T_STORE store','store.store_id=marketing.store_id')
+            ->join('T_ACTIVITY_CONFIG activity','activity.code=marketing.code');
+        $field = ['marketing.*,user.user_name,store.store_name,activity.activity_name'];
+        if($is_count){
+            if(empty($condition)){
+                return $this->page($page,$pageSize)->count();
+            }
+            return $this->where($condition)->page($page,$pageSize)->count();
+        }else{
+            if($order){
+                if(empty($condition)){
+                    return $this
+                        ->field($field)->page($page,$pageSize)->order($order)->column('*');
+                }
+                return $this
+                    ->field($field)->where($condition)->page($page,$pageSize)->order($order)->column('*');
+            }
+            if(empty($condition)){
+                return $this
+                    ->field($field)->page($page,$pageSize)->column('*');
+            }
+            return $this
+                ->field($field)->where($condition)->page($page,$pageSize)->column('*');
+        }
+    }

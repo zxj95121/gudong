@@ -1,0 +1,151 @@
+var FormValidation = function () {
+
+
+    return {
+        init: function (rules,messages) {
+            //Sample 2
+            $('#form_2_select2').select2({
+                placeholder: "Select an Option",
+                allowClear: true
+            });
+
+            var form2 = $('#form_sample_2');
+            var error2 = $('.alert-error', form2);
+            var success2 = $('.alert-success', form2);
+
+            form2.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-inline', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                ignore: "",
+                rules: rules,
+                messages: messages,
+                errorPlacement: function (error, element) { // render error placement for each input type
+                    if ( element.is(":radio") ){  // for chosen elements, need to insert the error after the chosen container
+                        error.html('这是必选字段').css({'margin-top':'0px'}).appendTo(element.parents('.radio_valida'));
+                    }else{
+                        error.insertAfter(element); // for other inputs, just perform default behavoir                        
+                    }
+
+                },
+                invalidHandler: function (event, validator) { //display error alert on form submit   
+                    success2.hide();
+                    error2.show();
+                    App.scrollTo(error2, -200);
+                },
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                        .closest('.help-inline').removeClass('ok'); // display OK icon
+                    $(element)
+                        .closest('.control-group').removeClass('success').addClass('error'); // set error class to the control group
+                },
+                unhighlight: function (element) { // revert the change dony by hightlight
+
+                    $(element)
+                        .closest('.control-group').removeClass('error'); // set error class to the control group
+                },
+                success: function (label) {
+                    if (label.attr("for") == "service" || label.attr("for") == "membership") { // for checkboxes and radip buttons, no need to show OK icon
+                        label
+                            .closest('.control-group').removeClass('error').addClass('success');
+                        label.remove(); // remove error label here
+                    } else { // display success icon for other inputs
+                        label
+                        .addClass('valid').addClass('help-inline ok') // mark the current input as valid and display OK icon
+                        .closest('.control-group').removeClass('error').addClass('success'); // set success class to the control group
+                    }
+                },
+                submitHandler: function (form) {
+                    success2.show();
+                    error2.hide();
+                    form.submit();
+                }
+            });
+
+
+
+
+            // <div class="control-group">    一套js巨屌
+
+            //     <label class="control-label">Chosen Dropdown<span class="required">*</span></label>
+
+            //     <div class="controls chzn-controls">
+
+            //         <select id="form_2_chosen" class="span6 chosen" data-with-diselect="1" name="options1" data-placeholder="Choose an Option" tabindex="1">
+
+            //             <option value=""></option>
+
+            //             <option value="Option 1">Option 1</option>
+
+            //             <option value="Option 2">Option 2</option>
+
+            //             <option value="Option 3">Option 3</option>
+
+            //             <option value="Option 4">Option 4</option>
+
+            //         </select>
+
+            //     </div>
+
+            // </div>
+
+            //apply validation on chosen dropdown value change, this only needed for chosen dropdown integration.
+            $('.chosen, .chosen-with-diselect', form2).change(function () {
+                form2.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
+            });
+
+             //apply validation on select2 dropdown value change, this only needed for chosen dropdown integration.
+            $('.select2', form2).change(function () {
+                form2.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
+            });
+
+
+                                    // <div class="control-group">
+
+                                    //     <label class="control-label">Select2 Dropdown<span class="required">*</span></label>
+
+                                    //     <div class="controls select2-wrapper">
+
+                                    //         <select id="form_2_select2" class="span6" name="options2">
+
+                                    //             <option value=""></option>
+
+                                    //             <option value="Option 1">Option 1</option>
+
+                                    //             <option value="Option 2">Option 2</option>
+
+                                    //             <option value="Option 3">Option 3</option>
+
+                                    //             <option value="Option 4">Option 4</option>
+
+                                    //         </select>
+
+                                    //     </div>
+
+                                    // </div>
+        }
+
+    };
+ 
+}();
+
+//配置通用的默认提示语 
+$.extend($.validator.messages, {  
+    required: "这是必填字段",
+    remote: "请修正此字段",
+    email: "请输入有效的电子邮件地址",
+    url: "请输入有效的网址",
+    date: "请输入有效的日期",
+    dateISO: "请输入有效的日期 (YYYY-MM-DD)",
+    number: "请输入有效的数字",
+    digits: "只能输入数字",
+    creditcard: "请输入有效的信用卡号码",
+    equalTo: "你的输入不相同",
+    extension: "请输入有效的后缀",
+    maxlength: $.validator.format("最多可以输入 {0} 个字符"),
+    minlength: $.validator.format("最少要输入 {0} 个字符"),
+    rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的字符串"),
+    range: $.validator.format("请输入范围在 {0} 到 {1} 之间的数值"),
+    max: $.validator.format("请输入不大于 {0} 的数值"),
+    min: $.validator.format("请输入不小于 {0} 的数值")
+}); 

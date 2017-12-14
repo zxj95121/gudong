@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <title></title>
+    <style type="text/css">
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="text-decoration: none;cursor: pointer;" href="{:url('index/index/userShow')}?uid={$userObj.user_id}"></a>
+        <h1 class="mui-title">{$userObj.user_name}的说说</h1>
+    </header>
+
+    <div class="mui-content">
+        {if condition="count($momentList) > 0"}
+        <ul class="mui-table-view mui-table-view-chevron" id="momentList">
+            {foreach name="momentList" item="value"}
+            <li class="mui-table-view-cell mui-media" mid="{$value.moment_id}">
+                <a class="mui-navigate-right" style="text-decoration: none;cursor: pointer;" href="{:url('index/see/seeMoment')}?mid={$value.moment_id}">
+                    <img class="mui-media-object mui-pull-left" src="{$value.img}">
+                    <div class="mui-media-body">
+                        <span style="font-size: 0.8em;">{$value.add_ts}</span>
+                        <p class="mui-ellipsis">{$value.content}</p>
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+            <h6 align="center" style="padding-bottom: 3px;">- 到底啦 -</h6>
+            <li style="width: 100%;height: 3.5rem;opacity: 0;"></li>
+        </ul>
+        {else /}
+        <p style="text-align: center;position: fixed;top: 30%;width: 100%;">- 用户尚未发表任何说说 -</p>
+        {/if}
+    </div>
+    {include file="common/foot" /}
+
+    <script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+

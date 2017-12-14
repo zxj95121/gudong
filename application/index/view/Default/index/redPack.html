@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/index/js/redpack/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+		<style type="text/css">
+			body {
+		  		background: #CD533D;
+			}
+		</style>
+	</head>
+	<script src="/static/index/js/redpack/js/adapt.js" type="text/javascript" charset="utf-8"></script>
+
+	<body style="display: none;">
+		<i class="mui-icon mui-icon-back" style="display: block;position: fixed;top: 1em;left: 1em;font-size: 17px;color: #FFF;cursor: pointer;" onclick="window.location.href='/index/index/xiaoyou.html?activity_id={$act_obj['activity_id']}';"><span style="font-size: 13px;">返回活动</span></i>
+		<div class="bag">
+			<div class="user">
+				<img src="{:substr($act_obj['img'][0], 1)}" class="headImg" />
+				<span class="name">{$act_obj['activity_name']}</span>
+				<p class="p1">参与活动，抽取随机研值。</p>
+				<p class="p2" id="rest_yz" num="{$userObj->yanzhi}">研值余额：{$userObj->yanzhi}</p>
+			</div>
+			<div class="middle">
+				<img src="/static/index/js/redpack/img/3.png" class="open" style="cursor: pointer;" />
+			</div>
+			<div class="footer">
+				<span>详细红包规则请看下方！</span>
+				<ul>
+					<li>
+						<a href="#" id="pay_yz" num="{$act_obj['config']['pay']}">参加活动需支付{$act_obj['config']['pay']}研值</a>
+					</li>
+					<li>
+						<a href="#">参加活动返还{$act_obj['config']['back']}研值</a>
+					</li>
+					<li>
+						<a href="#">红包研值范围：{$act_obj['config']['min']}-{$act_obj['config']['max']}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<form id="form" style="display: none;" method="post" action="/index/activity/redPackDeal">
+			<input type="text" name="aid" value="{$act_obj['activity_id']}">
+		</form>
+	</body>
+
+	<script src="/static/index/js/redpack/js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/index/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/index/js/redpack/js/index.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>

@@ -1,0 +1,62 @@
+$(function(){
+
+	//图片布局处理
+	var imgWidth = $('.moment-image-div:eq(0)').width();
+
+	var imgLength = $('.moment-image-div').length;
+	if (imgLength >= 3)
+		var spaceWidth = parseInt(($('.moment-image').width()-3*imgWidth)/3);
+	else if (imgLength == 2) {
+		var spaceWidth = parseInt(($('.moment-image').width()-2*imgWidth)/2);
+	} else {
+		var spaceWidth = 0;
+	}
+
+	//图片大于1张，才进行高度处理
+	if (imgLength > 1)
+		$('.moment-image-div').css('height', imgWidth+'px');
+	else {
+		var img = new Image();
+		var src = $('.moment-image-div:eq(0)').css('backgroundImage');
+		img.src = src.substring(5, parseInt(src.indexOf(')'))-1);
+		var width = img.width;
+		var height = img.height;
+		var zhi = height*parseInt($('.moment-image').width())/width;
+		img.onload = function(){
+			$('.moment-image-div').css('height', zhi+'px');
+		}
+	}
+
+	$('.moment-image-div:gt(2)').css('marginTop', spaceWidth+'px');
+	$('.moment-image-div').each(function(){
+		var index = parseInt($(this).index('.moment-image-div'))%3;
+		if (imgLength > 2) {
+			if (index < 2) {
+				$(this).css('marginRight', spaceWidth+'px');
+			}
+			if (index < 1){
+				$(this).css('marginLeft', 0.5*spaceWidth+'px');
+			}
+		} else {
+			$('.moment-image-div').eq(0).css('marginRight', spaceWidth+'px');
+			$('.moment-image-div').eq(0).css('marginLeft', 0.5*spaceWidth+'px');
+		}
+	})
+
+
+	//预加载点赞图片
+	var image = new Image();
+	image.src = '/static/index/images/love_32_green.png';
+
+
+
+	/*---------------------------------预览图片-----------------------------------------*/
+	mui.previewImage();
+
+
+
+	/*返回上一页*/
+	$('.i_prev_url').click(function(){
+		history.back();
+	})
+})

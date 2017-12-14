@@ -1,0 +1,105 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/proMoment.css">
+</head>
+<body>
+	<header class="gd-header">
+		<div id="gd-head">
+			<i class="glyphicon glyphicon-chevron-left i_prev_url"></i>
+			<div class="gd-head-center">
+				<div class="gd-header-nav">
+					<span class="gd-head-title">说说详情</span>
+				</div>
+			</div>
+			<div class="gd-head-right">发表</div>
+		</div>
+	</header>
+
+	<div id="content">
+		<textarea placeholder="说点什么吧"></textarea>
+		<div class="div-photo">
+			
+			<div class="pdiv addphoto">
+				<img src="/static/index/images/carema_200.png">
+				<span>照片</span>
+			</div>
+		</div>
+
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">仅自己可见
+		        <span class="mui-badge mui-switch">
+		  			<div class="mui-switch-handle"></div>
+				</span>
+		    </li>
+		</ul>
+		
+	</div>
+
+	<script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/new/proMoment.js"></script>
+
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript">
+    	wx.config({
+
+		    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+
+		    appId: '{$appId}', // 必填，公众号的唯一标识
+
+		    timestamp: '{$timestamp}', // 必填，生成签名的时间戳
+
+		    nonceStr: '{$nonceStr}', // 必填，生成签名的随机串
+
+		    signature: '{$signature}',// 必填，签名，见附录1
+
+		    jsApiList: [
+		    	'closeWindow',
+		    	'chooseImage'
+		    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+		});
+
+		wx.ready(function(){
+			$('.gd-head-right').click(function(){
+				wx.closeWindow();
+			})
+
+			$('.addphoto').click(function(){
+				wx.chooseImage({
+
+				    count: 9, // 默认9
+
+				    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+
+				    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+
+				    success: function (res) {
+
+				        var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+				        var num = parseInt($('.pdiv').length) - 1;
+				        for (var i in localIds) {
+			        		if (num+i >= 9) {
+								$('.addphoto').css('display', 'none');
+								break;
+							}
+				        	$('.addphoto').before('<div class="pdiv photo" style="background-image:url('+localIds[i]+');"></div>');
+				        }
+				        setMargin();
+				    }
+
+				});
+			})
+
+
+		})
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+.gd-nav{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 3.5rem;
+	font-size: 1.6rem;
+	align-items: center;
+	color: #E3E3E3;
+	padding: 0rem 0.8rem;
+	background: #4D4D4D;
+}
+body{
+	background: #F5F5F7;
+}
+.gd-nav i{
+	color: #E3E3E3;
+	cursor: pointer;
+}
+.gd-comments{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	background: #FFF;
+}
+
+.comment{
+	display: flex;
+	width: 100%;
+	border-bottom: 0.05rem solid #CECECE;
+}
+.comment-in{
+	width: 100%;
+	padding: 0.7rem 0.7rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.comment-in img{
+	border-radius: 50%;
+	width: 3.5rem;
+	height: 3.5rem;
+	margin-right: 0.4rem;
+}
+.comment-right{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.comment-right-top{
+	height: 1.6rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.4rem;
+	color: #3e3e3e;
+}
+.crt-time{
+	font-size: 1.3rem;
+	color: #B1B1B1;
+}
+.comment-right-content{
+	font-size: 1.5rem;
+	color: #888888;
+	line-height: 1.8rem;
+}
+.comment-0 .comment-right-content{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.comment-0 .crc-who{
+	color: #3e3e3e;
+	margin-left: 0.5rem;
+}
+
+
+/*说说评论下方*/
+.bottom-wrapper{
+	border-top: 0.06rem solid #cecece;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+}
+.bottom{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	/*min-height: 3rem;*/
+	margin: 0 auto;
+	padding: 0.2rem 0rem;
+	width: calc(100% - 0.5rem);
+	/*left: 1%;*/
+}
+.bottom textarea{
+	width: 80%;
+	/*min-height: 1.6rem;*/
+	font-size: 1.6rem;
+	padding: 0.4rem 0.3rem;
+	margin: 0px;
+	/*line-height: 1.0;*/
+	outline: none;
+}
+.bottom button{
+	width: 19%;
+	/*height: 2.6rem;*/
+	font-size: 1.6rem;
+	background: #A2A2A2;
+	color: #FFF;
+	border-radius: 0.5rem;
+	line-height: 1.5rem;
+}
+.bottom .button-active{
+	background: #44B549;
+}

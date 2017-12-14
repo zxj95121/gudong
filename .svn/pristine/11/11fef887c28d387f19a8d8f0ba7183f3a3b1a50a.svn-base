@@ -1,0 +1,250 @@
+ /*----------------------------点击展示所有评论start--------------------------------------------*/
+ mui.init();
+ $(document).on('click', '.moment-comments-seeAll', function(){
+ 	if ($(this).attr('status') == '1') {
+	 	$(this).siblings('.gd-mc').removeClass('moment-comments-hide');
+	 	$(this).attr('status', '0');
+	 	$(this).html('收起评论');
+	} else {
+	 	$(this).siblings('.gd-mc:gt(2)').addClass('moment-comments-hide');
+	 	$(this).attr('status', '1');
+	 	$(this).html('查看全部'+$(this).attr('num')+'条评论');
+	}
+ })
+
+ comment_reply = {
+ 	mid: 0,
+ 	msg: '',
+ 	cid: 0,
+ 	username: ''
+ };
+ /*----------------------------点击展示所有评论over--------------------------------------------*/
+ /*----------------------------回复评论--------------------------------------------*/
+ $(document).on('click', '.gd-mc', function(){
+ 	var username = $(this).find('.moment-comments-nickname').html();
+ 	var cid = $(this).attr('cid');
+ 	comment_reply.cid = cid;
+ 	comment_reply.username = username;
+
+ 	var btnArray = ['取消', '回复'];
+	var that = $(this);
+	mui.prompt('请输入你的回复：', '回复'+username, '提示', btnArray, function(e) {
+		if (e.index != 0) {
+			// info.innerText = '谢谢你的评语：' + e.value;
+			comment_reply.msg = e.value;
+			comment_reply.mid = that.parents('.moment').attr('mid');
+			operateAjax('comment_reply');
+		} else {
+			// info.innerText = '你点了取消按钮';
+		}
+	})
+
+ })
+
+
+ /*操作事件*/
+ /*-------------------暂时点击评论不跳转-------------------*/
+ // $('.moment-comment').click(function(){
+ // 	var mid = $(this).parents('.moment').attr('mid');
+ // 	window.location.href = '/index/moment/showComments?mid='+mid;
+ // })
+
+collect = {
+	mid: 0,
+	type: 0
+};
+ /*更多操作*/
+$('.gdp-wrapper').click(function(){
+	var height = $(this).children().css('height');
+	console.log(height);
+	var gdp = $(this).parents('.gdp');
+	gdp.animate({top: height, opacity: 0.5}, 400);
+	setTimeout(function(){
+		gdp.hide();
+	}, 400);
+})
+
+//更多操作按钮
+$(document).on('click', '.moment-cicles', function(){
+	$('.gdp').css({top: 0, opacity: 1});
+	$('.gdp').show();
+	collect.mid = $(this).parents('.moment').attr('mid');
+	collect.type = (parseInt($(this).parents('.moment').attr('iscollect'))+1)%2;
+	if (collect.type == 1) {
+		$('.gd-popover-operate[see="collect"]').html('收藏');
+	} else {
+		$('.gd-popover-operate[see="collect"]').html('取消收藏');
+	}
+})
+
+$('.gd-popover-operate').click(function(e){
+	// e.stopPropagation();
+	//表示点了关于收藏
+	if (identity == 2) {
+        layer.msg('非会员无法收藏');
+        setTimeout(function(){
+			window.location.href = '/index/user/payVip';
+        }, 800);
+        return false;
+    }
+	if ($(this).attr('see') == 'collect') {
+		operateAjax('collect');
+	}
+})
+
+thumb = {
+	mid: 0,
+	type: 1
+};
+$(document).on('click', '.moment-thumb', function(){
+	thumb.mid = $(this).parents('.moment').attr('mid');
+	operateAjax('thumb');
+})
+
+
+
+/*---------------------------评论部分-------------------------------------*/
+
+comment = {
+	mid: 0,
+	msg: ''
+}
+$(document).on('tap', '.moment-comment', function(e) {
+	if (identity == 2) {
+        layer.msg('非会员无法评论');
+        setTimeout(function(){
+			window.location.href = '/index/user/payVip';
+        }, 800);
+        return false;
+    }
+	// e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+	var btnArray = ['取消', '评论'];
+	var that = $(this);
+	mui.prompt('请输入你的评论：', '你的评论', '提示', btnArray, function(e) {
+		if (e.index != 0) {
+			// info.innerText = '谢谢你的评语：' + e.value;
+			comment.msg = e.value;
+			comment.mid = that.parents('.moment').attr('mid');
+			operateAjax('comment');
+		} else {
+			// info.innerText = '你点了取消按钮';
+		}
+	})
+});
+
+
+/*--------------------------关注按钮---------------------------*/
+subscribe = {
+	uid: 0
+};
+$(document).on('click', '.moment-subscribe', function(){
+	var uid = $(this).parents('.moment').attr('uid');
+	subscribe.uid = uid;
+
+	if (identity == 2) {
+        layer.msg('非会员无法关注');
+        setTimeout(function(){
+			window.location.href = '/index/user/payVip';
+        }, 800);
+        return false;
+    }
+	operateAjax('subscribe');
+})
+
+
+/*-----------------------------------公用ajax函数--------------------------------*/
+function operateAjax($type) {
+	switch($type) {
+		case 'collect':
+			var url = '/index/see/collect';
+			var msg = collect;
+		break;
+		case 'thumb':
+			var url = '/index/moment/thumb';
+			var msg = thumb;
+		break;
+		case 'comment':
+			var url = '/index/see/comment';
+			var msg = comment;
+		break;
+		case 'comment_reply':
+			var url = '/index/see/comment';
+			var msg = comment_reply;
+		break;
+		case 'subscribe':
+			var url = '/index/user/subscribe';
+			var msg = subscribe;
+		break;
+	}
+
+	$.ajax({
+		url: url,
+		dataType: 'json',
+		type: 'post',
+		data: msg,
+		success: function(data) {
+			
+			switch($type) {
+				case 'collect':
+					if (data.errcode == 0) {
+						layer.msg($('.gd-popover-operate[see="collect"]').html()+'成功', {time: 1200});
+						$('.moment[mid="'+msg.mid+'"]').attr('iscollect', msg.type);
+					} else if (data.errcode == 2) {
+						layer.msg('自己不能收藏自己', {time: 1200});
+					}
+				break;
+
+				case 'thumb':
+					if (data.errcode == 0) {
+						layer.msg('感谢给予鼓励!', {time: 1200});
+						var count = parseInt($('.moment[mid="'+msg.mid+'"]').find('.moment-thumb').find('span').html());
+						$('.moment[mid="'+msg.mid+'"]').find('.moment-thumb').find('span').html(count+data.jia);
+						$('.moment[mid="'+msg.mid+'"]').find('.moment-thumb').find('img').attr('src', '/static/index/images/love_32_green.png');
+					} else if (data.errcode == 1) {
+						layer.msg('请明天再赞！', {time: 1200});
+					}
+				break;
+
+				case 'comment':
+					if (data.errcode == 0) {
+						layer.msg('评论成功!', {time: 1200});
+
+						//评论全部展开
+						var dom = $('.moment[mid="'+msg.mid+'"]').find('.moment-comments-seeAll');
+						dom.siblings('.gd-mc').removeClass('moment-comments-hide');
+					 	dom.attr('status', '0');
+					 	dom.html('收起评论');
+					 	dom.attr('num', parseInt(dom.attr('num'))+1);
+					 	
+					 	$('.moment[mid="'+msg.mid+'"]').find('.moment-comment').find('.moment-operate-num').html(dom.attr('num'));
+
+						$('.moment[mid="'+msg.mid+'"]').find('.moment-comments').append('<div class="moment-comments-first gd-mc" uid="'+data.uid+'" cid="'+data.cid+'"> <span class="moment-comments-nickname">'+data.name+'</span> <span>:</span> <span class="moment-comments-content">'+msg.msg+'</span> </div>');
+					}
+				break;
+				case 'comment_reply':
+					if (data.errcode == 0) {
+						layer.msg('回复成功', {time: 1200});
+						//添加新的数据
+
+						//展开所有评论
+						var dom = $('.moment[mid="'+msg.mid+'"]').find('.moment-comments-seeAll');
+						dom.siblings('.gd-mc').removeClass('moment-comments-hide');
+					 	dom.attr('status', '0');
+					 	dom.html('收起评论');
+					 	dom.attr('num', parseInt(dom.attr('num'))+1);
+
+					 	$('.moment[mid="'+msg.mid+'"]').find('.moment-comment').find('.moment-operate-num').html(dom.attr('num'));
+
+						$('.moment[mid="'+msg.mid+'"]').find('.moment-comments').append('<div class="moment-comments-second gd-mc" uid="'+data.uid+'" cid="'+data.cid+'"> <span class="moment-comments-nickname">'+data.name+'</span><span class="moment-comments-word-reply">回复</span><span class="moment-comments-nickname">'+msg.username+'</span><span>:</span><span class="moment-comments-content">'+msg.msg+'</span> </div>');
+					}
+				break;
+				case 'subscribe':
+					if (data.errcode == 0) {
+						layer.msg('关注成功!', {time: 1200});
+						$('.moment[uid="'+msg.uid+'"]').find('.moment-subscribe').remove();
+					}
+				break;
+			}
+		}
+	})
+}

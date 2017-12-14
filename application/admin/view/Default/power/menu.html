@@ -1,0 +1,82 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>菜单列表</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <form action="{:url('admin/power/menu')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                        <input type="text" maxlength="100" name="menu_name" value="{$menu_name}" style="height:24px;font-size:12px;" placeholder="-要查找的菜单-"/>
+                                    </div>
+                                    <select class="select_info chosen" data-with-diselect="1" name="parent_id" data-placeholder="-查找所属子菜单-" tabindex="1">
+                                        <option value=""></option>
+                                        {foreach $menuOneLevel as $menuItem}
+                                        <option value="{$menuItem['menu_id']}" {if $parent_id == $menuItem['menu_id']}selected{/if}>{$menuItem['menu_name']}</option>
+                                        {/foreach}
+                                    </select>
+                                    <select class="select_info chosen" data-with-diselect="1" name="is_show" data-placeholder="-显示状态-" tabindex="1">
+                                        <option value=""></option>
+                                        <option value="1" {if $is_show == 1}selected{/if}>显示</option>
+                                        <option value="2" {if $is_show == 2}selected{/if}>不显示</option>
+                                    </select>
+                                    <div style="float:right;">
+                                        <!--input type="button" onclick="editStaff(0)" class="btn green" value="添　加"/-->
+                                        <input type="submit" class="btn green" value="搜　索"/>
+                                    </div>
+                                </form>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>菜单名称</th>
+                                    <th>controller名称</th>
+                                    <th>action名称</th>
+                                    <th>父级菜单ID</th>
+                                    <th>显示状态</th>
+                                    <th>icon</th>
+                                    <th>排序</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $menuList as $key=>$menu}
+                                <tr class="odd gradeX">
+                                    <td>{$key+1}</td>
+                                    <td>{$menu['menu_name']}</td>
+                                    <td>{$menu['controller_name']}</td>
+                                    <td>{$menu['action_name']}</td>
+                                    <td>{$menu['parent_menu_id']}</td>
+                                    <td>
+                                        <span class="btn {if $menu['is_show']==1}green{else}red{/if}">
+                                            {$menu.is_show|showStatus=###,'显示,关闭:1,2'}
+                                        </span>
+                                    </td>
+                                    <td style="font-size:18px;color:#ccc;"><i class="icon-{$menu['icon']}"></i></td>
+                                    <td>{$menu['list_order']}</td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file='Default/common/footer'}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/index/js/redpack/css/detail.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css"> -->
+	</head>
+	<script src="/static/index/js/redpack/js/adapt.js" type="text/javascript" charset="utf-8"></script>
+
+	<body style="display: none;">
+		<div class="qrcode">
+			<img src="/static/index/js/redpack/img/qr.png" class="pic" />
+			<img src="/static/index/js/redpack/img/hand.png" class="hand" />
+		</div>
+		<div class="content">
+			<div class="person">
+				<img src="{:substr($act_obj['img'][0], 1)}" class="headImg" />
+				<span class="name">{$act_obj['activity_name']}</span>
+				<p class="congratulation">研值红包范围：{$act_obj['config']['min']}-{$act_obj['config']['max']}</p>
+				<p>本次红包研值: <span class="money1"> {$joinObj['num']}</span></p>
+				<p>研值余额: <span class="money1"> {$userObj['yanzhi']}</span></p>
+				<!-- <p>参与研值: <span class="money1"> {$act_obj['config']['back']}</span></p> -->
+				<!-- <p style="margin: 0.1rem 0 0.2rem;">
+					<a class="cash">提现</a>
+					<a class="share">分享</a>
+				</p> -->
+				<div style="width: 100%;display: flex;justify-content: center;padding-bottom: 5px;font-size: 16px;">
+			        <div style="color: #fff;border: 1px solid #007aff;background-color: #007aff;width: 40%;cursor: pointer;line-height: 32px;border-radius: 5px;margin: 10px 0px;" onclick="window.location.href='/index/activity/redPack.html?aid={$act_obj['activity_id']}';">
+			            再次参与
+			        </div>
+			    </div>
+			</div>
+			<!-- <div class="record">
+				<span class="title">共位好友打开了红包，贡献奖励记录：</span>
+				<ul>
+					<li>
+						<span class="span1">郑诚</span>
+						<span class="span2">10元</span>
+					</li>
+					<li>
+						<span class="span1">张小鹏</span>
+						<span class="span2">20元</span>
+					</li>
+					<li>
+						<span class="advertise">习近平强调一句话！让中国"颜值"有了大变化有了大变化有了大变化有了大变化</span>
+					</li>
+				</ul>
+			</div> -->
+
+		</div>
+	</body>
+
+	<script src="/static/index/js/redpack/js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="/static/index/js/redpack/js/detail.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

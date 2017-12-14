@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <style type="text/css">
+    	html{
+    		background: #f5f5f5;
+    	}
+    	a:hover{
+    		text-decoration: none;
+    	}
+    	ul{
+    		/*margin: 0px;*/
+    		padding-left: 16px;
+    	}
+    	li{
+    		list-style-type: decimal;
+    	}
+    	#messageId::before, .mui-card::after{
+			position: absolute;
+		    top: 0;
+		    right: 0;
+		    left: 0;
+		    height: 1px;
+		    content: '';
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		    background-color: #c8c7cc;
+    	}
+    	.myYan{
+    		    height: 3rem;
+    font-size: 1.7rem;
+    /* padding: 0 4rem; */
+    margin-left: 10%;
+    /*color: #99e068;*/
+    color: #000;
+    	}
+    	.extral{
+    		    height: 3rem;
+    font-size: 1.7rem;
+    /* padding: 0 4rem; */
+    margin-left: 10%;
+    /*color: #e9c720;*/
+    color: #000;
+    	}
+    </style>
+</head>
+<body style="background: #f5f5f5;">
+	<header id="header" class="mui-bar mui-bar-nav" style="background: white;">
+		<h1 class="mui-title">成为校友</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+		</a>
+	</header>
+
+			<!--<div class="mui-card-header" style="font-size: 15px;color: #464643;">付费会员说明：</div>
+			<div class="mui-card-content">
+				<div class="mui-card-content-inner">
+					<ul>
+						<li>付费需抵扣研值1999*9 = 17991</li>
+						<li>1RMB=9研值</li>
+						<li>研值不足的部分，可用RMB进行支付</li>
+					</ul>
+				</div>
+			</div>-->
+			<!-- <div class="mui-card-footer">页脚</div> -->
+
+			<!-- <div class="mui-card-header" style="font-size: 15px;color: #464643;">研值信息：</div> -->
+			<img src="/static/index/images/a1.png" style="    width: 8rem;
+    margin: 7.5rem 9rem 3.6rem 8rem;"/>
+				<div class="myYan">研值<span  style="    font-size: 1.7rem;
+    float: right;
+    margin-right: 10%;
+    color: #000;">{$userObj['yanzhi']}</span>
+				</div>
+				<div class="extral">货币<span  style=" font-size: 1.7rem;float: right;
+    margin-right: 10%;color: #000;">{$extral}</span>
+				</div>
+			<p style="height: 3rem;width: 80%;margin-left: 10%;color: #000;text-align: right;font-size: 1.5rem;">合计：￥1999元/年</p>			
+			<button type="button" class="btn" id="payBtn" style="        width: 80%;
+    color: #FFF;
+    cursor: pointer;
+    margin: 1rem 10%;background:#332d46;
+    height: 3rem;
+    font-size: 1.4rem;">加入校友会</button>
+
+			 <!-- <li class="mui-table-view-cell">颜值支付</li>
+	         <li class="mui-table-view-cell" style="background: #7CD165;color: #FFF;">微信支付</li>
+		</ul> -->
+
+	<script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/static/index/js/common.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+
+
+    <script type="text/javascript">
+    	$('#payBtn').click(function(){
+    		var extral = '{$extral}';
+    		$(this).attr('disabled', 'disabled');
+    		if (extral != 0) {
+    			alert('需要支付RMB,后续开发');
+    			$(this).removeAttr('disabled');
+    		}
+    		var that = $(this);
+    		var real_ext = '{$real_ext}';
+
+    		$.ajax({
+    			url: '/index/user/toVip',
+    			type: 'post',
+    			dataType: 'json',
+    			data: {
+    				extral: extral
+    			},
+    			success: function(data){
+    				if (data.errcode == 0) {
+    					layer.msg('成功升级为付费会员');
+    					window.location.href = "/index/index/center";
+    				}
+    			}
+    		})
+    	})
+    </script>
+</body>
+</html>

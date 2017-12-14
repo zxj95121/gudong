@@ -1,0 +1,239 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <!--4个数据框-->
+            <div class="row-fluid">
+                <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="icon-wrench"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="{$data['arrange']}">1</div>
+                            <div class="desc">预约课程订单</div>
+                        </div>
+                        <a class="more" href="###">查看更多<i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                    <div class="dashboard-stat green">
+                        <div class="visual">
+                            <i class="icon-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="{$data['goods']|default='0'}">2</div>
+                            <div class="desc">商品兑换订单</div>
+                        </div>
+                        <a class="more" href="###">
+                            查看更多 <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="span3 responsive" data-tablet="span3  " data-desktop="span3">
+                    <div class="dashboard-stat purple">
+                        <div class="visual">
+                            <i class="icon-tags"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="{$data['pay']|default='0'}">2</div>
+                            <div class="desc">总营业额</div>
+                        </div>
+                        <a class="more" href="#">
+                            查看更多<i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                    <div class="dashboard-stat yellow">
+                        <div class="visual">
+                            <i class="icon-user"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number" data-value="{$data['user']|default='0'}">3</div>
+                            <div class="desc">会员关注总数</div>
+                        </div>
+                        <a class="more" href="###">
+                            查看更多<i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $('.details .number').each(function(index){
+                    var value = $(this).data('value');
+                    loopNum(index,0,value);
+                });
+                function loopNum(index,currentValue,toValue){
+                    if(currentValue > toValue){
+                        return false;
+                    }
+                    setTimeout(function(){
+                        $('#dashboard .number:eq('+index+')').html(currentValue);
+                        var diff = Math.floor(toValue/50);
+                        if(toValue <= 50){
+                            diff = 1;
+                        }
+                        currentValue = currentValue+diff;
+                        if(currentValue >= toValue){
+                            currentValue = toValue;
+                        }
+                        loopNum(index,currentValue,toValue);
+                    },0+10*index);
+                }
+            </script>
+
+            <!-- 左边饼图-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption"><i class="icon-calendar"></i>课程数据统计</div>
+                    <div class="tools">
+                        <a href="" class="collapse"></a>
+                        <a href="" class="remove"></a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span6" id="main" style="height: 500px;width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{include file='Default/common/footer'}
+<script src="/static/echart/echarts.js"></script>
+<script src="/static/echart/vintage.js"></script>
+<script src="/static/echart/macarons.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        var myChart = echarts.init(document.getElementById('main'));
+        option = {
+
+            tooltip: {
+                trigger: 'axis',
+                formatter: function(params, ticket, callback) {
+
+                    var res = params[0].name;
+
+                    for (var i = 0, l = params.length; i < l; i++) {
+                        if (params[i].seriesType === 'line') {
+                            res += '<br/>' + params[i].seriesName + ' : ' + (params[i].value ? params[i].value : '-') + 'h';
+                        } else {
+                            res += '<br/>' + params[i].seriesName + ' : ' + (params[i].value ? params[i].value : '-') + '个';
+                        }
+                    }
+                    return res;
+                }
+            },
+
+            grid: {
+                containLabel: true
+            },
+            legend: {
+                data: ['约课率', '空缺位置', '已预约位置']
+            },
+            xAxis: [{
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                data: [1,2,3,4]
+            }],
+            dataZoom: [{
+                type: 'slider',
+                xAxisIndex: 0,
+                filterMode: 'empty',
+                start: 0,
+                end: 100
+            }, {
+                type: 'slider',
+                yAxisIndex: 0,
+                filterMode: 'empty',
+                start: 0,
+                end: 100
+            }, {
+                type: 'inside',
+                xAxisIndex: 0,
+                filterMode: 'empty',
+                start: 0,
+                end: 100
+            }, {
+                type: 'inside',
+                yAxisIndex: 0,
+                filterMode: 'empty',
+                start: 0,
+                end: 100
+            }],
+            yAxis: [{
+                type: 'value',
+                name: '预约率',
+                min: 0,
+                position: 'right',
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+                {
+                    type: 'value',
+                    name: '约课数量',
+                    min: 0,
+                    position: 'left',
+                    axisLabel: {
+                        formatter: '{value} 个'
+                    }
+                } ],
+            series: [{
+                name: '约课率',
+                type: 'line',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top',
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        width: 3,
+                        shadowColor: 'rgba(0,0,0,0.4)',
+                        shadowBlur: 10,
+                        shadowOffsetY: 10
+                    }
+                },
+                data:  {$course['math']}
+            }, {
+                name: '空缺位置',
+                type: 'bar',
+                yAxisIndex: 1,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: {$course['no']}
+            }, {
+                name: '已预约位置',
+                type: 'bar',
+                yAxisIndex: 1,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data:  {$course['yes']}
+            }]
+        };
+        myChart.setOption(option);
+
+    });
+</script>
+
+

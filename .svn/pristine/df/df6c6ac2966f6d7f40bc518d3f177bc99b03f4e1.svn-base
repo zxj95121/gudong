@@ -1,0 +1,144 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:none；
+}
+/* @font-face {font-family:"myFont fan";src: url('./NotoSansHans-DemiLight.ttf'); */
+}
+body, div, span, i, em, h2, h3, h4, h5, h6, h1, b, big, small, ul, li, a, img {
+  margin: 0;
+  padding: 0;
+  border:none;
+  /*font-weight:lighter;*/
+  font-size:1rem;
+  font-weight:400;
+  color:#323232;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+input,button,textarea,text{
+	outline: none;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+li{
+  list-style:none;
+  }
+a{
+  text-decoration:none;
+  }
+.clear-fix:after{
+	content:' ';
+	width:0;
+	height:0;
+	clear:both;
+	display:block;
+}
+em,i{
+	font-style:normal;
+}
+/*************head*******************/
+#head{
+	width:100%;
+	height:3.93rem;
+	background:#92a6c7;
+}
+.wrapper{
+	width:100%;
+	background:#fefefe;
+	overflow:hidden;
+	position:relative;
+}
+.wrapper .fl{
+	float: left;
+    font-size: 1.2rem;
+    margin-top: 1.3rem;
+    margin-left: 0.7rem;
+    color: #3f3f3f;
+}
+.wrapper .fr{
+	float: right;
+    color: #adadad;
+    font-size: 1rem;
+    margin-top: 1.2rem;
+    margin-right: 0.92rem
+}
+.wrapper .info{
+	width: 5.1rem;
+    height: 2rem;
+    background: rgba(254,254,252,0.6);
+    border: 2px solid #caccc2;
+    margin-top: 4.7rem;
+    margin-left: 19.7rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    line-height: 2rem
+}
+.wrapper .info span{
+	font-size: 1.2rem;
+    color: #83847f;
+}
+.wrapper .gtn{
+    width:100%;
+    position:relative;
+    overflow:hidden;
+}
+.wrapper .gtn .img{
+	margin-top: 9.68rem;
+    margin-left: 1rem;
+	width: 23rem;
+    height: 16rem;
+    background: gray
+}
+.wrapper .tite{
+	margin-left: 0.75rem;
+    width: 0.4rem;
+    position: absolute;
+    top: 9.1rem;
+    /*border: 1px solid red;*/
+}
+.wrapper .tite li{
+	width:0.4rem;
+	height:0.4rem;
+	border-radius:0.2rem;
+	background:rgba(161,161,161,1);
+	margin-top: 0.62rem;
+}
+.foot{
+	margin-top:26.2rem;
+	overflow:hidden;
+} 
+.foot .boot{
+	float: left;
+    width: 45%;
+    border: 3px solid #e8e9ed;
+    margin-left: 0.75rem;
+    padding: 0.7rem 0;
+    border-radius: 0.3rem;
+}
+.foot .boot span{
+	font-size:0.9rem;
+	margin-left:1rem;
+}
+.foot .doot{
+	width: 94%;
+    font-size: 0.95rem;
+    background: #e26861;
+    margin-top: 3.8rem;
+    margin-left: 0.8rem;
+    padding: 0.75rem 0;
+    text-align: center;
+    color: #fff9f8;
+    border-radius: 0.3rem;
+}

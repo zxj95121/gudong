@@ -1,0 +1,22 @@
+setTimeout(showPage, 1)
+
+function showPage() {
+	$('body').css('display', 'block')
+}
+
+$('.cash').on('click', function() {
+	$('.qrcode').css('display', 'block')
+	$('.pic').css('display', 'block')
+	$('.hand').css('display', 'none')
+})
+
+$('.qrcode').on('click', function(event) {
+	if(event.target.className !== 'pic')
+		$('.qrcode').css('display', 'none')
+})
+
+$('.share').on('click', function() {
+	$('.qrcode').css('display', 'block')
+	$('.pic').css('display', 'none')
+	$('.hand').css('display', 'block')
+})

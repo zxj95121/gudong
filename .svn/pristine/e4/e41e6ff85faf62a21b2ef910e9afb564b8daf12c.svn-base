@@ -1,0 +1,2997 @@
+---------------------------------------------------------------
+[ 2017-11-04T15:51:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/index.html
+[ info ] www.gudong.com/admin/Activity/index.html [运行时间：0.708291s][吞吐率：1.41req/s] [内存消耗：5,448.47kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->index[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'my_rule',
+  11 => 'page_no',
+  12 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055714s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.040749s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.043414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.036792s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038347s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039123s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041188s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037838s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041523s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037746s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036636s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.072658s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` LIMIT 0,10 [ RunTime:0.041214s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `activity` LIMIT 0,1 [ RunTime:0.037224s ]
+---------------------------------------------------------------
+[ 2017-11-04T15:51:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/operation_info/activity_id/1.html
+[ info ] www.gudong.com/admin/Activity/operation_info/activity_id/1.html [运行时间：0.908435s][吞吐率：1.10req/s] [内存消耗：5,380.55kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->operation_info[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066947s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.039647s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038049s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.044260s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038615s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039355s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043383s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046289s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.263482s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.043746s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039034s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.044670s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` WHERE  `activity_id` = 1 LIMIT 1 [ RunTime:0.048670s ]
+---------------------------------------------------------------
+[ 2017-11-04T15:51:57+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/removePic
+[ info ] www.gudong.com/admin/Activity/removePic [运行时间：0.641987s][吞吐率：1.56req/s] [内存消耗：5,514.55kb] [文件加载：62]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'removePic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '55',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'src' => '/uploads/img/15097819042547.png',
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->removePic[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050521s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.036828s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.040217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.035985s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.034952s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037479s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035385s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.034701s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037452s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035292s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.038728s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` WHERE  `activity_id` = 1 LIMIT 1 [ RunTime:0.036160s ]
+[ sql ] [ SQL ] UPDATE `activity`  SET `img`='[\".\\/uploads\\/img\\/15097819046057.png\",\".\\/uploads\\/img\\/15097819041431.png\",\".\\/uploads\\/img\\/15097819043861.png\"]'  WHERE  `activity_id` = 1 [ RunTime:0.047982s ]
+---------------------------------------------------------------
+[ 2017-11-04T15:52:08+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/save_info.html
+[ info ] www.gudong.com/admin/Activity/save_info.html [运行时间：1.145986s][吞吐率：0.87req/s] [内存消耗：5,544.87kb] [文件加载：63]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'save_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '988',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryx3MJhT6rTAxRSUJq',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'activity_id' => '1',
+  'backUrl' => 'http://www.gudong.com/admin/Activity/index.html',
+  'activity_name' => '小活动',
+  'start_time' => '2017-11-02',
+  'end_time' => '2017-11-02',
+  'status' => '1',
+  'content' => '<p>Here lies one whose name was written in water</p>',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->save_info[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054959s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.037524s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.263914s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.040242s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.051827s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037876s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041857s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035414s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039528s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.262094s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.046622s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` WHERE  `activity_id` = 1 LIMIT 1 [ RunTime:0.036511s ]
+[ sql ] [ SQL ] UPDATE `activity`  SET `activity_name`='小活动',`start_time`=1509552000,`end_time`=1509552000,`content`='<p>Here lies one whose name was written in water</p>',`status`=1,`img`='[\".\\/uploads\\/img\\/15097819046057.png\",\".\\/uploads\\/img\\/15097819041431.png\",\".\\/uploads\\/img\\/15097819043861.png\"]'  WHERE  `activity_id` = 1 [ RunTime:0.050343s ]
+---------------------------------------------------------------
+[ 2017-11-04T15:52:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/index.html
+[ info ] www.gudong.com/admin/Activity/index.html [运行时间：1.407318s][吞吐率：0.71req/s] [内存消耗：5,448.22kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->index[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'my_rule',
+  11 => 'page_no',
+  12 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063245s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.041563s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042105s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.041068s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.044209s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039871s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.264279s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.491978s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041189s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042044s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043713s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.043167s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` LIMIT 0,10 [ RunTime:0.040999s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `activity` LIMIT 0,1 [ RunTime:0.039378s ]
+---------------------------------------------------------------
+[ 2017-11-04T15:52:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/operation_info/activity_id/1.html
+[ info ] www.gudong.com/admin/Activity/operation_info/activity_id/1.html [运行时间：0.925907s][吞吐率：1.08req/s] [内存消耗：5,380.38kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->operation_info[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060591s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.050367s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.279314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.041135s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040211s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039956s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040920s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039504s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.044290s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042085s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.041146s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` WHERE  `activity_id` = 1 LIMIT 1 [ RunTime:0.043656s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:08:46+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/User/save_info.html
+[ info ] www.gudong.com/admin/User/save_info.html [运行时间：0.621979s][吞吐率：1.61req/s] [内存消耗：5,525.16kb] [文件加载：63]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'save_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '19937',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.gudong.com',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarydcJOUg1NYJGjzsEU',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+  'backUrl' => 'http://www.gudong.com/admin/user/index.html',
+  'user_name' => 'jackS',
+  'header_img' => 'index/59fd6d4a5bfcb.jpg',
+  'gender' => '1',
+  'mobile' => '13019901880',
+  'birthday' => '2017-10-27',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->save_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054052s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.040716s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037995s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.038065s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036560s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037372s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037211s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037379s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036841s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036991s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036705s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `user_id`=175,`user_name`='jackS',`gender`=1,`mobile`='13019901880',`header_img`='index/59fd6d4a5bfcb.jpg',`birthday`=1509033600  WHERE  `user_id` = 175 [ RunTime:0.036168s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:08:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：0.759606s][吞吐率：1.32req/s] [内存消耗：5,441.09kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059411s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.043068s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041790s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.040080s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.047590s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039826s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043142s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041686s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041212s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042782s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041933s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041790s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.041904s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.041602s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.041241s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:08:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.716728s][吞吐率：1.40req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055140s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.039618s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.038783s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039363s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038981s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040261s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041699s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039147s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039735s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039229s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.039882s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.036581s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.039375s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:08:50+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.696556s][吞吐率：1.44req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060659s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.038845s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.037391s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040930s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036175s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038692s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037770s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039942s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037838s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038629s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039356s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.038195s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.035738s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.039605s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/User/operation_info/user_id/175.html
+[ info ] www.gudong.com/admin/User/operation_info/user_id/175.html [运行时间：0.959536s][吞吐率：1.04req/s] [内存消耗：5,636.89kb] [文件加载：61]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->operation_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+  9 => 'file_dir',
+  10 => 'size',
+  11 => 'image_upload',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069085s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.041860s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.043545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.041828s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.045007s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041380s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043980s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.050933s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.046080s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.044822s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.043223s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 175 LIMIT 1 [ RunTime:0.039474s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:20+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/User/save_info.html
+[ info ] www.gudong.com/admin/User/save_info.html [运行时间：0.694153s][吞吐率：1.44req/s] [内存消耗：5,525.64kb] [文件加载：63]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'save_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '959',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary7JiOgZ0RJoqJO8dJ',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+  'backUrl' => 'http://www.gudong.com/admin/user/index.html',
+  'user_name' => 'jackS',
+  'header_img' => 'index/59fd6d4a5bfcb.jpg',
+  'gender' => '1',
+  'mobile' => '13019901880',
+  'birthday' => '2017-10-07',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->save_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057192s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.040057s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041007s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.048151s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039891s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.044731s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041078s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.047119s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041171s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038524s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039123s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `user_id`=175,`user_name`='jackS',`gender`=1,`mobile`='13019901880',`header_img`='index/59fd6d4a5bfcb.jpg',`birthday`=1507305600  WHERE  `user_id` = 175 [ RunTime:0.037601s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:21+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：0.710016s][吞吐率：1.41req/s] [内存消耗：5,441.06kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055198s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.040410s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035974s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.037729s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037852s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035853s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037268s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037179s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036534s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037785s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037784s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041037s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.037267s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.040536s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.037989s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:22+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.709761s][吞吐率：1.41req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053286s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.039591s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.049851s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.042271s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.034992s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038887s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039623s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.042859s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035481s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037126s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038509s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.036690s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.038025s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.036302s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/User/operation_info/user_id/175.html
+[ info ] www.gudong.com/admin/User/operation_info/user_id/175.html [运行时间：0.657038s][吞吐率：1.52req/s] [内存消耗：5,365.83kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->operation_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+  9 => 'file_dir',
+  10 => 'size',
+  11 => 'image_upload',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061138s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.042225s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.038254s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040938s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.050387s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.048423s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038195s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038209s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.049017s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.040921s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 175 LIMIT 1 [ RunTime:0.037600s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:35+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/User/save_info.html
+[ info ] www.gudong.com/admin/User/save_info.html [运行时间：0.680338s][吞吐率：1.47req/s] [内存消耗：5,525.64kb] [文件加载：63]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'save_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '959',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryA8Ykg9AnktHqOGtl',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+  'backUrl' => 'http://www.gudong.com/admin/user/index.html',
+  'user_name' => 'jackS',
+  'header_img' => 'index/59fd6d4a5bfcb.jpg',
+  'gender' => '1',
+  'mobile' => '13019901880',
+  'birthday' => '1993-10-24',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->save_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056665s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.041146s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.045354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.048247s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039775s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.040004s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.051314s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037731s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.044921s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035728s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.037822s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038135s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `user_id`=175,`user_name`='jackS',`gender`=1,`mobile`='13019901880',`header_img`='index/59fd6d4a5bfcb.jpg',`birthday`=751392000  WHERE  `user_id` = 175 [ RunTime:0.037007s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：0.824515s][吞吐率：1.21req/s] [内存消耗：5,441.06kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066527s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.046980s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.042349s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.044954s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.044068s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.059801s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.055800s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.049259s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041477s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042594s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.044840s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.038527s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.041158s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:09:36+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.788056s][吞吐率：1.27req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=2e5mccnmlgnitbuup8or4m0r74',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061820s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.040096s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.049720s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041333s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038435s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.047055s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046755s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.044503s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.040308s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039057s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.056807s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.041712s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.038319s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.044897s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:42:00+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/removePic
+[ info ] www.gudong.com/admin/Activity/removePic [运行时间：0.033195s][吞吐率：30.13req/s] [内存消耗：3,233.35kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'removePic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '55',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'src' => '/uploads/img/15097819046057.png',
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:00+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.029649s][吞吐率：33.73req/s] [内存消耗：3,129.65kb] [文件加载：47]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:02+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/removePic
+[ info ] www.gudong.com/admin/Activity/removePic [运行时间：0.028992s][吞吐率：34.49req/s] [内存消耗：3,233.27kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'removePic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '55',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'src' => '/uploads/img/15097819046057.png',
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.029831s][吞吐率：33.52req/s] [内存消耗：3,129.65kb] [文件加载：47]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:03+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/removePic
+[ info ] www.gudong.com/admin/Activity/removePic [运行时间：0.028808s][吞吐率：34.71req/s] [内存消耗：3,233.27kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'removePic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '55',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'src' => '/uploads/img/15097819046057.png',
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.029485s][吞吐率：33.92req/s] [内存消耗：3,129.65kb] [文件加载：47]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:10+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Activity/removePic
+[ info ] www.gudong.com/admin/Activity/removePic [运行时间：0.031477s][吞吐率：31.77req/s] [内存消耗：3,233.27kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'removePic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '55',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'src' => '/uploads/img/15097819046057.png',
+  'activity_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:10+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.034942s][吞吐率：28.62req/s] [内存消耗：3,129.65kb] [文件加载：47]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://www.gudong.com/admin/Activity/operation_info/activity_id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.077942s][吞吐率：12.83req/s] [内存消耗：3,115.02kb] [文件加载：46]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:15+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] www.gudong.com/captcha.html [运行时间：0.056574s][吞吐率：17.68req/s] [内存消耗：2,573.92kb] [文件加载：39]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ C:\wamp64\www\gudong\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:15+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/bg/jiant.png
+[ info ] www.gudong.com/static/admin/image/bg/jiant.png [运行时间：0.033123s][吞吐率：30.19req/s] [内存消耗：2,548.46kb] [文件加载：40]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/static/admin/css/style-metro.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'bg' => 'jiant.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T16:42:18+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Index/loginIn.html
+[ info ] www.gudong.com/admin/Index/loginIn.html [运行时间：1.957648s][吞吐率：0.51req/s] [内存消耗：5,151.30kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '42',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'check_code' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.572563s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.985934s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.338083s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:42:25+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：6.640364s][吞吐率：0.15req/s] [内存消耗：5,441.02kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.862752s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.315950s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.247965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.173245s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.117843s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.104279s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.442495s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.798507s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:1.406276s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.769235s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.450053s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.367389s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.165969s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.159658s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.110170s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:42:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：5.010144s][吞吐率：0.20req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.160208s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.097421s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.112055s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.214258s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.125057s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.097499s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.396216s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.117834s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.189167s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.254819s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:1.210346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.756737s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.317941s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.214257s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.593889s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:42:39+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：6.496017s][吞吐率：0.15req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.443071s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.146817s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.291099s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.768131s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.529874s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.187754s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.463614s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.334641s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.296320s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.358276s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.614286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.507653s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:1.060277s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.100172s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.250850s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:55:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：2.070995s][吞吐率：0.48req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.603801s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.076270s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.177379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.101678s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.063359s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.056258s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.107708s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.071284s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.061342s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.100912s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.090856s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.104100s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.113173s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.051109s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.125943s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:57:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：14.213264s][吞吐率：0.07req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:12.160038s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.189427s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.043125s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.048658s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040600s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.053800s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.186475s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.195925s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.095910s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.088729s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.071341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.313043s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.154765s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.066970s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.364155s ]
+---------------------------------------------------------------
+[ 2017-11-04T17:18:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/index.html
+[ info ] www.gudong.com/admin/Activity/index.html [运行时间：0.706368s][吞吐率：1.42req/s] [内存消耗：5,447.73kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->index[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'my_rule',
+  11 => 'page_no',
+  12 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054072s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.062069s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.036413s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035427s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036661s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038079s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035209s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038652s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036841s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.041370s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` LIMIT 0,10 [ RunTime:0.037321s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `activity` LIMIT 0,1 [ RunTime:0.036275s ]
+---------------------------------------------------------------
+[ 2017-11-04T17:18:15+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/operation_info/activity_id/4.html
+[ info ] www.gudong.com/admin/Activity/operation_info/activity_id/4.html [运行时间：0.715676s][吞吐率：1.40req/s] [内存消耗：5,380.15kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/Activity/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=k6l5qjrllsg5707o88rmcgcjv0',
+)
+[ info ] [ PARAM ] array (
+  'activity_id' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Activity->operation_info[ C:\wamp64\www\gudong\application\admin\controller\Activity.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\Activity\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056413s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.039036s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.042196s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.104966s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.045760s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039756s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036622s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035244s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038557s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.045189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `activity` [ RunTime:0.038799s ]
+[ sql ] [ SQL ] SELECT * FROM `activity` WHERE  `activity_id` = 4 LIMIT 1 [ RunTime:0.036813s ]
+---------------------------------------------------------------
+[ 2017-11-04T17:43:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Activity/index.html
+[ info ] www.gudong.com/admin/Activity/index.html [运行时间：0.034656s][吞吐率：28.85req/s] [内存消耗：3,232.94kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Activity',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T17:43:54+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.031885s][吞吐率：31.36req/s] [内存消耗：3,115.27kb] [文件加载：46]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T17:43:55+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] www.gudong.com/captcha.html [运行时间：0.108459s][吞吐率：9.22req/s] [内存消耗：2,573.95kb] [文件加载：39]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ C:\wamp64\www\gudong\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T17:43:55+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/bg/jiant.png
+[ info ] www.gudong.com/static/admin/image/bg/jiant.png [运行时间：0.074358s][吞吐率：13.45req/s] [内存消耗：2,548.46kb] [文件加载：40]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/static/admin/css/style-metro.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'bg' => 'jiant.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T17:44:47+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Index/loginIn.html
+[ info ] www.gudong.com/admin/Index/loginIn.html [运行时间：0.228142s][吞吐率：4.38req/s] [内存消耗：5,151.30kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '42',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'check_code' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061967s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.047104s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.040220s ]
+---------------------------------------------------------------
+[ 2017-11-04T17:44:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：0.796088s][吞吐率：1.26req/s] [内存消耗：5,441.02kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063096s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.048286s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.039504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.059521s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041306s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.040416s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039138s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038546s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.043632s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.041237s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040671s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041080s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.039616s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.043723s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.040013s ]
+---------------------------------------------------------------
+[ 2017-11-04T17:44:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.813068s][吞吐率：1.23req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057179s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.049321s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.057888s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.040742s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041759s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.043515s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.061094s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.053879s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038005s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038886s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.040943s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.044944s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.040779s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.039381s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.044771s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:25:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.804070s][吞吐率：1.24req/s] [内存消耗：5,440.77kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059933s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.039855s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.040971s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038861s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.048607s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.048137s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.038726s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.042141s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046370s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.042402s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.047411s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.039231s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.039242s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.041509s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:25:57+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/User/operation_info/user_id/175.html
+[ info ] www.gudong.com/admin/User/operation_info/user_id/175.html [运行时间：0.758959s][吞吐率：1.32req/s] [内存消耗：5,365.83kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'User',
+    2 => 'operation_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->operation_info[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\operation_info.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'info',
+  9 => 'file_dir',
+  10 => 'size',
+  11 => 'image_upload',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064175s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.045681s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.049719s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.044559s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.046183s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042582s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.042756s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.045589s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.055284s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.046123s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.045717s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.046714s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 175 LIMIT 1 [ RunTime:0.043099s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:26:05+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/uploadImg.html
+[ info ] www.gudong.com/admin/upload/uploadImg.html [运行时间：0.055219s][吞吐率：18.11req/s] [内存消耗：3,116.64kb] [文件加载：45]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'uploadImg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '94229',
+  'accept' => '*/*',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary7EGyDof9Msl3qUGQ',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+  'backUrl' => 'http://www.gudong.com/admin/user/index.html',
+  'user_name' => 'jackS',
+  'header_img' => '',
+  'gender' => '1',
+  'mobile' => '13019901880',
+  'birthday' => '1993-10-24',
+  'column' => 'header_img',
+  'file_dir' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Upload->uploadImg[ C:\wamp64\www\gudong\application\admin\controller\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:26:48+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/upload/uploadImg.html
+[ info ] www.gudong.com/admin/upload/uploadImg.html [运行时间：0.054369s][吞吐率：18.39req/s] [内存消耗：3,116.64kb] [文件加载：45]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'upload',
+    2 => 'uploadImg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '67146',
+  'accept' => '*/*',
+  'origin' => 'http://www.gudong.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarypRS6To7hgSrHTYLs',
+  'referer' => 'http://www.gudong.com/admin/User/operation_info/user_id/175.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '175',
+  'backUrl' => 'http://www.gudong.com/admin/user/index.html',
+  'user_name' => 'jackS',
+  'header_img' => '',
+  'gender' => '1',
+  'mobile' => '13019901880',
+  'birthday' => '1993-10-24',
+  'column' => 'header_img',
+  'file_dir' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Upload->uploadImg[ C:\wamp64\www\gudong\application\admin\controller\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:38:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：0.791402s][吞吐率：1.26req/s] [内存消耗：5,440.63kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=jku2vrgidb9t99mklhfifd4f22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059926s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.042286s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.042225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.038811s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.039481s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.059376s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035387s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036418s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.036209s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.045696s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038903s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.039464s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.037472s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.046624s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:45:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/Collection/index.html
+[ info ] www.gudong.com/admin/Collection/index.html [运行时间：0.086431s][吞吐率：11.57req/s] [内存消耗：3,207.66kb] [文件加载：48]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Collection',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:45:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.gudong.com/admin/index/login.html [运行时间：0.034618s][吞吐率：28.89req/s] [内存消耗：3,115.23kb] [文件加载：46]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=1|0; PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:45:41+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] www.gudong.com/captcha.html [运行时间：0.046667s][吞吐率：21.43req/s] [内存消耗：2,573.91kb] [文件加载：39]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ C:\wamp64\www\gudong\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:45:41+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/bg/jiant.png
+[ info ] www.gudong.com/static/admin/image/bg/jiant.png [运行时间：0.058409s][吞吐率：17.12req/s] [内存消耗：2,548.46kb] [文件加载：40]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/static/admin/css/style-metro.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+  'bg' => 'jiant.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-04T18:45:42+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Index/loginIn.html
+[ info ] www.gudong.com/admin/Index/loginIn.html [运行时间：0.351282s][吞吐率：2.85req/s] [内存消耗：5,151.30kb] [文件加载：57]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'content-length' => '42',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.gudong.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'check_code' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ C:\wamp64\www\gudong\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096846s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.126398s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.059219s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:45:44+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] www.gudong.com/admin/user/index.html [运行时间：1.365127s][吞吐率：0.73req/s] [内存消耗：5,441.23kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.112285s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.096762s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.099671s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.061389s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.087986s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.066048s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.071596s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.078133s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.065068s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.071923s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.064780s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.065184s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.100737s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.092700s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.096579s ]
+---------------------------------------------------------------
+[ 2017-11-04T18:45:45+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index/59fd6d4a5bfcb.jpg
+[ info ] www.gudong.com/admin/user/index/59fd6d4a5bfcb.jpg [运行时间：1.243724s][吞吐率：0.80req/s] [内存消耗：5,440.63kb] [文件加载：60]
+[ info ] [ LANG ] C:\wamp64\www\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.gudong.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|4; PHPSESSID=ar88oa0fnfb33ifhus4scncki2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ C:\wamp64\www\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] C:\wamp64\www\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061217s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.059849s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.078017s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.054207s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.078394s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.113126s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.116392s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.106161s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.061358s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035521s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.038177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.033814s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.079406s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.057788s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.133811s ]

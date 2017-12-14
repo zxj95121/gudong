@@ -1,0 +1,60 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑红包信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/Theme/save_info')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                <input type="hidden" name="theme_id" value="{$info['theme_id']|default=''}">
+                                <input type="hidden" name="backUrl" value="{$backUrl}">
+
+                                <div class="control-group">
+                                  <label class="control-label">主题：<span class="required">*</span></label>
+                                    <div class="controls">
+                                     <input type="text" value="{$info['theme']|default=''}" name="theme" class="span6 m-wrap"
+                                           placeholder="请输入主题" >
+                                </div>
+                              </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">　状　态：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-选择状态-" tabindex="1">
+                                            <option value="1" {if isset($info)}{if 1 == $info['status']}selected{/if}{/if}>可用</option>
+                                            <option value="2" {if isset($info)}{if 2 == $info['status']}selected{/if}{/if}>不可用</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">保存</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">返回</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 实例化编辑器 -->
+
+{include file='Default/common/footer'}
+

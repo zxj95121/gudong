@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>研值送礼</title>
+	<!-- <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css"> -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script src="/static/index/js/common.js"></script>
+	<style type="text/css">
+		.giftItem{
+			width: 80%;
+			margin-left: 10%;
+			height: 7rem;
+			background: #f5f5f5;
+			position: relative;
+			margin-bottom: 1rem;
+			border-radius: 0.3rem;
+		}
+		.giftItem span{
+			color: inherit;
+		}
+		.giftItem img{
+			max-width: 5rem;
+			max-height:5rem;
+   			position: absolute;
+    
+		}
+		.choose{
+			background: #332d46 !important;
+			color: white;
+		}
+		.img-left{
+			left: 1rem;
+    		top: 1rem;
+		}
+		.img-right{
+			left: 14rem;
+    		top: 1rem;
+		}
+		.yanzhi-left{
+			color: #c09f67 !important;
+			margin-left: 12rem;
+    		font-size: 2rem;
+		}
+		.yanzhi-right{
+			color: #c09f67 !important;
+			margin-left: 1rem;
+    		font-size: 2rem;
+		}
+		.submit{
+			    width: 80%;
+    height: 2.67rem;
+    border: none;
+    color: white;
+    border-radius: 0.3rem;
+    background: #332d46;
+    margin-left: 10%;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+    line-height: 2.67rem;
+    font-size: 1.2rem;
+		}
+		.shadow{
+			display: none;
+			position: fixed;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    background: rgba(0,0,0,0.7);
+		}
+		.addressCon{
+			position: absolute;
+		    width: 20rem;
+		    background: white;
+		    height: 15rem;
+		    top: -10rem;
+		    left: 2.5rem;
+		    border-radius: 0.5rem;
+		}
+		.addressCon input{
+			    width: 90% !important;
+			    margin: 1rem 5% 0 5%;
+		}
+		.btn{
+			    width: 5rem;
+			    height: 2.2rem;
+			    font-size: 1rem;
+			    margin-left: 2.4rem;
+			    margin-right: 2.4rem;
+			    margin-top: 1rem;
+		}
+		.confirm{
+			background: #332d46;
+			color: white;
+		}
+		.name-left{
+			    margin: 1rem;
+    padding-top: 1.5rem;
+    margin-left: 13rem;
+    font-size: 1.3rem;
+		}
+		.name-right{
+			    margin: 1rem;
+    padding-top: 1.5rem;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+		}
+	</style>
+</head>
+<body style="background: white;">
+	<div>
+		<img src="/static/index/images/gift_banner.jpg" width="100%" />
+		<p style="    text-align: center;
+		    font-size: 2rem;
+		    font-weight: 400;
+		    margin-top: 2.5rem;">
+					用研值送礼物
+				</p>
+				<p style="    text-align: center;
+		    font-size: 1.2rem;
+		    margin-top: 1rem;
+		    color: #666;">
+					便捷不唐突的送礼方式
+		</p>
+		{foreach $gift as $key=>$item}
+		{if $key%2==0}
+			<div class="giftItem">
+				<img src="{$item['img']}" class="img-left"  width="100%"/>
+				<p class="name-left">{$item['name']}</p>
+				<span class="yanzhi yanzhi-left">￥<span class="cost">{$item['cost']}</span></span ><span>研值</span>
+			</div>
+		{else}
+		<div class="giftItem">
+			<img src="{$item['img']}" class="img-right"  width="100%"/>
+			<p class="name-right">{$item['name']}</p>
+			<span class="yanzhi yanzhi-right">￥<span class="cost">{$item['cost']}</span></span ><span>研值</span>
+		</div>
+		{/if}
+		{/foreach}
+		<div class="submit">
+			选好了
+		</div>
+		<div class="shadow">
+			<div class="addressCon">
+				<input type="text"placeholder="请填写地址!" class="address" />
+				<input type="text"placeholder="请填写收件人姓名!" class="name" />
+				<input type="tel"placeholder="请填写手机号!" class="mobile" />
+				<button class="btn confirm">
+					确认
+				</button>
+				<button class="btn btn-default cancel">
+					取消
+				</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+	{include file="Default/index_new/foot" /}
+	<script>
+		$(function(){
+			$(".giftItem").click(function(){
+				$(".giftItem").removeClass("choose");
+				$(this).addClass("choose");
+			});
+			$(".submit").click(function(){
+				var length=$("body").find(".choose").length;
+				if(length==0){
+					alert("请先选择礼物");
+				}
+				else{
+					$(".shadow").show();
+					$(".addressCon").animate({"top":"11rem"})
+				}
+			})
+			$(".confirm").click(function(){
+				if($(".address").val()==""||$(".mobile").val()==""||$(".name").val()==""){
+					alert("请完整填写收货信息");
+				}
+				else{
+					$.ajax({
+                            url: '{:url("index/activity/joinGift")}',
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                uid: $(".userId").val(),
+                                address: $(".address").val(),
+                                name:$(".name").val(),
+                                mobile:$(".mobile").val(),
+                                cost:$(".choose").find(".cost").html(),
+                                proName:$(".choose").find("p").html()
+                            },
+                            success: function(data) {
+                            	$(".shadow").hide();
+								$(".addressCon").animate({"top":"-10rem"});
+								if(data.errcode==0){
+									alert("送礼成功！");
+								}
+								else{
+									alert("余额不足，请阅研值攻略。")
+								}
+                            }
+                        })
+				}
+			})
+			$(".cancel").click(function(){
+				$(".shadow").hide();
+				$(".addressCon").animate({"top":"-10rem"})
+			})
+		})
+	</script>
+</body>
+</html>

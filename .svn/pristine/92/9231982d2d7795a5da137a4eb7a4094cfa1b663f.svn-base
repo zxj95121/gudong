@@ -1,0 +1,239 @@
+{include file='Default/common/header'}
+<style>
+    .uImg{position: relative}
+    .deletePic{
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        display: none;
+        display: none;
+    }
+</style>
+
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑活动信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/Activity/save_info')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                <input type="hidden" name="activity_id" class="activityId" value="{$info['activity_id']|default=''}">
+                                <input type="hidden" name="backUrl" value="{$backUrl}">
+
+
+                                <div class="control-group">
+                                  <label class="control-label">活动名称：<span class="required">*</span></label>
+                                    <div class="controls">
+                                     <input type="text" value="{$info['activity_name']|default=''}" name="activity_name" class="span6 m-wrap"
+                                           placeholder="请输入活动名称">
+                                </div>
+                              </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">开始时间：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="date" value="{if isset($info)}{$info['start_time']|date='Y-m-d',###}{/if}" name="start_time" class="span6 m-wrap"
+                                               placeholder="请输入开始时间" >
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">结束时间：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="date" value="{$info['end_time']|date='Y-m-d',###}" name="end_time" class="span6 m-wrap"
+                                               placeholder="请输入结束时间" >
+                                    </div>
+                                </div>
+<!-- 
+                                <div class="control-group">
+                                    <label class="control-label">活动类型<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="radio" name="type" value="1">研值红包
+                                        <input type="radio" name="type" value="2">送礼
+                                        <input type="radio" name="type" value="0" checked="true">其他
+                                    </div>
+                                </div> -->
+
+                                <div class="control-group">
+                                    <label class="control-label">状　　态：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-选择状态-" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="1" {if isset($info)}{if 1 == $info['status']}selected{/if}{/if}>正常</option>
+                                            <option value="2" {if isset($info)}{if 2 == $info['status']}selected{/if}{/if}>异常</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label">介绍：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <textarea name="content" id="container">{$info['content']|default=''}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">活动图片：<span class="required">*</span></label>
+                                    <div class="order-comm-f-img controls">
+                                        {if !empty($info['img'])}
+                                        <?php $img = json_decode($info['img']);?>
+                                        {foreach $img as $item}
+                                        <div class="uImg">
+                                            <img src="{$base_path}/images/cha.png" style="width: 2rem;height: 2rem" hidden="hidden" class="deletePic">
+                                            <img class="showPic" src="{$item|substr=###,1}"/>
+                                        </div>
+                                        {/foreach}
+                                        {else/}
+                                        {/if}
+                                        <img src="{$base_path}/images/img07.png" class="uploadImg"  id="uploadImg" hidden="true"/>
+                                        <input type="file" multiple="5" name="img" id="upimg" >
+                                    </div>
+                                </div>
+                                <div style="display: none;" id="HeaderImgArr"></div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">保存</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">返回</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/admin/ueditor-php/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/static/admin/ueditor-php/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script>
+    var ue = UE.getEditor('container');
+    $('.new-btn-group').delegate('input[type="file"]','change',function(){
+        $('.new-btn-group span').show();
+    });
+
+    var len;
+    $(function(){
+        //鼠标覆盖图片事件
+        $(".order-comm-f-img").on("mouseenter",".showPic",function(){
+            $(this).siblings(".deletePic").show();
+        })
+        $(".order-comm-f-img").on("mouseenter",".deletePic",function(){
+            $(this).show();
+        })
+        $(".order-comm-f-img").on("mouseleave",".showPic",function(){
+            $(this).siblings(".deletePic").hide();
+        })
+        //删除图片事件
+        $(".order-comm-f-img").on("click",".deletePic",function(){
+            var src = $(this).siblings(".showPic").attr("src");
+            var this_img=$(this);
+            $.ajax({
+                url: '/admin/Activity/removePic',
+                type: 'POST',
+                async:false,
+                data:{src:src,activity_id:$(".activityId").val()},
+                dataType:'json',
+                success: function (val) {
+                    if(val==1){
+                        this_img.parent().remove();
+                    }
+                }
+            })
+        })
+        $(".uploadImg").bind("click",function(){
+            $("#upimg").click();
+        });
+        $("#upimg").change(function(){
+            $("#HeaderImgArr").html('');
+            checkUpImg();
+        });
+        var ini=0;
+        //文件检测
+        function checkUpImg() {
+            //获取文件
+            var file="";
+            var src="";
+            var srcc="";
+            var fileList = document.getElementById('upimg').files;
+            var file = document.getElementById('upimg');
+
+            for(var i=0; i<fileList.length; i++) {
+                if(ini==4){
+                    alert("最多上传4张图片！");
+                    return false;
+                }
+                var id="img"+ini;
+                ini++;
+                var html="<img src='' id="+id+" class='headImg' style='height:250px;width:200px'>";
+                $(".uploadImg").before(html);
+                var size = file .files[i].size;
+                console.log(i+"...");
+                loadImage(fileList[i],id);
+                if(size>400*1024){
+                    alert('请上传400K以内的图片');
+                    return false;
+                }
+            }
+        };
+
+        // 显示文件
+        function loadImage(file, id) {
+            var image = document.getElementById(id);
+            image.onload = function() {
+                var canvas = document.getElementById("myCanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.width = image.width;
+                canvas.height = image.height;
+                ctx.drawImage(image, 0, 0, image.width, image.height);
+            };
+            // 在装载图像的过程中发生错误时调用的事件句柄。
+            image.onerror = function() {
+            };
+            // 当用户放弃图像的装载时调用的事件句柄。
+            image.onabort = function() {
+            };
+            //
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                image.src = evt.target.result;
+                $("#HeaderImgArr").append("<input type='text' name='headerImage[]' value='"+evt.target.result+"'>");
+            }
+            reader.readAsDataURL(file);
+        };
+    })
+
+
+    //删除图片
+    $(function(){
+        $(".uploadImg").last().bind("click", del);
+    });
+    var del = function () {
+        var src = $(this).siblings('img').attr('src');
+        //alert(src);
+        //return false;
+        $.ajax({
+            type: "GET", //访问WebService使用Post方式请求
+            url: "ajax.php?act=del", //调用WebService的地址和方法名称组合---WsURL/方法名
+            data: "src=" + src,
+            success: function (data) {
+            }
+        });
+        $(this).parent().remove();
+        return false;
+    }
+</script>
+{include file='Default/common/footer'}
+

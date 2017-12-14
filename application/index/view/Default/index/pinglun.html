@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title></title>
+    <style>
+       .backg{
+        position: absolute;
+        top:0;
+        width: 100%;
+        height: 40.63rem;
+        opacity: 0.4;
+       }
+    </style>
+    
+    <!-- <script src="/static/index/js/index.js"></script> -->
+    <link href="/static/index/css/pinglun2.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <!--<img src="images/pinglun.jpg" style="" class="backg">-->
+  <div id="head">
+    <img src="/static/index/images/timg4.png" alt="" onclick="window.location.href='{:url('index/moment/myMomentShow')}?mid={$mid}';"/>
+    <span>评论列表</span>
+  </div>
+  <div class="discuss" id="discuss">
+    <ul>
+        {if condition="count($obj) > 0"}
+            {foreach name="obj" item="value"}
+          <li cid="{$value['id']}">
+            <div class="td"><img src="{$value['header_img']}" style="width: 100%;height: 100%;" /></div>
+            <div class="act" style="">
+              <p>{$value['user_name']}</p>
+              <span style="word-break: break-all;">{$value['content']}</span>
+            </div>
+            <div class="bod">
+              <span class="fot">{:date('H:i', $value['add_ts'])}</span><!-- <input type="checkbox"> -->
+              <!-- <div class="box">3</div> -->
+            </div>
+            <div class="bade delete" style="cursor: pointer;height: 100%;display:flex;justify-content:center;align-items:center;"><span>X</span></div>
+          </li>
+          {/foreach}
+        {else /}
+            <p style="text-align: center;width: 100%;position: fixed;top: 30%;">-暂无评论-</p>
+        {/if}
+      
+    </ul>
+  </div>
+</body>
+<script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+<script src="/static/index/js/common.js"></script>
+<script type="text/javascript" src="/static/index/layer/layer.js"></script>
+{literal}
+<script>
+  $(function(){
+    var b = document.getElementsByTagName("body")[0];//获取整个body
+    var div = document.getElementById("discuss");//获取评论区大盒子
+    var lis = document.getElementsByTagName("li");//获取评论区里li元素数组
+    for(var i = 0; i < lis.length;i++){//遍历li元素
+      lis[i].id = "tarLi"+(i+1);//为每个li元素动态添加id
+      lis[i].addEventListener("touchmove",function(e){//为每个li元素注册touchmove事件
+        e.preventDefault();//阻止touchmove事件默认行为
+      });
+    }
+    var $this;
+    var i=0;
+    $("li").bind("touchstart",function(){//为评论区每个li元素绑定touchstart事件
+      $this = $(this).attr("id");//把当前li元素的id赋值给$this
+      move();//执行move()函数
+    });
+    function move(){//定义move()函数
+      var startX; var endX;//touch事件起始点位置横坐标
+      var target = document.getElementById($this);//获取事件目标元素
+        document.addEventListener("touchstart",function(e){//为整个文档添加touchstart事件
+          startX = e.touches[0].pageX;//获取touchstart事件起始点横坐标
+          return false;//阻止事件默认行为
+        });
+        document.addEventListener("touchend",function(e){//为整个文档添加touchend事件
+          endX = e.changedTouches[0].pageX;//获取touchend事件终结点横坐标
+          if(endX < startX){//如果终结点横坐标 < 起始点横坐标，则滑动方向为向左
+            $("#"+$this+"").animate({"left":"-4.43rem"});//调整当前li元素left值，向左移动相应距离
+            return false;//阻止事件默认行为
+          }else if(endX >startX){//如果终结点横坐标 > 起始点横坐标，则滑动方向为向左
+            $("#"+$this+"").animate({"left":"0"});//恢复li元素left值，使其回到原来状态
+            return false;//阻止事件默认行为
+          }
+          i++;
+        });
+      }
+  })
+/*
+touchEvent("tarLi2");
+touchEvent("tarLi3");
+touchEvent("tarLi4");
+touchEvent("tarLi5");
+touchEvent("tarLi6");*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //touchmove,touchstart,touchend
+  //获取元素
+    /*var b = document.getElementsByTagName("body")[0];
+  var div = document.getElementById("discuss");
+  var lis = document.getElementsByTagName("li");
+  var targetLi = document.getElementById("tar");
+  var blade =document.getElementById("blade");
+  //禁止其他li元素所有滑动
+  for(var i = 0; i < lis.length;i++){
+    lis[i].addEventListener("touchmove",function(e){
+      e.preventDefault();
+    });
+  }
+  (function(){
+    var startX,endX;
+    //目标里元素绑定滑动事件
+    targetLi.addEventListener("touchstart",function(e){
+      startX = e.touches[0].pageX;
+    });
+    targetLi.addEventListener("touchend",function(e){
+      endX = e.changedTouches[0].pageX;
+      if(endX < startX){
+        targetLi.style.left = "-4.43rem";
+      }else if(endX > startX){
+        targetLi.style.left = "0";
+      }
+    });
+  })();*/
+
+  /*//touchmove,touchstart,touchend
+    var b = document.getElementsByTagName("body")[0];
+  var div = document.getElementById("discuss");
+  var lis = document.getElementsByTagName("li");
+  for(var i = 0; i < lis.length; i++){
+    lis[i].addEventListener("touchmove",function(e){
+      e.preventDefault();
+    });
+    (function(i){
+      var startX,endX;
+      for(var j = 0; j < lis[i].length; j++){
+        lis[j].addEventListener("touchstart",function(e){
+          startX = e.touches[0].pageX;
+        });
+        lis[j].addEventListener("touchend",function(e){
+          endX = e.changedTouches[0].pageX;
+        });
+        if(startX > endX){
+          lis[j].style.left = "-4.43rem";
+        }else if(startX < endX){
+          lis[j].style.left = "0";
+        }
+      }
+    })(i);
+  }*/
+</script>
+{/literal}
+<script type="text/javascript">
+    var deleteUrl = '{:url("index/moment/deleteComment")}';
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('.delete').click(function(){
+            var dom = $(this).parents('li');
+            var cid = dom.attr('cid');
+
+            //对这条评论进行删除
+            $.ajax({
+                url: deleteUrl,
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    cid: cid
+                },
+                success: function(data) {
+                    if (data.errcode == 0) {
+                        layer.msg('删除成功');
+                        dom.remove();
+                    }
+                }
+            })
+        })
+    })
+</script>
+</html>
+

@@ -1,0 +1,94 @@
+{include file='Default/common/header'}
+        <style>
+            .modal-body span{
+                width: 25%;
+                display: block;
+                float: left;
+            }
+            .modal-body font{
+                width: 75%;
+                display: block;
+                float: left;
+            }
+        </style>
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <a href="{:url('admin/Activity/operation_info')}" class="btn green"><i class="icon-plus"></i>添加活动</a>
+            <div class="row-fluid" style="margin-top: 10px;">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>活动配置列表</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <form action="{:url('admin/Activity/index')}" id='searchForm' method='get'>
+                                    <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-请选择状态-" tabindex="1">
+                                        <option value=""></option>
+                                        <option value="1" {if isset($status)}{if $status == 1}selected{/if}{/if}>正常</option>
+                                        <option value="2" {if isset($status)}{if $status == 2}selected{/if}{/if}>异常</option>
+                                    </select>
+                                    <!--<button type="submit" style="margin-bottom:26px" class="btn green"><i class="icon-search"></i>搜索</button>-->
+                                </form>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                {include file='Default/common/table/table_thead'}
+                                <tbody>
+                                {foreach $list as $key=>$info}
+                                <tr class="odd gradeX">
+                                    <td>{$key}</td>
+                                    <td>{$info['activity_name']}</td>
+                                    <td>{$info['start_time']|date="Y-m-d",###}--{$info['end_time']|date="Y-m-d",###}</td>
+                                    <td data-content="{:htmlspecialchars($info['content'])}" class="showContent">{$info['content']|htmlspecialchars_decode|strip_tags|mb_substr=0,36,'utf-8'}</td>
+                                    <td>
+                                        {if !empty($info['yanzhi_img'])}
+                                        <img src="{$info['yanzhi_img']}" class="showImg" >
+                                        {else/}
+                                        <img src="/static/admin/image/notKnow.jpg" class="showImg">
+                                        {/if}
+                                    </td>
+                                    <td>{$info['add_ts']|date="Y-m-d",###}</td>
+                                    <td><span>{$info['status']|showstatus=###,'正常,异常:1,2'}</span></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn green" href="#" data-toggle="dropdown">
+                                                操作<i class="icon-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" style="text-align: left">
+                                                <li><a href="{:url('admin/Activity/operation_info',['activity_id'=>$info['activity_id']])}">修改</a></li>
+                                                <li><a href="{:url('admin/Activity/update_status',['activity_id'=>$info['activity_id']])}">
+                                                    {if $info['status']==1}禁用{else/}解除{/if}</a>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{include file='Default/common/footer'}
+<script>
+    $('.chosen[name="status"]').change(function () {
+        return $('#searchForm').submit();
+    })
+
+</script>

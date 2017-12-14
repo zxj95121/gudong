@@ -1,0 +1,12 @@
+<thead>
+<tr>
+    {foreach $my_rule as $k=>$v}
+        {if $k==0}
+        <th style="width: 4%">{$v}</th>
+        {else/}
+        <th>{$v}</th>
+        {/if}
+    {/foreach}
+
+</tr>
+</thead>

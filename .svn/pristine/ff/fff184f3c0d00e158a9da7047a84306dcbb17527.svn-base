@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:none；
+}
+/* @font-face {font-family:"myFont fan";src: url('./NotoSansHans-DemiLight.ttf'); */
+}
+body, div, span, i, em, h2, h3, h4, h5, h6, h1, b, big, small, ul, li, a, img {
+  margin: 0;
+  padding: 0;
+  border:none;
+  /*font-weight:lighter;*/
+  font-size:1rem;
+  font-weight:400;
+  color:#323232;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+input,button,textarea,text{
+	outline: none;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+li{
+  list-style:none;
+  }
+a{
+  text-decoration:none;
+  }
+.clear-fix:after{
+	content:' ';
+	width:0;
+	height:0;
+	clear:both;
+	display:block;
+}
+em,i{
+	font-style:normal;
+}
+
+/*头部*/
+#head{
+	width:100%;
+	height:3.93rem;
+	background:#92a6c7;
+	text-align: center;
+    line-height: 3.93rem;
+    border-bottom:2px solid #f9fdff;
+    position:relative;
+}
+#head img{
+	width: 1.4rem;
+    height: 1.2rem;
+    position: absolute;
+    margin-left: -9.8rem;
+    top: 1.4rem;
+    cursor: pointer;
+}
+#head span{
+	font-size:1.2rem;
+	color:#eff9ee;
+}
+
+/*主体*/
+.discuss ul{
+	width:100%;
+	margin-top: 0.04rem;
+	position: relative;
+}
+
+.discuss ul li{
+	width: 100%;
+	background: #f1f1fb;
+	border-bottom: 1px solid #C5D1D1;
+	padding: 0.6rem 0.4rem;
+	float: left;
+	position: relative;
+}
+.discuss ul li:nth-child(4){
+	/*left:-4.42rem;*/
+}
+
+.discuss ul li .td{
+	float:left;
+	width: 2.85rem;
+    height: 2.85rem;
+    background: green;
+    border-radius: 50%;  
+}
+.discuss ul li .act{
+	float: left;
+    width: 68%;
+    margin-left: 0.6rem;
+}
+.discuss ul li .act p{
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.discuss ul li .act span{
+	 font-size: 0.7rem;
+	 color:#9a9aa2;
+}
+.discuss ul li .bod{
+	width: 15%;
+    float: right;
+    /*line-height: 0.95rem;*/
+}
+.discuss ul li .bod .fot{
+	font-size:1rem;
+}
+.discuss ul li .bod input{
+	width: 0.9rem;
+    height: 0.9rem;
+    margin-left: 0.2rem;  
+}
+.discuss ul li .bod .box{
+	width: 1rem;
+    height: 1rem;
+    background: #f3c7c8;
+    border-radius: 0.2rem;
+    text-align: center;
+    margin-left: 2.6rem;
+    margin-top: 0.6rem;
+    color: #f4e0e1;
+}
+.discuss ul li .bade{
+    /* width: 2rem; */
+   font:400 1.25rem/1rem "Simsun",sans-serif;
+    background: #e8b2ab;
+    position: absolute;
+    right: -4.48rem;
+    /*right: 0rem;*/
+    top: 0rem;
+    /* text-align: center; */
+    /*padding: 1.77rem .001rem;*/
+    width: 4.5rem;
+    height: 4.6rem;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height:4.49rem;
+}
+
+
+

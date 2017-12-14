@@ -1,0 +1,104 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:none；
+}
+/* @font-face {font-family:"myFont fan";src: url('./NotoSansHans-DemiLight.ttf'); */
+/*}*/
+body, div, span, i, em, h2, h3, h4, h5, h6, h1, b, big, small, ul, li, a, img {
+  margin: 0;
+  padding: 0;
+  border:none;
+  /*font-weight:lighter;*/
+  font-size:1rem;
+  font-weight:400;
+  color:#323232;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+input,button,textarea,text{
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+li{
+  list-style:none;
+  }
+a{
+  text-decoration:none;
+  }
+.clear-fix:after{
+	content:' ';
+	width:0;
+	height:0;
+	clear:both;
+	display:block;
+}
+em,i{
+	font-style:normal;
+}
+/************************************/
+    .con-body img{
+    	       width: 9rem;
+    margin: 5.5rem 9rem 3.6rem 7rem;
+    } 
+	.con-body{
+		width: 100%;
+		height: 100%;
+		
+	}
+	.vali{
+		position: relative;
+		width: 100%;
+	}
+	.mobile{
+		width: 22rem;
+    	margin-left: 1.5rem;
+    	border: none;
+    	height: 3.27rem;
+   	 	padding-left: 1rem;
+   	 	font-size: 1rem;
+	}
+	.yanzheng{
+		 width: 22rem;
+	    margin-left: 1.5rem;
+	    border: none;
+	    height: 3.27rem;
+	    padding-left: 1rem;
+	    font-size: 1rem;
+	    margin-top: 0.66rem;
+	    margin-bottom: 1.33rem;
+	}
+	.getCode{
+		    width: 8rem;
+    height: 2.67rem;
+    border: none;
+    color: white;
+    position: absolute;
+    left: 15.1rem;
+    top: 1rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #332d46;
+	}
+	.validate{
+	    width: 22rem;
+    height: 2.67rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #332d46;
+    margin-left: 1.5rem;
+    letter-spacing: 0.1rem;
+	}

@@ -1,0 +1,4 @@
+$(function(){
+	var imgWidth = $('.pdiv:eq(0)').width();
+	$('.pdiv').css('height', imgWidth+'px');
+})

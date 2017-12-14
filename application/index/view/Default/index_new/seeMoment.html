@@ -1,0 +1,189 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>读懂我</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/index/js/swiper/dist/css/swiper.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/rem.css">
+    <!-- image预览 -->
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/css/previewimage.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/show_common.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/moment.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/seeMoment.css">
+</head>
+<body>
+	<header class="gd-header">
+		<i class="glyphicon i_prev_url" style="top: 1.1rem;"><img src="/static/index/images/icon-prev.png" style="width: 2rem;"></i>
+		<div class="gd-head-center">
+			<div class="gd-header-nav">
+				<span class="gd-head-title" href="#content1">进化详情</span>
+			</div>
+<!-- 			<div class="gd-header-nav">
+				<span class="gd-head-title" href="#content2">同城</span>
+			</div>
+			<div class="gd-header-nav">
+				<span class="gd-head-title" href="#content3">同性</span>
+			</div> -->
+		</div>
+	</header>
+
+	<div class="gd-content">
+<!-- 		<div id="PullDown" class="scroller-pullDown" style="display: none;">
+            <img style="width: 20px; height: 20px;" src="/static/index/images/rolling.svg">
+            <span id="pullDown-msg" class="pull-down-msg">下拉刷新</span>
+        </div> -->
+	    <div class="gd-con" id="content1">
+
+	    	{foreach $momentsObj as $key => $value}
+	    	<div class="moment" uid="{$value['user_id']}" mid="{$value['moment_id']}" iscollect="{$value['is_collect']}"><!-- 说说 -->
+					<div class="moment-header"><!-- 头部 -->
+						<!-- <img class="moment-header-img" src="http://wx.qlogo.cn/mmopen/y5RpFDuUObyHey58AgYvp2vva3vicQEON4Rzab7hj4x8JuDM1ZLRBz1Bn7QwvicEsd08CYAlsF4m0DEXxeoKicyh3BwWY2tzUSz/0"> -->
+						<img class="moment-header-img" src="{$value['headimg']}">
+						<div class="moment-header-right">
+							<div class="moment-header-right-top">
+								<div class="moment-header-right-top-left">
+  								<div class="moment-nickname">{$value['name']}</div>
+  								{if condition="!$value['is_sub']"}
+  								<div class="moment-subscribe"><button type="button" class="mui-btn mui-btn-success mui-btn-outlined">关注</button></div>
+  								{/if}
+								</div>
+								<!-- <div class="moment-header-right-top-right">
+									<div class="moment-position">合肥市</div>
+									<div class="moment-position-icon glyphicon glyphicon-map-marker">
+									</div>
+								</div> -->
+							</div>
+							<div class="moment-header-right-bottom">
+								<div class="moment-time">{$value['add_ts']}</div>
+								<div class="moment-see-icon glyphicon glyphicon-eye-open"></div>
+								<div class="moment-see">43</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="moment-content"><!-- 文字内容 -->
+						{$value['content']}
+					</div>
+
+					<div class="moment-image"><!-- 图片部分 -->
+						{foreach $value['images'] as $k=> $v}
+						<div class="moment-image-div" style="background-image: url('{$v}');">
+							<img class="mui-media-object" src="{$v}" style="opacity: 0;width: 100%;height: 100%;" data-preview-src="" data-preview-group="1">
+						</div>
+						{/foreach}
+					</div>
+
+					<div class="moment-operate"><!-- 底部操作部分 -->
+						<div class="moment-operate-left">
+  						<!-- <div class="moment-thumb">
+  							<img src="/static/index/images/thumb_48.png">
+  							<span class="moment-operate-num">2</span>
+  						</div> -->
+  						<!-- <div class="moment-thumb-num"></div> -->
+  						<div class="moment-thumb">
+  							<img src="/static/index/images/love_32{if condition="$value['is_thumb']"}_green{/if}.png">
+  							<span class="moment-operate-num">{$value['thumb_num']}</span>
+  						</div>
+  						<div class="moment-comment">
+  							<img src="/static/index/images/comment_48.png">
+  							<span class="moment-operate-num">{$value['comment_num']}</span>
+  						</div>
+  						<!-- <div class="moment-comment-num"></div> -->
+  						<div class="moment-share">
+  							<img src="/static/index/images/share_48.png">
+  						</div>
+						</div>
+						<div class="moment-cicles">
+							<img src="/static/index/images/circle_48.png">
+						</div>
+					</div>
+
+					<div class="moment-comments"><!-- 评论部分 -->
+						{if condition="$value['comment_num'] > 3"}
+						<div class="moment-comments-seeAll" status="1" num="{$value['comment_num']}">
+							查看全部{$value['comment_num']}条评论
+						</div>
+						{else /}
+						<div class="moment-comments-seeAll" status="0" style="display: none;" num="{$value['comment_num']}">
+						</div>
+						{/if}
+						{foreach $value['comments'] as $kc =>$vc}
+						{if condition="$kc <= 2"}
+						<div class="moment-comments-first gd-mc" uid="{$vc['user_id']}" cid="{$vc['id']}">
+							<span class="moment-comments-nickname">{$vc['user_name']}</span><span>:</span><span class="moment-comments-content">{$vc['content']}</span>
+						</div>
+						<!-- <div class="moment-comments-second gd-mc">
+							<span class="moment-comments-nickname">观音菩萨</span><span class="moment-comments-word-reply">回复</span><span class="moment-comments-nickname">孙悟空</span><span>:</span><span class="moment-comments-content">给你脸了是吧</span>
+						</div> -->
+						{else /}
+							{if condition="!$vc['comment_id']"}
+  						<div class="moment-comments-first gd-mc moment-comments-hide" uid="{$vc['user_id']}" cid="{$vc['id']}">
+  							<span class="moment-comments-nickname">{$vc['user_name']}</span>
+  							<span>:</span>
+  							<span class="moment-comments-content">{$vc['content']}</span>
+  						</div>
+  						{else /}
+  						<div class="moment-comments-second gd-mc moment-comments-hide" uid="{$vc['user_id']}" cid="{$vc['id']}">
+  							<span class="moment-comments-nickname">{$vc['user_name']}</span><span class="moment-comments-word-reply">回复</span><span class="moment-comments-nickname">{$vc['usered_name']}</span><span>:</span><span class="moment-comments-content">{$vc['content']}</span>
+  						</div>
+  						{/if}
+						{/if}
+						{/foreach}
+					</div>
+				</div>
+	     
+	    	{/foreach}
+				<div id="PullUp" class="scroller-pullUp" style="display: none;">
+                <img style="width: 20px; height: 20px;" src="/static/index/images/rolling.svg" />
+                <span id="pullUp-msg" class="pull-up-msg">正在获取</span>
+            </div>
+	  	</div>
+	</div>
+
+
+	<div class="gdp" style="display: none;">
+		<div class="gdp-wrapper">
+			<div class="gdp-wp">
+				<div class="gd-popover-operate" see="nosee">
+		        	不看此人
+		        </div>
+		        <div class="gd-popover-operate" see="tip-off">
+		        	举报
+		        </div>
+		        <div class="gd-popover-operate" see="collect">
+		        	收藏
+		        </div>
+		        <div class="gd-popover-cancle">
+		        	取消
+			    </div>
+			</div>
+	    </div>
+	</div>
+
+	<script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+    <!-- <script type="text/javascript" src="/static/index/js/swiper/dist/js/swiper.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/index/js/new/show_common.js"></script> -->
+    <!-- 图片预览start -->
+    <script type="text/javascript" src="/static/index/js/mui/js/mui.zoom.js"></script>
+    <!-- 图片预览over -->
+    <script type="text/javascript" src="/static/index/js/mui/js/mui.previewimage.js"></script>
+
+    <script type="text/javascript">
+    	identity = {$identity};
+    </script>
+
+    <script type="text/javascript" src="/static/index/js/new/moment.js"></script>
+    <script type="text/javascript" src="/static/index/js/new/seeMoment.js"></script>
+
+    {include file="Default/index_new/foot" /}
+</body>
+</html>

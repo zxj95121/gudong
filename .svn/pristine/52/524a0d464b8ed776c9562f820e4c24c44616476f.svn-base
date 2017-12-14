@@ -1,0 +1,203 @@
+thumbArr = new Array();
+
+$('.thumb').click(function() {
+    // if (!identity) {
+    //     layer.msg('尚未注册，无法点赞。', {time: 1000});
+    //     layer.confirm('尚未注册，无法点赞。是否现在去注册？', {
+    //         btn: ['确认','取消'] //按钮
+    //     }, function(index){
+    //         layer.close(index);
+    //         window.location.href = '{:url("index/index/login")}';
+    //     }, function(index){
+    //         layer.close(index);
+    //     });
+    //     return false;
+    // }
+    var dom = $(this).parents('.mui-card-footer').find('.thumb_num');
+    var prevNumber = parseInt(dom.html().trim());
+
+    var mid = $(this).parents('.oneMoment').attr('mid');
+
+    if (!thumbArr.hasOwnProperty(mid)){
+    	thumbArr[mid] = new Array();
+    	thumbArr[mid]['count'] = 0;
+    	thumbArr[mid]['prev'] = prevNumber;
+    	thumbArr[mid]['over'] = false;
+    }
+
+    var type = 1;//给别人点赞
+
+    var that = $(this);
+
+    if (thumbArr[mid]['over'])
+    	return false;
+    //发ajax
+    $.ajax({
+        url: '/index/moment/thumb',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            type: type,
+            mid: mid
+        },
+        success: function(data) {
+            if (data.errcode == 0) {
+            	thumbArr[mid]['count']++;
+                dom.html(prevNumber+data.jia);
+                dom.html(thumbArr[mid]['prev'] + thumbArr[mid]['count']);
+                that.removeClass('operate-notActive');
+            } else if (data.errcode == 1) {
+            	if (!thumbArr[mid]['over'])
+            		layer.msg('最多点10个赞哦~');
+            	thumbArr[mid]['over'] = true;
+            }
+        },
+        error: function() {
+        }
+    })
+})
+
+
+
+
+
+///收藏部分
+
+
+//------
+collectArr = new Array();
+$('.collect').click(function(){
+    // if (!identity) {
+    //     layer.msg('尚未注册，无法收藏。', {time: 1000});
+    //     layer.confirm('尚未注册，无法收藏。是否现在去注册？', {
+    //         btn: ['确认','取消'] //按钮
+    //     }, function(index){
+    //         layer.close(index);
+    //         window.location.href = '{:url("index/index/login")}';
+    //     }, function(index){
+    //         layer.close(index);
+    //     });
+    //     return false;
+    // }
+    if (identity == 2) {
+    	window.location.href = '/index/user/payVip';
+        return false;
+    }
+
+
+    var user_id = $(this).parents('.oneMoment').attr('uid');
+    if (uid == user_id) {
+        layer.msg('不能收藏自己的说说!', {time: 1000});
+        return false;
+    }
+    var dom = $(this).parents('.mui-card-footer').find('.collect_num');
+    var prevNumber = parseInt(dom.html().trim());
+    var type = 1;
+    var mid = $(this).parents('.oneMoment').attr('mid');
+
+    var that = $(this);
+
+    if (!collectArr.hasOwnProperty(mid)){
+    	collectArr[mid] = new Array();
+    	collectArr[mid]['over'] = false;
+    }
+
+    if (collectArr[mid]['over'])
+    	return false;
+    //发ajax
+    $.ajax({
+        url: '/index/see/collect',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            type: type,
+            mid: mid
+        },
+        success: function(data) {
+            if (data.errcode == 10) {
+            	layer.msg('您已经收藏过了');
+            	collectArr[mid]['over'] = true;
+                // dom.html(prevNumber);
+                // if (type == 1) {
+                //     var number = prevNumber+1;
+                //     layer.msg('收藏失败', {time: 1000});
+                //     that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                // } else {
+                //     var number = prevNumber-1;
+                //     layer.msg('取消收藏失败', {time: 1000});
+                //     that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                // }
+            } else if (data.errcode == 2) {
+                // dom.html(prevNumber);
+                layer.msg('不能收藏自己的说说');
+                // that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+            } else if (data.errcode == 3) {
+                // dom.html(prevNumber);
+                layer.msg('非会员无法收藏');
+                // that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+            }
+
+            if (data.errcode == 0) {
+            	dom.html(prevNumber+1);
+            	that.removeClass('operate-notActive');
+            }
+        },
+        error: function() {
+        }
+    })
+})
+
+
+
+
+//开始评论部分
+
+
+$('.comment').click(function(){
+    if (identity == 2) {
+        window.location.href = '/index/user/payVip';
+        return false;
+    }
+   	var dom = $(this).parents('.mui-card-footer').find('.comment_num');
+    var prevNumber = parseInt(dom.html().trim());
+
+    var mid = $(this).parents('.oneMoment').attr('mid');
+
+    var that = $(this);
+
+    // var scrollHeight = $(window).scrollTop(); 
+    //弹框输入评论
+    var btnArray = ['取消', '评论'];
+    mui.prompt('请输入你的评论：', '你的评论', '', btnArray, function(e) {
+        if (e.index == 0) {
+            // console.log('谢谢你的评语：' + e.value);
+        } else {
+            if (e.value == '') {
+                layer.msg('评论不能为空');
+            }
+            $.ajax({
+                url: '/index/see/comment',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    msg: e.value.trim(),
+                    mid: mid
+                },
+                success: function(data) {
+                    if (data.errcode == 0) {
+                        layer.msg('评论成功', {time: 1000});
+                        // $('#comment_ul').append('<li class="mui-table-view-cell mui-collapse mui-active" cid="'+data.cid+'"> <a class="mui-navigate-right" href="#"> <span class="comment_left comment_span">'+data.name+'</span> <span class="mui-badge mui-badge-success">1</span> </a> <div class="mui-collapse-content"> <p> <span class="sp1 sp">'+data.name+'</span>： <span class="sp2 sp">'+e.value+'</span> </p> </div> </li>');
+                        dom.html(prevNumber+1);
+
+                        var comment_dom = that.parents('.oneMoment').find('.mui-card-content');
+                        comment_dom.find('.noCommentP').remove();
+                        comment_dom.append('<p class="commentsP" cid="'+data.cid+'"> <span>'+data.name+'</span>：'+e.value+'</p>');
+                        // $(window).scrollTop(scrollHeight);
+                    }
+                }
+            })
+        }
+    })
+
+    $('.mui-popup').find('input')[0].focus();
+})

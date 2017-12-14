@@ -1,0 +1,55 @@
+<script>
+    $(function () {
+        $('.showImg').click(function () {
+            var img_src = $(this).attr('src');
+            $('#myModal').find('img').attr('src',img_src);
+            $('#myModal').modal('show');
+        })
+        $('.show_content').click(function () {
+            var content = $(this).data('val');
+            $('#show_content').find('img').attr('src',img_src);
+            $('#show_content').modal('show');
+        })
+        $('.showContent').click(function () {
+            $('.modal-title').text('内容浏览')
+            var content = $(this).data('content');
+            $('#show_content').find('.modal-body').html("<p>"+content+"</p>");
+            $('#show_content').modal('show');
+        })
+        $('.submit').click(function () {
+            return $('#searchForm').submit();
+        })
+    })
+</script>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:700px;margin-left: -350px;top:10%;display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:16px;">
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    图片预览
+                </h4>
+            </div>
+            <div class="modal-body">
+                <img src="" style="width:100%;max-height: 300px;"/>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<div class="modal fade" id="show_content" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:700px;margin-left: -350px;top:10%;display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:16px;">
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    内容预览
+                </h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

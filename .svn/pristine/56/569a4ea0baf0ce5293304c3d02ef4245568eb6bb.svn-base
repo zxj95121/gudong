@@ -1,0 +1,97 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+    outline:none；
+}
+/* @font-face {font-family:"myFont fan";src: url('./NotoSansHans-DemiLight.ttf'); */
+/*}*/
+body, div, span, i, em, h2, h3, h4, h5, h6, h1, b, big, small, ul, li, a, img {
+  margin: 0;
+  padding: 0;
+  border:none;
+  /*font-weight:lighter;*/
+  font-size:1rem;
+  font-weight:400;
+  color:#323232;
+	-webkit-tap-highlight-color: transparent;
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+input,button,textarea,text{
+	font-family: "PingFang SC", PingFangSC, Helvetica, sans-serif!important;
+}
+li{
+  list-style:none;
+  }
+a{
+  text-decoration:none;
+  }
+.clear-fix:after{
+	content:' ';
+	width:0;
+	height:0;
+	clear:both;
+	display:block;
+}
+em,i{
+	font-style:normal;
+}
+/****************************************/
+      .item-right{
+				float: right;
+				height: 3.5rem;
+			}	
+			 .container-con .cItem{
+    height: 3.5rem;
+    border-bottom: 1px solid #eee;
+    line-height: 3.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    background: white;
+			 }	
+			 .headImg{
+			 	width: 2.5rem;
+			 	height: 2.5rem;
+			 	border-radius: 1.25rem;
+			 	margin-top: 0.75rem;
+			 }
+			 .item-right input{
+			 	text-align: right;
+			 	border: none;
+			 	outline: none;
+			 	padding-right: 0.5rem;
+			 	font-size: 1rem;
+			 }
+			 .save{
+				        background: #332d46;
+    width: 92%;
+    margin-left: 4%;
+    height: 2.67rem;
+    border: none;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+			}
+			.container-con .cItem:last-child {
+				    margin-bottom: 1rem !important;
+				}
+				.item-right span{
+					    width: 8rem;
+    display: block;
+    height: 100%;
+    text-align: right;
+    margin-right: 0.5rem;
+				}

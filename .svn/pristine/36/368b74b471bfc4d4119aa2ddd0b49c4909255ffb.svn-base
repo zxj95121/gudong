@@ -1,0 +1,64 @@
+$(function(){
+	var imgWidth = $('.pdiv:eq(0)').width();
+	$('.pdiv').css('height', imgWidth+'px');
+
+	var spaceWidth = parseInt(($('.div-photo').width()-3*imgWidth)/3);
+
+	//上边距
+	$('.pdiv:gt(2)').css('marginTop', spaceWidth+'px');
+	// 左右边距
+	$('.pdiv').each(function(){
+		var index = parseInt($(this).index('.pdiv'))%3;
+		if (index < 2) {
+			$(this).css('marginRight', spaceWidth+'px');
+		}
+		if (index < 1){
+			$(this).css('marginLeft', 0.5*spaceWidth+'px');
+		}
+	})
+
+
+	/*返回上一页*/
+	$('.i_prev_url').click(function(){
+		history.back();
+	})
+	
+	
+	
+//	$('.addphoto').click(function() {
+//		$('#file')[0].click();
+//	})
+})
+
+function setMargin(){
+	var imgWidth = $('.pdiv:eq(0)').width();
+	$('.pdiv').css('height', imgWidth+'px');
+
+	var spaceWidth = parseInt(($('.div-photo').width()-3*imgWidth)/3);
+	$('.pdiv:gt(2)').css('marginTop', spaceWidth+'px');
+	// 左右边距
+	$('.pdiv').each(function(){
+		var index = parseInt($(this).index('.pdiv'))%3;
+		if (index < 2) {
+			$(this).css('marginRight', spaceWidth+'px');
+		}
+		if (index < 1){
+			$(this).css('marginLeft', 0.5*spaceWidth+'px');
+		}
+	})
+
+	$('.addphoto').css({'marginRight': '0px', 'marginLeft': '0px'});
+
+	/*检查当前照片个数*/
+	if (parseInt($('.pdiv').size()) >= 10) {
+		$('.addphoto').css('display', 'none');
+	}
+
+	// $('.photo').each(function(){
+	// 	$(this).longPress(function(){
+	// 		alert(123);
+	// 	})
+	// })
+
+	mui.previewImage();
+}

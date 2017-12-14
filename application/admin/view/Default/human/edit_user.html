@@ -1,0 +1,84 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑用户信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/human/saveUser')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+
+                                <input type="hidden" name="user_id" value="{$user['user_id']}">
+                                <div class="control-group">
+                                    <label class="control-label">用户名：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$user['name']}" name="name" data-required="1" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">密　码：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input name="password" maxlength="18" value="{$user['password']}"  type="password" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">头　像：</label>
+                                    <div class="controls">
+                                        <div class="new-btn-group">
+                                            <button class="btn green">上传头像</button>
+                                            <input type="file" name="header_img" value="{$user['header_img']}"/>
+                                            <span {if empty($user['header_img'])}style="display:none;"{/if}><i class="icon-ok-circle green-icon"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">　手机号：</label>
+                                    <div class="controls">
+                                        <input name="mobile" value="{$user['mobile']}" maxlength="11"  type="text" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">性　别：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="gender" data-placeholder="-请选择性别-" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="1" {if 1 == $user['gender']}selected{/if}>男</option>
+                                            <option value="2" {if 2 == $user['gender']}selected{/if}>女</option>
+                                            <option value="3" {if 3 == $user['gender']}selected{/if}>未知</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">　积分数：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input name="points" value="{$user['points']}" maxlength="5"  type="text" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">save</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">return</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.new-btn-group').delegate('input[type="file"]','change',function(){
+        $('.new-btn-group span').show();
+    });
+</script>
+{include file='Default/common/footer'}

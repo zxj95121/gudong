@@ -1,0 +1,58 @@
+{foreach $image_upload as $column=>$name}
+<div class="control-group">
+    <label class="control-label">{$name}</label>
+    <div class="controls">
+        <div class="fileupload fileupload-new" data-provides="fileupload">
+            <div class="fileupload-new thumbnail default_{$column}" style="width: 200px; height: 150px;" >
+                <img {if(isset($info[$column]))} src='{$Think.config.cms_upload}/{$info[$column]|default=''}'{else/} src='{$Think.config.cms_resource}/image/zhanwu.jpg'{/if} alt=""/>
+            </div>
+            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
+            </div>
+            <div>
+                <span class="btn btn-file">
+                    <span class="fileupload-new">选择图片</span>
+                    <span class="fileupload-exists">重选</span>
+                    <input type="file" class="default" name='upload_{$column}'/><!-- 这个name是ajax文件上传时要用的  -->
+                </span>
+                <a href="javascript:;" class="btn fileupload-exists" data-dismiss="fileupload">取消</a>
+                <a href="javascript:;" class="btn red fileupload-exists upload_img" data-column='{$column}' id='click_{$column}'>上传</a>
+                <input type="hidden" class='save_input' name="{$column}" id="column_{$column}" value='{$info[$column]|default=''}'><!-- 这个是保存的时候用的 -->
+            </div>
+        </div>
+    </div>
+</div>
+{/foreach}
+<script type="text/javascript">
+    $(function () {
+        $('.upload_img').click(function(){
+            var formData = new FormData($( "#form_sample_2" )[0]);
+            column = $(this).data('column');
+            formData.append('column',column);
+            formData.append('file_dir','{$file_dir}');
+            $.ajax({
+                {if !empty($size)}
+                url: '{:url("upload/uploadImg",['x'=>$size['x'],'y'=>$size['y']])}' ,
+                {else/}
+                url: '{:url("upload/uploadImg")}' ,
+                {/if}
+                type: 'post',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if(data!=false){
+                        $('#column_'+column).val(data);
+                        $('.default_img').html('');
+                        $('#click_'+column).html('已上传').removeClass('red').addClass('blue');
+                    }else{
+                        alert('未上传成功')
+                    }
+                },
+                error: function (returndata) {
+                }
+            });
+        })
+    })
+</script>

@@ -1,0 +1,45 @@
+var swiper = new Swiper('.swiper-container-father', {
+	passiveListeners : false,
+	touchMoveStopPropagation : false,
+	mousewheelControl: true,
+    on:{
+    	slideChangeTransitionEnd: function(){
+      		var activeIndex = this.activeIndex;
+      		$('.gd-header-nav').removeClass('gd-header-nav-active');
+      		$('.gd-header-nav').eq(activeIndex).addClass('gd-header-nav-active');
+    	},
+  	},
+});
+
+window.currentPage = 1;
+
+
+/*----------------------------------------加载更多---------------------------------------*/
+window.loading = false;
+$('#content1').unbind("scroll").bind("scroll", function(e){
+    var sum = this.scrollHeight; 
+    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+    	$('#PullUp').show();
+    	if (!window.loading) {
+    		window.loading = true;
+	    	$.ajax({
+	    		url: '/index/index/nextZhanshi',
+	    		dataType: 'html',
+	    		type: 'get',
+	    		data: {
+	    			page: window.currentPage+1
+	    		},
+	    		success: function(data) {
+	    			$('#PullUp').before(data);
+	    			$('#PullUp').hide();
+	    			window.currentPage = window.currentPage+1;
+	    			window.loading = false;
+	    		}
+	    	})
+	    	// $('#content1').load('/index/index/nextZhanshi?page='+(window.currentPage+1), function(){
+	    	// 	$('#PullUp').hide();
+	    	// 	window.loading = false;
+	    	// });
+	    }
+    }
+});

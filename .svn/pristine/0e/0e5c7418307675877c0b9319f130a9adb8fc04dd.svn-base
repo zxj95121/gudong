@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/style2.css">
+    
+    <title></title>
+    <style type="text/css">
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="text-decoration: none;cursor: pointer;" href="{:url('index/index/zhanshi')}"></a>
+        <h1 class="mui-title">用户简介</h1>
+    </header>
+
+    <div class="mui-content">
+        {php} if($userObj->gender == 2) $xing = '她'; else $xing = '他'; {/php}
+        <ul class="mui-table-view" style="margin: 0;">
+            <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;">
+                    <img class="mui-media-object mui-pull-left" src="{$userObj.header_img}">
+                    <div class="mui-media-body">
+                        {$userObj.user_name}
+                        <p class="mui-ellipsis">
+                            {if condition="$userObj.isMember == 1"}
+                                会员
+                            {else /}
+                                非会员
+                            {/if}
+                        </p>
+                    </div>
+                </a>
+            </li>
+
+            <li class="mui-table-view-divider">其他信息</li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="{:url('index/index/userMomentShow')}?uid={$userObj.user_id}">
+                    <span class="mui-badge mui-badge-primary">{$moment_count}</span>
+                    {$xing}的说说
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    {include file="common/foot" /}
+
+
+    <script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+

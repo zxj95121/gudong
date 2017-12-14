@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <title></title>
+    <style type="text/css">
+        .mui-table-view-cell:after{
+            height: 0px;
+        }
+        #momentHeader{
+            padding-bottom: 12px;
+        }
+        .comment_span{
+            display: inline-block;
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 0.8em;
+        }
+        .comment_left{
+            width: 30%;
+            text-align: left;
+            color: #807979;
+        }
+        .comment_right{
+            width: 70%;
+            color: #756a6a;
+            text-align: center;
+        }
+        .sp{
+            font-size: 0.9em;
+        }
+        .sp1{
+            color: #58AAED;
+        }
+    </style>
+</head>
+<body>
+	<!--<img src="images/zhanshi.jpg" style="" class="backg">-->
+
+
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="text-decoration: none;cursor: pointer;" href="{:url('index/index/userMomentShow')}?uid={$obj['user_id']}"></a>
+        <h1 class="mui-title">说说详情</h1>
+    </header>
+
+    <div class="mui-content" style="background-color:#fff" id="muiContent">
+        <ul class="mui-table-view mui-table-view-chevron" id="momentHeader">
+            <li class="mui-table-view-cell mui-media">
+                <a class="mui-navigate" style="text-decoration: none;cursor: pointer;">
+                    <img class="mui-media-object mui-pull-left" src="{$obj['headimg']}">
+                    <div class="mui-media-body">
+                        <span>{$obj['name']}</span>
+                        <p class="mui-ellipsis" style="font-size: 0.7em;color: #8f8f94;">{$obj['add_ts']}</p>
+                    </div>
+                </a>
+            </li>
+            <p style="padding: 0 15px;">{$obj['content']}</p>
+
+            <ul class="mui-table-view mui-grid-view">
+                {php}if(count($obj['images']) == 1) $number = 12; else if (count($obj['images']) == 2) $number = 6; else   $number = 4;{/php}
+                {foreach name="$obj['images']" item="value"}
+                <li class="mui-table-view-cell mui-media mui-col-xs-{$number}">
+                    <a href="#">
+                        <img class="mui-media-object" src="{$value}">
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+
+            <div style="display: flex;flex-direction: row;justify-content: flex-end;margin-top: 10px;">
+                <span class="mui-badge mui-badge-{if condition="$obj['is_thumb']"}primary{else /}default{/if} dian" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-thumbs-up"></i> <span class="num">{$obj['thumb_num']}</span></span> 
+                <span class="mui-badge mui-badge-default ping" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-comment"></i> <span class="num">{$obj['comment_num']}</span></span> 
+                <span class="mui-badge mui-badge-{if condition="$obj['is_collect']"}primary{else /}default{/if} shou" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-heart"></i> <span class="num">{$obj['collect_num']}</span></span>
+            </div>
+        </ul>
+        <ul class="mui-table-view" id="comment_ul">
+            {if condition="count($commentObj)>0"}
+            <li class="mui-table-view-divider" style="font-size: 0.8em;">评论详情</li>
+            {else /}
+            <li class="mui-table-view-divider" style="font-size: 0.8em;">暂无评论</li>
+            {/if}
+            {foreach $commentObj as $value}
+            <li class="mui-table-view-cell mui-collapse" cid="{$value['id']}">
+                <a class="mui-navigate-right" href="#">
+                    <span class="comment_left comment_span">{$value['user_name']}</span>
+                    <span class="mui-badge mui-badge-success">1</span>
+                    <!-- <span class="comment_right comment_span">{$value['content']}</span> -->
+                </a>
+                <div class="mui-collapse-content">
+                    <p>
+                        <span class="sp1 sp">{$value['user_name']}</span>：
+                        <span class="sp2 sp">{$value['content']}</span>
+                    </p>
+                </div>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div style="display: block;height: 50px;width: 100%;opacity: 0;background-color: #EFEFF4;">
+    </div>
+
+    {include file="common/foot" /}
+    <script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            mid = {$mid};//说说的ID
+            user_id = {$obj['user_id']};//发说说人的用户ID
+            thumbUrl = '{:url("index/moment/thumb")}';
+            collectUrl = '{:url("index/see/collect")}';
+            commentUrl = '{:url("index/see/comment")}';
+            identity = {$identity};//当前访问者的身份
+            uid = '{$uid}';//当前访问者的身份
+
+            $('#yi').click(function(){
+                window.location.href="/index/index/zhanshi.html#user";
+            })
+            $('#dao').click(function(){
+                window.location.href="/index/index/zhanshi.html#activity";
+            })
+            $('#jia').click(function(){
+                window.location.href="/index/index/center";
+            })
+            $(document).on('touchstart', '#yi', function(){
+                window.location.href="/index/index/zhanshi.html#user";
+            })
+            $(document).on('touchstart', '#dao', function(){
+                window.location.href="/index/index/zhanshi.html#activity";
+            })
+            $(document).on('touchstart', '#jia', function(){
+                window.location.href="/index/index/center";
+            })
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.dian').click(function() {
+                if (!identity) {
+                    layer.msg('尚未注册，无法点赞。', {time: 1000});
+                    layer.confirm('尚未注册，无法点赞。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+
+                // if ($(this).hasClass('mui-badge-default')) {
+                    var type = 1;//给别人点赞
+                    // var number = prevNumber+1;
+                    
+                // } else {
+                    // var type = 0;//取消点赞
+                    // var number = prevNumber-1;
+                    // $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                // }
+                // dom.html(number);
+                var that = $(this);
+                //发ajax
+                $.ajax({
+                    url: thumbUrl,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        type: type,
+                        mid: mid
+                    },
+                    success: function(data) {
+                        if (data.errcode == 0) {
+                            dom.html(prevNumber+data.jia);
+                            that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                            // if (type == 1) {
+                            //     var number = prevNumber+1;
+                            //     layer.msg('点赞失败', {time: 1000});
+                            //     that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                            // } else {
+                            //     var number = prevNumber-1;
+                            //     layer.msg('取消点赞失败', {time: 1000});
+                            //     that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                            // }
+                        }
+                    },
+                    error: function() {
+                    }
+                })
+            })
+
+            $('.shou').click(function(){
+                if (!identity) {
+                    layer.msg('尚未注册，无法收藏。', {time: 1000});
+                    layer.confirm('尚未注册，无法收藏。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                if (identity == 2) {
+                    // layer.msg('非会员不能收藏!', {time: 1000});
+                    layer.confirm('您不是付费会员，无法收藏。是否查看付费详情？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/user/payVip")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                    return false;
+                }
+                if (uid == user_id) {
+                    layer.msg('不能收藏自己的说说!', {time: 1000});
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+
+                if ($(this).hasClass('mui-badge-default')) {
+                    var type = 1;//收藏该说说
+                    var number = prevNumber+1;
+                    $(this).removeClass('mui-badge-default').addClass('mui-badge-primary');
+                } else {
+                    var type = 0;//取消收藏
+                    var number = prevNumber-1;
+                    $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                }
+                dom.html(number);
+                var that = $(this);
+
+                //发ajax
+                $.ajax({
+                    url: collectUrl,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        type: type,
+                        mid: mid
+                    },
+                    success: function(data) {
+                        if (data.errcode == 1) {
+                            dom.html(prevNumber);
+                            if (type == 1) {
+                                var number = prevNumber+1;
+                                layer.msg('收藏失败', {time: 1000});
+                                that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                            } else {
+                                var number = prevNumber-1;
+                                layer.msg('取消收藏失败', {time: 1000});
+                                that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                            }
+                        } else if (data.errcode == 2) {
+                            dom.html(prevNumber);
+                            layer.msg('不能收藏自己的说说');
+                            that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                        } else if (data.errcode == 3) {
+                            dom.html(prevNumber);
+                            layer.msg('非会员无法收藏');
+                            that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                        }
+                    },
+                    error: function() {
+                        dom.html(prevNumber);
+                        if (type == 1) {
+                            var number = prevNumber+1;
+                            that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                        } else {
+                            var number = prevNumber-1;
+                            that.removeClass('mui-badge-primary').addClass('mui-badge-default');
+                        }
+                    }
+                })
+            })
+
+            $('.ping').click(function(){
+                if (!identity) {
+                    // layer.msg('尚未注册，无法评论。', {time: 1000});
+                    layer.confirm('尚未注册，无法评论。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                if (identity == 2) {
+                    // layer.msg('您不是付费会员，无法评论。', {time: 1000});
+                    layer.confirm('您不是付费会员，无法评论。是否查看付费详情？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/user/payVip")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+
+                // if ($(this).hasClass('mui-badge-default')) {
+                //     var type = 1;//评论该说说
+                //     var number = prevNumber+1;
+                //     $(this).removeClass('mui-badge-default').addClass('mui-badge-primary');
+                // } else {
+                //     var type = 0;//取消点赞
+                //     var number = prevNumber-1;
+                //     $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                // }
+                // dom.html(number);
+
+                //弹框输入评论
+                var btnArray = ['取消', '评论'];
+                mui.prompt('请输入你的评论：', '你的评论', '', btnArray, function(e) {
+                    if (e.index == 0) {
+                        // console.log('谢谢你的评语：' + e.value);
+                    } else {
+                        if (e.value == '') {
+                            layer.msg('评论不能为空');
+                        }
+                        $.ajax({
+                            url: commentUrl,
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                msg: e.value.trim(),
+                                mid: mid
+                            },
+                            success: function(data) {
+                                if (data.errcode == 0) {
+                                    layer.msg('评论成功', {time: 1000});
+                                    $('#comment_ul').append('<li class="mui-table-view-cell mui-collapse mui-active" cid="'+data.cid+'"> <a class="mui-navigate-right" href="#"> <span class="comment_left comment_span">'+data.name+'</span> <span class="mui-badge mui-badge-success">1</span> </a> <div class="mui-collapse-content"> <p> <span class="sp1 sp">'+data.name+'</span>： <span class="sp2 sp">'+e.value+'</span> </p> </div> </li>');
+                                    dom.html(prevNumber+1);
+                                }
+                            }
+                        })
+                    }
+                })
+                //发ajax
+                // $.ajax({
+                //     url: collectUrl,
+                //     type: 'post',
+                //     dataType: 'json',
+                //     data: {
+                //         type: type,
+                //         mid: mid
+                //     },
+                //     success: function(data) {
+                //         if (data.errcode == 1) {
+                //             dom.html(prevNumber);
+                //             if (type == 1) {
+                //                 var number = prevNumber+1;
+                //                 layer.msg('点赞失败', {time: 1000});
+                //                 $(this).removeClass('mui-badge-default').addClass('mui-badge-primary');
+                //             } else {
+                //                 var number = prevNumber-1;
+                //                 layer.msg('取消点赞失败', {time: 1000});
+                //                 $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                //             }
+                //         } else if (data.errcode == 2) {
+                //             dom.html(prevNumber);
+                //             layer.msg('不能收藏自己的说说');
+                //             $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                //         } else if (data.errcode == 3) {
+                //             dom.html(prevNumber);
+                //             layer.msg('非会员无法收藏');
+                //             $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                //         }
+                //     },
+                //     error: function() {
+                //         dom.html(prevNumber);
+                //         if (type == 1) {
+                //             var number = prevNumber+1;
+                //             $(this).removeClass('mui-badge-default').addClass('mui-badge-primary');
+                //         } else {
+                //             var number = prevNumber-1;
+                //             $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                //         }
+                //     }
+                // })
+            })
+        })
+    </script>
+</body>
+</html>
+

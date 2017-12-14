@@ -1,0 +1,90 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box light-grey">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-globe"></i>学生消耗详情</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="clearfix">
+                                <div class="btn-group">
+                                </div>
+                                <form action="{:url('admin/human/allExpendStudent')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                    <input type="hidden" name="student_no" value="{$student_no}">
+                                    <div class="chzn-container" style="float: left;margin-right: 15px;">
+                                        <span style="position: relative;top: 3px;">请选择日期查找:</span> <input size="16" type="text" value="{if !empty($today)}{$today}{/if}" placeholder="-请选择月份-" name="homework_time" readonly class="form_datetime">
+                                    </div>
+
+                                    <div style="float:right;">
+                                        <!--<input type="button" onclick="editManage(0)" class="btn green" value="添　加"/>-->
+                                        <input type="submit" class="btn green" value="搜　索"/>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div style="height: 15px;"></div>
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>学生姓名</th>
+                                    <th>学生学号</th>
+                                    <th>科目</th>
+                                    <th>消耗总数</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {foreach $studentExpend as $key=>$expend}
+                                <tr class="odd gradeX">
+                                    <td>{$key+1}</td>
+                                    <td>{$expend['student_name']}</td>
+                                    <td>{$expend['student_no']}</td>
+                                    <td>{$expend['subject_name']}</td>
+                                    <td>{$expend['expend_many']}</td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                            <div class="" style="width:30%;margin: 0 auto">
+                                {include file='Default/common/page'}
+                            </div>
+                            <div class="expend-total">总消耗:<span style="color: firebrick">{$total}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .expend-total{
+        float: right;
+        position: relative;
+        font-size: 18px;
+        top: -30px;
+        right: 2%;
+    }
+</style>
+<script src="/static/admin/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+
+
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm',
+        weekStart: 1,
+        autoclose: true,
+        startView: 3,
+        minView: 3,
+        forceParse: false,
+        language: 'zh-CN'
+    });
+</script>
+{include file='Default/common/footer'}

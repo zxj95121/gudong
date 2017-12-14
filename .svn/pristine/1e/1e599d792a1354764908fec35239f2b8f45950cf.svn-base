@@ -1,0 +1,46 @@
+$(function(){
+	var imgWidth = $('.pdiv:eq(0)').width();
+	$('.pdiv').css('height', imgWidth+'px');
+
+	var spaceWidth = parseInt(($('.div-photo').width()-3*imgWidth)/3);
+
+	//上边距
+	$('.pdiv:gt(2)').css('marginTop', spaceWidth+'px');
+	// 左右边距
+	$('.pdiv').each(function(){
+		var index = parseInt($(this).index('.pdiv'))%3;
+		if (index < 2) {
+			$(this).css('marginRight', spaceWidth+'px');
+		}
+		if (index < 1){
+			$(this).css('marginLeft', 0.5*spaceWidth+'px');
+		}
+	})
+})
+
+
+wx.ready(function(){
+
+		$('.gd-head-right').click(function(){
+			wx.closeWindow();
+		})
+
+		$('.addphoto').click(function(){
+			wx.chooseImage({
+
+		    count: 9, // 默认9
+
+		    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+
+		    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+
+		    success: function (res) {
+
+		        var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+		        console.log(localIds);
+		    }
+
+		});
+	})
+
+})

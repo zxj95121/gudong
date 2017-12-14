@@ -1,0 +1,113 @@
+<?php
+namespace app\admin\controller;
+use app\common\model\RedConfigModel;
+use app\common\model\StoreModel;
+use app\common\model\UserModel;
+use app\common\service\helperService;
+use think\Db;
+use think\Validate;
+
+class RedConfig extends Base{
+    /**
+     * 研值红包配置首页
+     * @return mixed
+     */
+    public function index(){
+        $params = $this->request->param();
+
+        $where = [
+//            'user_no'=>isset($params['user_no'])?$params['user_no']:'',
+        ];
+        $where = array_filter($where);
+
+        $page = isset($params['page'])?intval($params['page']):1;
+        $pageSize = 10;
+
+
+        $redConfigModel = new RedConfigModel();
+        $res = $redConfigModel->getPage($page,$pageSize,$where,false);
+        $totalCount = $redConfigModel->getPage(0,0,$where,true);
+        $pageString = helperService::createPage($totalCount,
+            $page ,'RedConfig/index',$params,$pageSize);
+
+        $this->assign('page',$pageString);
+        $this->assign('list',$res);
+
+        $userModel = new UserModel();
+        $userList  = $userModel->getMulti(['status'=>1,'mobile'=>['neq','']]);
+        $this->assign('userList',$userList);
+
+
+        $arr_title = ['序号','需要支付的研值','红包最小值','红包最大值','参与活动赠送研值'];
+        $this->assign('my_rule',$arr_title);
+
+        $this->assign('user_no',isset($params['user_no'])?$params['user_no']:'');
+
+        return $this->fetch($this->_layout.'/'.$this->controller_name.'/'.$this->action_name);
+    }
+
+
+    /**
+     * 编辑信息
+     */
+    public function operation_info()
+    {
+        $params = $this->request->param();
+        if(!empty($params)){
+            $info = $this->getInfo($params);
+            $this->assign('info',$info);
+        }
+        return $this->fetch($this->_layout . '/' . $this->controller_name . '/' . $this->action_name);
+    }
+
+    /**
+     * 保存信息
+     */
+    public function save_info(){
+        $params = $this->request->param();
+//        var_dump($params);exit;
+        $rule = [
+            'id'=>'number',
+            'pay|需要支付的研值'=>'require|max:100',
+            'min|红包最小值'=>'require|max:100',
+            'max|红包最大值'=>'require|max:100',
+            'back|参与活动赠送研值'=>'require|max:100',
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+        $redConfigModel = new RedConfigModel();
+        $data = [
+            'pay' => $params['pay'],
+            'min' => $params['min'],
+            'max' => $params['max'],
+            'back' => $params['back']
+        ];
+
+        if (!empty($params['id'])) {
+            $res = $redConfigModel->saveData($data, ['id' => $params['id']]);
+
+        } else {
+            $res = $redConfigModel->saveData($data);
+        }
+        if ($res!==false) {
+            $this->redirect($params['backUrl']);
+        } else {
+            die("<script>alert('操作有误，请稍后重试。');window.location.href='" . url('admin/RedConfig/index') . "'</script>");
+        }
+    }
+    /**
+     * 获取信息
+     * @param $params
+     * @return array|false|\PDOStatement|string|\think\Model
+     */
+    public function getInfo($params){
+        $redConfigModel = new RedConfigModel();
+        if(!empty($params['id'])){
+            $res = $redConfigModel->getOne(['id'=>$params['id']]);
+            $this->assign('info',$res);
+            return $res;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑用户信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/human/saveStudent')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+
+                                <input type="hidden" name="student_id" value="{$student['student_id']}">
+                                <div class="control-group">
+                                    <label class="control-label">姓名:<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$student['student_name']}" name="student_name" data-required="1" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+                             
+                                <div class="control-group">
+                                    <label class="control-label">头　像：</label>
+                                    <div class="controls">
+                                        <div class="new-btn-group">
+                                            <button class="btn green">上传头像</button>
+                                            <input type="file" name="header_img" value="{$student['student_headerImg']}"/>
+                                            <span {if empty($student['student_headerImg'])}style="display:none;"{/if}><i class="icon-ok-circle green-icon"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">家长编号:<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$student['parent_no']}" name="parent_no" data-required="1" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">性　别：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="student_sex" data-placeholder="-请选择性别-" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="1" {if 1 == $student['student_sex']}selected{/if}>男</option>
+                                            <option value="2" {if 2 == $student['student_sex']}selected{/if}>女</option>
+                                            <option value="3" {if 3 == $student['student_sex']}selected{/if}>未知</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">门　店：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="store_id" data-placeholder="-请选择门店-" tabindex="1">
+                                            <option value=""></option>
+                                            {foreach $allStore as $store}
+                                            <option value="{$store['store_id']}" {if $student['student_store'] == $store['store_id']}selected{/if}>{$store['store_name']}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                </div>
+                           
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">save</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">return</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.new-btn-group').delegate('input[type="file"]','change',function(){
+        $('.new-btn-group span').show();
+    });
+</script>
+{include file='Default/common/footer'}

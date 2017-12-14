@@ -1,0 +1,23 @@
+setTimeout(showPage, 1)
+
+var isClick = false;
+function showPage() {
+	$('body').css('display', 'block')
+}
+$('.open').on('click', function() {
+	var yanzhi = parseInt($('#rest_yz').attr('num'));
+	var pay = parseInt($('#pay_yz').attr('num'));
+	if (yanzhi < pay) {
+		layer.msg('研值不足，无法参与活动!', {time: 1000});
+		return false;
+	}
+
+	$(this).removeClass('open').addClass('active');
+	setTimeout(function(){
+		// window.location.href = '';
+		if (!isClick)
+			$('#form')[0].submit();
+		isClick = true;
+		// $(this).removeClass('active').addClass('open');
+	}, 1200)
+})

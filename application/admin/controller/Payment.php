@@ -1,0 +1,67 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: tseXD
+ * Date: 2017/9/28
+ * Time: 15:11
+ */
+
+namespace app\admin\controller;
+use app\common\model\PaymentModel;
+use app\common\model\UserModel;
+use app\common\service\helperService;
+use think\Validate;
+
+
+class Payment extends Base {
+
+    /**
+     * 支付记录首页
+     * @return mixed
+     */
+    public function index()
+    {
+        $params = $this->request->param();
+
+        $rule = [
+            'user_no|用户'=>'max:100',
+            'page'=>'number',
+        ];
+        $validate = new Validate($rule);
+        if(!$validate->check($params)){
+            $this->error($validate->getError(),null,'',3);
+        }
+        $add_ts =isset($params['add_ts']) ? $params['add_ts'] : '';
+        $where = [
+            'payment.user_no'=>isset($params['user_no'])?$params['user_no']:'',
+        ];
+
+        $where = array_filter($where);
+
+        $page = isset($params['page']) ? intval($params['page']):1;
+        $pageSize = 10;
+
+        $paymentModel = new PaymentModel();
+        $res = $paymentModel->getPaymentPage($page, $pageSize, $where, false,'payment.add_ts desc');
+        $totalCount = $paymentModel->getPaymentPage(0, 0, $where, true,'payment.add_ts desc');
+        $pageString = helperService::createPage($totalCount,
+            $page, 'Payment/index', $params, $pageSize);
+
+        $userModel = new UserModel();
+        $userList  = $userModel->getMulti(['status'=>1]);
+        $this->assign('userList',$userList);
+
+        $this->assign('page', $pageString);
+        $this->assign('list', $res);
+
+        $arr_title = ['序号','付款人','支付商户编号', '支付金额','添加时间','状态'];
+        $this->assign('my_rule', $arr_title);
+
+        $this->assign('page_no', ($page - 1) * $pageSize);
+
+        $this->assign('add_ts', isset($params['add_ts']) ? $params['add_ts'] : date('Y-m-d'));
+        $this->assign('user_no',isset($params['user_no'])?$params['user_no']:0);
+
+        return $this->fetch($this->_layout . '/' . $this->controller_name . '/' . $this->action_name);
+    }
+}

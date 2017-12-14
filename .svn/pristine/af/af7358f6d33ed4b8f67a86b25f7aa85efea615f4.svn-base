@@ -1,0 +1,1130 @@
+---------------------------------------------------------------
+[ 2017-09-16T17:11:36+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] www.ezj.com/ [运行时间：0.164716s][吞吐率：6.07req/s] [内存消耗：1,426.84kb] [文件加载：40]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:11:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/staff.html
+[ info ] www.ezj.com/admin/human/staff.html [运行时间：0.097511s][吞吐率：10.26req/s] [内存消耗：1,898.74kb] [文件加载：48]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'staff',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553102',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:11:42+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.ezj.com/admin/index/login.html [运行时间：0.072602s][吞吐率：13.77req/s] [内存消耗：1,744.20kb] [文件加载：46]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553102; PHPSESSID=g0r5uapgkplna85pivib4rthj6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:11:42+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] www.ezj.com/captcha.html [运行时间：0.154739s][吞吐率：6.46req/s] [内存消耗：1,453.12kb] [文件加载：39]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553102; PHPSESSID=g0r5uapgkplna85pivib4rthj6',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ G:\phpstudy\phpstudy\WWW\zaojiao\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:12:00+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/index/loginIn.html
+[ info ] www.ezj.com/admin/index/loginIn.html [运行时间：0.176959s][吞吐率：5.65req/s] [内存消耗：2,935.95kb] [文件加载：58]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.ezj.com',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553108',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'check_code' => '5v4kf',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001743s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.060410s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.020477s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:12:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login.html
+[ info ] www.ezj.com/admin/index/login.html [运行时间：0.029488s][吞吐率：33.91req/s] [内存消耗：1,744.65kb] [文件加载：46]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553108',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:13:27+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/index/loginIn.html
+[ info ] www.ezj.com/admin/index/loginIn.html [运行时间：0.062515s][吞吐率：16.00req/s] [内存消耗：2,872.77kb] [文件加载：57]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'content-length' => '47',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.ezj.com',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553128',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'li442',
+  'password' => '123456',
+  'check_code' => '5v4kf',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000905s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.017201s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'li442'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.000367s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:13:27+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/main/index.html
+[ info ] www.ezj.com/admin/main/index.html [运行时间：0.123841s][吞吐率：8.07req/s] [内存消耗：2,958.34kb] [文件加载：58]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553128',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Main->index[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Main.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\main\index.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.020730s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.019191s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.003132s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001064s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000626s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/bg/jiant.png
+[ info ] www.ezj.com/static/admin/image/bg/jiant.png [运行时间：0.065124s][吞吐率：15.36req/s] [内存消耗：1,427.09kb] [文件加载：40]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/static/admin/css/style-metro.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553128',
+)
+[ info ] [ PARAM ] array (
+  'bg' => 'jiant.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:13:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/management/refund.html
+[ info ] www.ezj.com/admin/management/refund.html [运行时间：0.021860s][吞吐率：45.75req/s] [内存消耗：1,427.76kb] [文件加载：40]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'management',
+    2 => 'refund',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/main/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553128',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:13:34+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/main/index.html
+[ info ] www.ezj.com/admin/main/index.html [运行时间：0.116512s][吞吐率：8.58req/s] [内存消耗：2,958.14kb] [文件加载：58]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/index/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553128',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Main->index[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Main.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\main\index.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000636s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.018364s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.020987s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.002333s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000761s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:13:46+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/staff.html
+[ info ] www.ezj.com/admin/human/staff.html [运行时间：0.136271s][吞吐率：7.34req/s] [内存消耗：3,130.02kb] [文件加载：59]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'staff',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/main/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553220',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->staff[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\staff.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'staffList',
+  7 => 'store_id',
+  8 => 'subject_id',
+  9 => 'gender',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000666s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.017344s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.022169s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT `staff`.*,`role`.`role_name` FROM `staff` `staff` LEFT JOIN `role` `role` ON `role`.`role_id`=`staff`.`role_id` LIMIT 0,10 [ RunTime:0.001510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `staff` `staff` LEFT JOIN `role` `role` ON `role`.`role_id`=`staff`.`role_id` LIMIT 1 [ RunTime:0.000202s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:13:46+08:00 ] 127.0.0.1 127.0.0.1 GET /20170801/44ca691b811d162c85d1f9b1ddd761ab.png
+[ info ] www.ezj.com/20170801/44ca691b811d162c85d1f9b1ddd761ab.png [运行时间：0.032634s][吞吐率：30.64req/s] [内存消耗：1,426.90kb] [文件加载：40]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '20170801',
+    1 => '44ca691b811d162c85d1f9b1ddd761ab.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/staff.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553220',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-16T17:13:49+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.134546s][吞吐率：7.43req/s] [内存消耗：3,220.38kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/staff.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553220',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.016074s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.017012s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.016323s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000403s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:16:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.157496s][吞吐率：6.35req/s] [内存消耗：3,220.39kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/staff.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553235',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000661s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.018407s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.016854s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.016168s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000298s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:16:35+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.120206s][吞吐率：8.32req/s] [内存消耗：3,220.38kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553372',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.017357s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.015695s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001063s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.015326s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000296s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:16:38+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/homework.html
+[ info ] www.ezj.com/admin/human/homework.html [运行时间：0.139996s][吞吐率：7.14req/s] [内存消耗：3,176.02kb] [文件加载：63]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'homework',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553372',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->homework[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000613s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.016604s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.018187s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001677s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001014s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000915s ]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'english.homework' doesn't exist[G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2017-09-16T17:16:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.124693s][吞吐率：8.02req/s] [内存消耗：3,220.38kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553372',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000793s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.017266s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.016669s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001085s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.019501s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:16:59+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.135876s][吞吐率：7.36req/s] [内存消耗：3,219.82kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553407',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000822s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.017659s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.017387s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.016552s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000321s ]
+---------------------------------------------------------------
+[ 2017-09-16T17:17:02+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/attendance.html
+[ info ] www.ezj.com/admin/human/attendance.html [运行时间：0.115658s][吞吐率：8.65req/s] [内存消耗：3,181.77kb] [文件加载：63]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'attendance',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553407',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->attendance[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000705s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.016095s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.016687s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000660s ]
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'english.attendance' doesn't exist[G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[ 2017-09-16T17:17:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/human/user.html
+[ info ] www.ezj.com/admin/human/user.html [运行时间：0.122541s][吞吐率：8.16req/s] [内存消耗：3,219.77kb] [文件加载：60]
+[ info ] [ LANG ] G:\phpstudy\phpstudy\WWW\zaojiao\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'human',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.ezj.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.ezj.com/admin/human/user.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g0r5uapgkplna85pivib4rthj6; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1504596328,1505553102; Hm_lpvt_3c8ecbfa472e76b0340d7a701a04197e=1505553407',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Human->user[ G:\phpstudy\phpstudy\WWW\zaojiao\application\admin\controller\Human.php ]
+[ info ] [ VIEW ] G:\phpstudy\phpstudy\WWW\zaojiao\public/../application/admin\view\Default\human\user.html [ array (
+  0 => 'website_title',
+  1 => 'copy_right',
+  2 => 'controller_name',
+  3 => 'action_name',
+  4 => '_SideMenu',
+  5 => 'page',
+  6 => 'user_name',
+  7 => 'gender',
+  8 => 'grade',
+  9 => 'recommend',
+  10 => 'allUser',
+  11 => 'userList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000604s ] mysql:dbname=english;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.018302s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.017943s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 1  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 8  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 10  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 14  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 24  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000954s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 29  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 36  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 2 LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 40  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.016729s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY user_id desc LIMIT 0,10 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` IN (21,20,19,18,17,16,15,13) [ RunTime:0.000284s ]

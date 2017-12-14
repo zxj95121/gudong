@@ -1,0 +1,74 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑红包信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/RedConfig/save_info')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="{$info['id']|default=''}">
+                                <input type="hidden" name="backUrl" value="{$backUrl}">
+
+
+                                <div class="control-group">
+                                  <label class="control-label">需要支付的研值：<span class="required">*</span></label>
+                                    <div class="controls">
+                                     <input type="text" value="{$info['pay']|default=''}" name="pay" class="span6 m-wrap"
+                                           placeholder="请输入需要支付的研值" >
+                                </div>
+                              </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">红包最小值：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$info['min']|default=''}" name="min" class="span6 m-wrap"
+                                               placeholder="请输入需要红包最小值" >
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label">红包最大值：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$info['max']|default=''}" name="max" class="span6 m-wrap"
+                                               placeholder="请输入需要红包最大值" >
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label">参与活动赠送研值：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$info['back']|default=''}" name="back" class="span6 m-wrap"
+                                               placeholder="请输入需要参与活动赠送研值" >
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">保存</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">返回</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 实例化编辑器 -->
+
+{include file='Default/common/footer'}
+

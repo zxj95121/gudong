@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <title></title>
+    <style type="text/css">
+        .mui-table-view-cell:after{
+            height: 0px;
+        }
+        #momentHeader{
+            padding-bottom: 12px;
+        }
+        #setBtn a
+        {
+            font-size: 0.89em;
+        }
+        #menu{
+            min-width: 80px;
+        }
+    </style>
+</head>
+<body>
+	<!--<img src="images/zhanshi.jpg" style="" class="backg">-->
+
+
+    <header id="header" class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="text-decoration: none;cursor: pointer;" href="{:url('index/moment/myMoment')}"></a>
+        <h1 class="mui-title">in记详情</h1>
+        <!-- <a class="mui-icon mui-icon-gear mui-pull-right" style="text-decoration: none;cursor: pointer;"> -->
+        <li role="presentation" class="dropdown mui-pull-right" id="setBtn">
+            <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="mui-icon mui-icon-gear"></i>
+                <!-- <span class="caret"></span> -->
+            </a>
+            <ul id="menu" class="dropdown-menu" aria-labelledby="drop5" style="left: auto;right: 0px;">
+              <li><a href="#setSee"><i class="glyphicon glyphicon-asterisk"></i>访问权限</a></li>
+              <li><a href="#setDel" id="del_a"><i class="glyphicon glyphicon-trash"></i>删除说说</a></li>
+            </ul>
+        </li>
+        <!-- </a> -->
+    </header>
+    <div class="mui-content" style="background-color:#fff">
+        <ul class="mui-table-view mui-table-view-chevron" id="momentHeader">
+            <li class="mui-table-view-cell mui-media">
+                <a class="mui-navigate" style="text-decoration: none;cursor: pointer;">
+                    <img class="mui-media-object mui-pull-left" src="{$obj['headimg']}">
+                    <div class="mui-media-body">
+                        <span>{$obj['name']}</span> <i id="i_see" class="glyphicon glyphicon-eye-close" style="font-size: 12px;color: #bdbdbd;{if condition="$obj['see'] == 1"}display: none;{/if}"></i>
+                        <p class="mui-ellipsis" style="font-size: 0.7em;color: #8f8f94;">{$obj['add_ts']}</p>
+                    </div>
+                </a>
+            </li>
+            <p style="padding: 0 15px;">{$obj['content']}</p>
+
+            <ul class="mui-table-view mui-grid-view">
+                {php}if(count($obj['images']) == 1) $number = 12; else if (count($obj['images']) == 2) $number = 6; else   $number = 4;{/php}
+                {foreach name="$obj['images']" item="value"}
+                <li class="mui-table-view-cell mui-media mui-col-xs-{$number}">
+                    <a href="#">
+                        <img class="mui-media-object" src="{$value}">
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+
+            <div style="display: flex;flex-direction: row;justify-content: flex-end;margin-top: 10px;">
+                <span class="mui-badge mui-badge-default dian" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-thumbs-up"></i> <span class="num">{$obj['thumb_num']}</span></span> 
+                <span class="mui-badge mui-badge-default ping" style="cursor: pointer;margin-right: 5px;" onclick="window.location.href='{:url('index/moment/comment')}?mid={$mid}';"><i class="glyphicon glyphicon-comment"></i> <span class="num">{$obj['comment_num']}</span></span> 
+                <span class="mui-badge mui-badge-danger shou" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-heart"></i> <span class="num">{$obj['collect_num']}</span></span>
+            </div>
+        </ul>
+        
+    </div><div style="display: block;height: 50px;width: 100%;opacity: 0;background-color: #EFEFF4;">
+    </div>
+
+    <div id="setSee" class="mui-popover mui-popover-action mui-popover-bottom" style="display: none;">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#" see="seeJustself" style="cursor: pointer;">仅自己可见</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="#" style="cursor: pointer;">所有人可见</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#" style="cursor: pointer;"><b>取消</b></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="setDel" class="mui-popover mui-popover-action mui-popover-bottom" style="display: none;">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#" see="del" style="cursor: pointer;">确认删除</a>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="#" style="cursor: pointer;"><b>取消</b></a>
+            </li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript" src="/static/index/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            mid = {$mid};//说说的ID
+            thumbUrl = '{:url("index/moment/thumb")}';
+
+
+            mui.init({
+                swipeBack:true //启用右滑关闭功能
+            });
+            mui('body').on('shown', '.mui-popover', function(e) {
+                //console.log('shown', e.detail.id);//detail为当前popover元素
+            });
+            mui('body').on('hidden', '.mui-popover', function(e) {
+                //console.log('hidden', e.detail.id);//detail为当前popover元素
+            });
+            mui('body').on('tap', '#setSee li>a', function() {
+                var a = this;
+                var parent;
+                //根据点击按钮，反推当前是哪个actionsheet
+                for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+                    if (parent.classList.contains('mui-popover-action')) {
+                        break;
+                    }
+                }
+                //关闭actionsheet
+                mui('#' + parent.id).popover('toggle');
+                if ($(a).attr('see') == 'seeJustself') {
+                    //仅自己可见
+                    ajaxSee(0);
+                    // console.log('仅自己可见');
+                } else {
+                    // console.log('所有人可见');
+                    ajaxSee(1);
+                }
+                $('#drop5')[0].click();
+            })
+
+            mui('body').on('tap', '#setDel li>a', function(){
+                var a = this;
+                var parent;
+                //根据点击按钮，反推当前是哪个actionsheet
+                for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+                    if (parent.classList.contains('mui-popover-action')) {
+                        break;
+                    }
+                }
+                //关闭actionsheet
+                mui('#' + parent.id).popover('toggle');
+                if ($(a).attr('see') == 'del') {
+                    //删除
+                    // console.log('删除说说');
+                    $.ajax({
+                        url: '/index/moment/deleteSelfMoment',
+                        dataType: 'json',
+                        type:'post',
+                        data: {
+                            mid: mid
+                        },
+                        success: function(data) {
+                            if (data.errcode == 0) {
+                                layer.msg('删除成功', {time: 1000});
+                                window.location.href = '/index/moment/myMoment';
+                            }
+                        }
+                    })
+                }
+                $('#drop5')[0].click();
+            }) 
+
+
+            // $('#del_a').click(function(){
+            //     $('#drop5').find('.dropdown-backdrop').remove();
+            //     $('#setSee').addClass('mui-active').show();
+            //     $('body').append('<div class="mui-backdrop mui-backdrop-action mui-active" style=""></div>');
+            // })
+
+            // $('#drop5').click(function(){
+            //     $(this).find('.dropdown-backdrop').remove();
+            // })
+    
+        })
+
+        function ajaxSee(see) {
+            $.ajax({
+                url: '/index/moment/setSee',
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    mid: mid,
+                    see: see
+                },
+                success: function(data) {
+                    if (data.errcode == 0) {
+                        if (see == 1){
+                            layer.msg('已设置对所有人可见', {time: 1000});
+                            $('#i_see').hide();
+                        } else {
+                            layer.msg('已设置只对自己可见', {time: 1000});
+                            $('#i_see').css('display', 'inline-block');
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.dian').click(function() {
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+
+                // if ($(this).hasClass('mui-badge-default')) {
+                //     var type = 1;//给自己点赞
+                //     var number = prevNumber+1;
+                //     $(this).removeClass('mui-badge-default').addClass('mui-badge-primary');
+                // } else {
+                //     var type = 0;//取消点赞
+                //     var number = prevNumber-1;
+                //     $(this).removeClass('mui-badge-primary').addClass('mui-badge-default');
+                // }
+                // dom.html(number);
+                var that = $(this);
+                //发ajax
+                $.ajax({
+                    url: thumbUrl,
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        type: 1,
+                        mid: mid
+                    },
+                    success: function(data) {
+                        if (data.errcode == 0) {
+                            dom.html(prevNumber+data.jia);
+                            that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                            
+                        }
+                    },
+                    error: function() {
+                    }
+                })
+            })
+
+            $('.shou').click(function(){
+                layer.msg('自己不能收藏自己');
+            })
+        })
+    </script>
+</body>
+</html>
+

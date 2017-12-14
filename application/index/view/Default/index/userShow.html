@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title></title>
+    <style>
+       .backg{
+            position: absolute;
+            top:0;
+            width: 100%;
+            height: 40.63rem;
+            opacity: 0.4;
+        }
+        .mot li{
+            cursor: pointer;
+        }
+        .comment_ul a:hover{
+            text-decoration: none;
+        }
+        .oneMoment .momentHeader::after{
+            height: 0px;
+        }
+        .oneMoment{
+            border-bottom: 1px solid #c8c7cc;
+            padding-bottom: 5px;
+        }
+        .comment_ul::after{
+            height: 1px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 15px;
+            content: '';
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: #c8c7cc;
+        }
+        #muiContent img:hover{
+            transform: scale(1);
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/css/previewimage.css">
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="/static/index/js/common.js"></script>
+    <link href="/static/index/css/xiaoyou.css" type="text/css" rel="stylesheet">
+    <!-- <link href="/static/index/css/style.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/static/index/js/mui/dist/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="/static/index/bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!--<img src="images/xiaoyou.jpg" style="" class="backg">-->
+
+    <div class="mui-content" style="background-color:#fff" id="muiContent">
+        <div id="head" aid="10">
+            <div class="top">
+                <a class="return" href="/index/index/zhanshi.html#user" style="cursor: pointer;"><img src="/static/index/images/timg4.png"  alt="" / class="act"></a>
+                <span>{$userObj['user_name']}</span>
+                <a href=""><img src="{$userObj['header_img']}" alt="" / class="img"></a>
+                
+                <a href=""><img hidden="hidden" src="/static/index/images/timg12.png" alt="" / class="asd"></a>
+            </div>
+
+            <ul class="mot" style="margin-top: 14px;">
+                <li style="">
+                    <p>{$num['moment_num']}</p>
+                    <span>说说</span>
+                    </a>
+                </li>
+                <li>
+                    <p>{$num['sub_num']}</p>
+                    <span>关注</span>
+                </li>
+                <li>
+                    <p>{$num['fan_num']}</p>
+                    <span>粉丝</span>
+                </li>
+            </ul>
+        
+    </div>
+
+
+
+    <div class="mui-content" id="momentsDiv" style="background-color:#fff">
+        {foreach $moments as $key => $value}
+        <div class="oneMoment" mid="{$value['basic']['moment_id']}">
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell mui-media momentHeader">
+                    <p class="mui-ellipsis" style="font-size: 0.7em;color: #8f8f94;">{$value['basic']['add_ts']}</p>
+                </li>
+                <p style="padding: 0 15px;">{$value['basic']['content']}</p>
+
+                <ul class="mui-table-view mui-grid-view" style="padding: 0px 8px 8px 0px;" class="momentImage">
+                    {foreach $value['basic']['images'] as $v}
+                    {php}
+                        if(count($value['basic']['images']) == 1) 
+                            $imageSize = 12;
+                        else if (count($value['basic']['images'] == 2)) {
+                            $imageSize = 6;
+                        }
+                        else
+                            $imageSize = 4;
+                    {/php}
+                    <li class="mui-table-view-cell mui-media mui-col-xs-{$imageSize}">
+
+                            <img class="mui-media-object" src="{$v}" data-preview-src="" data-preview-group="{php}echo $key+1;{/php}">
+
+                    </li>
+                    {/foreach}
+                </ul>
+                <ul class="mui-table-view mui-grid-view">
+                    <div style="display: flex;flex-direction: row;justify-content: flex-end;margin-top: 10px;">
+                        <span class="mui-badge mui-badge-{if condition="$value['basic']['is_thumb']"}primary{else /}default{/if} dian" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-thumbs-up"></i> <span class="num">{$value['basic']['thumb_num']}</span></span> 
+                        <span class="mui-badge mui-badge-default ping" style="cursor: pointer;margin-right: 5px;"><i class="glyphicon glyphicon-comment"></i> <span class="num">{$value['basic']['comment_num']}</span></span> 
+                        <span class="mui-badge mui-badge-{if condition="$value['basic']['is_collect']"}primary{else /}default{/if} shou" style="cursor: pointer;"><i class="glyphicon glyphicon-heart"></i> <span class="num">{$value['basic']['collect_num']}</span></span>
+                    </div>
+                </ul>
+            </ul>
+            
+            <!-- 评论的div -->
+            <ul class="mui-table-view comment_ul">
+                <li class="mui-table-view-divider" style="font-size: 0.8em;">评论详情</li>
+                {foreach $value['comment'] as $data}
+                <li class="mui-table-view-cell mui-collapse" cid="{$data['id']}">
+                    <a class="mui-navigate-right" href="javascript:void(0);">
+                        <span class="comment_left comment_span">{$data['user_name']}</span>
+                        <span class="mui-badge mui-badge-success">1</span>
+                    </a>
+                    <div class="mui-collapse-content">
+                        <p>
+                            <span class="sp1 sp">{$data['user_name']}</span>：
+                            <span class="sp2 sp">{$data['content']}</span>
+                        </p>
+                    </div>
+                </li>
+                {/foreach}
+                {if condition="!count($value['comment'])"}
+                    <p style="text-align: center;width: 100%;color: #BFBCBC;font-size: 12px;"> - 暂时没有评论 - </p>
+                {/if}
+            </ul>
+        </div>
+        {/foreach}
+    </div>
+    
+    {if condition="!count($moments)"}
+    <p style="text-align: center;width: 100%;color: #BFBCBC;font-size: 12px;"> - 用户尚未发表任何说说 - </p>
+    {else /}
+        <div style="text-align: center;width: 100%;color: #BFBCBC;font-size: 12px;padding-top: 3px;">
+            {$page}
+        </div>
+    {/if}
+    <div style="display: block;height: 50px;width: 100%;opacity: 0;background-color: #EFEFF4;">
+    </div>
+
+
+    {include file="common/foot" /}
+    <div id="__MUI_PREVIEWIMAGE" class="mui-slider mui-preview-image mui-fullscreen"><div class="mui-preview-header"><span class="mui-preview-indicator"></span></div><div class="mui-slider-group"></div><div class="mui-preview-footer mui-hidden"></div><div class="mui-preview-loading"><span class="mui-spinner mui-spinner-white"></span></div></div>
+</body>
+    <script type="text/javascript" src="/static/index/layer/layer.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/dist/js/mui.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/js/mui.zoom.js"></script>
+    <script type="text/javascript" src="/static/index/js/mui/js/mui.previewimage.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            identity = {$identity};//当前访问者的身份
+            uid = '{$uid}';//当前访问者的身份
+
+
+            mui.previewImage();
+            mui('body').on('tap','a',function(){document.location.href=this.href;});
+    
+        })
+    </script>
+    <script>
+
+    $(function(){
+     //       $(".return").click(function(){
+        //  window.location.href="zhanshi.html"
+        // })
+        $('#yi').click(function(){
+            window.location.href="/index/index/zhanshi.html#user";
+        })
+        $('#dao').click(function(){
+            window.location.href="/index/index/zhanshi.html#activity";
+        })
+        $('#jia').click(function(){
+            window.location.href="/index/index/center";
+        })
+        $(document).on('touchstart', '#yi', function(){
+            window.location.href="/index/index/zhanshi.html#user";
+        })
+        $(document).on('touchstart', '#dao', function(){
+            window.location.href="/index/index/zhanshi.html#activity";
+        })
+        $(document).on('touchstart', '#jia', function(){
+            window.location.href="/index/index/center";
+        })
+
+        // var hash = window.location.hash;
+        // if (hash == '#center') {
+        //     $('.return').attr('href', '/index/index/center.html');
+        // } else if (hash == '#comment') {
+        //     $('.return').attr('href', '/index/moment/myComment.html');
+        // }
+
+        // $('.pagination li').each(function(){
+        //     $(this).click(function(){
+        //         var href = $(this).find('a').attr('href');
+        //         window.location.href = href;
+        //     })
+        // })
+    })
+</script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.dian').click(function() {
+                if (!identity) {
+                    layer.msg('尚未注册，无法点赞。', {time: 1000});
+                    layer.confirm('尚未注册，无法点赞。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+                var mid = $(this).parents('.oneMoment').attr('mid');
+
+                var that = $(this);
+                //发ajax
+                $.ajax({
+                    url: '/index/moment/thumb',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        type: 1,
+                        mid: mid
+                    },
+                    success: function(data) {
+                        if (data.errcode == 0) {
+                            dom.html(prevNumber+data.jia);
+                            that.removeClass('mui-badge-default').addClass('mui-badge-primary');
+                        }
+                    },
+                    error: function() {
+                    }
+                })
+            })
+
+
+            //收藏
+            $('.shou').click(function(){
+                var count = parseInt($(this).find('.num').html().trim());
+                if (!identity) {
+                    layer.msg('尚未注册，无法收藏。', {time: 1000});
+                    layer.confirm('尚未注册，无法收藏。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                if (identity == 2) {
+                    // layer.msg('非会员不能收藏');
+                    layer.confirm('您不是付费会员，无法收藏。是否查看付费详情？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/user/payVip")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+
+                if ($(this).hasClass('mui-badge-primary')) {
+                    layer.msg('您已经收藏过了！');
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = count;
+                var mid = $(this).parents('.oneMoment').attr('mid');
+
+                //发ajax
+                $.ajax({
+                    url: '/index/see/collect',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        type: 1,
+                        mid: mid
+                    },
+                    success: function(data) {
+                        if (data.errcode == 0) {
+                            dom.html(prevNumber+1);
+                            dom.parent().removeClass('mui-badge-default').addClass('mui-badge-primary');
+                            dom.prev().attr('src', '/static/index/images/star16white.png');
+                        } else if (data.errcode == 2) {
+                            layer.msg('您不能收藏自己的说说');
+                        }
+                    },
+                    error: function() {
+                    }
+                })
+            })
+
+
+
+            //开始评论
+
+
+            $('.ping').click(function(){
+                if (!identity) {
+                    // layer.msg('尚未注册，无法评论。', {time: 1000});
+                    layer.confirm('尚未注册，无法评论。是否现在去注册？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/index/login")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                if (identity == 2) {
+                    // layer.msg('您不是付费会员，无法评论。', {time: 1000});
+                    layer.confirm('您不是付费会员，无法评论。是否查看付费详情？', {
+                        btn: ['确认','取消'] //按钮
+                    }, function(index){
+                        layer.close(index);
+                        window.location.href = '{:url("index/user/payVip")}';
+                    }, function(index){
+                        layer.close(index);
+                    });
+                    return false;
+                }
+                var dom = $(this).find('.num');
+                var prevNumber = parseInt(dom.html().trim());
+                var mid = $(this).parents('.oneMoment').attr('mid');
+                var MomDom = $(this).parents('.oneMoment');
+
+                var scrollHeight = $(window).scrollTop(); 
+
+                //弹框输入评论
+                var btnArray = ['取消', '评论'];
+                mui.prompt('请输入你的评论：', '你的评论', '', btnArray, function(e) {
+                    $(window).scrollTop(scrollHeight);
+                    if (e.index == 0) {
+                        // console.log('谢谢你的评语：' + e.value);
+                    } else {
+                        if (e.value == '') {
+                            layer.msg('评论不能为空');
+                        }
+                        $.ajax({
+                            url: '/index/see/comment',
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                msg: e.value.trim(),
+                                mid: mid
+                            },
+                            success: function(data) {
+                                if (data.errcode == 0) {
+                                    layer.msg('评论成功', {time: 1000});
+                                    // console.log(scrollHeight);
+                                    MomDom.find('.comment_ul').append('<li class="mui-table-view-cell mui-collapse mui-active" cid="'+data.cid+'"> <a class="mui-navigate-right" href="#"> <span class="comment_left comment_span">'+data.name+'</span> <span class="mui-badge mui-badge-success">1</span> </a> <div class="mui-collapse-content"> <p> <span class="sp1 sp">'+data.name+'</span>： <span class="sp2 sp">'+e.value+'</span> </p> </div> </li>');
+                                    dom.html(prevNumber+1);
+                                    $(window).scrollTop(scrollHeight);
+                                }
+                            }
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+</html>
+

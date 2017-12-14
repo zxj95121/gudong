@@ -1,0 +1,164 @@
+<?php
+namespace app\common\model;
+/**
+ * 用户表
+ * Class UserModel
+ * @package app\common\model
+ */
+
+use app\common\model\AddFaceInfoModel;
+use app\common\model\CollectionModel;
+use app\common\model\ThumbModel;
+
+use think\Db;
+use think\Session;
+
+class UserModel extends BaseModel
+{
+    protected $table = 'user';
+
+    public static function getAllUser($id)
+    {
+    	$obj = Db::table('user')
+    		->where('status', '=', 1)
+    		->where('user_id', '<>', $id)
+    		->select();
+   		return $obj;
+    }
+
+   	//根据uid获取用户身份
+   	public static function getIdentity($uid) {
+   		// if (!$uid)
+   			// return 0;//非注册用户
+
+   		$userObj = UserModel::get($uid);
+      if (!$userObj->mobile) {
+        return 0;//游客
+      }
+   		if ($userObj->isMember == 1)
+   			return 1;//会员
+   		return 2;//非会员
+   	}
+
+
+    //存入新的用户
+    public static function newOpenidUser($userInfo)
+    {
+        $nickname = $userInfo['nickname'] ? $userInfo['nickname'] : '用户'.date('is', time()).rand(10,99);
+        $gender = $userInfo['sex'] ? $userInfo['sex'] : 3;
+        $header_img = $userInfo['headimgurl'] ? $userInfo['headimgurl'] : '/static/index/images/user-default.png';
+
+        $user_noArr = UserModel::where('status', 1)
+            ->field('user_no')
+            ->select();
+
+        $unArr = array();
+        foreach ($user_noArr as $value) {
+            $unArr[] = $value['user_no'];
+        }
+
+        if (!$unArr) {
+            $unArr = array(123);
+        }
+
+        while(1) {
+            $un = '' . rand(100, 999) . rand(100, 999);
+            $res_un = array_diff(array($un), $unArr);
+            if (count($res_un))
+                break;
+        }
+
+        $data = array(
+            'user_no' => $res_un[0],
+            'user_name' => $nickname,
+            'gender' => $gender,
+            'add_ts' => time(),
+            'header_img' => $header_img,
+            'isMember' => 2,
+            'openid' => Session::get('openid')
+        );
+
+        $userModel = new UserModel();
+        $user_id = $userModel->saveData($data);
+        
+        return $user_id;
+    }
+
+
+    //计算用户需要支付多少钱才能成为付费会员
+    public static function getPayVipPrice($uid)
+    {
+        $userObj = UserModel::get($uid);
+        $number = $userObj['yanzhi'];
+
+        $price = 1999;
+
+        if ($number >= $price)
+            return 0;
+        $extral = number_format(($price - $number), 2);
+        return $extral;
+    }
+
+
+    //对用户添加研值(必须是当前的Session,不支持对别人添加)
+    public static function addFaceScore($type, $uid='') {
+        //如果传入的是字符串，则是操作类型
+        //如果传入数字，直接加对应研值
+        if (!$uid) {
+            $uid = Session::get('uid');
+        }
+        $flight = UserModel::get($uid);
+        $face = $flight->yanzhi;
+
+        if (is_numeric($type)) {
+            $flight->yanzhi = $face + (int)$type;
+            $flight->save();
+            return true;
+        } else {
+            $obj = AddFaceInfoModel::get(['type' => $type]);
+            if (!$obj) {
+                //没找到这种加研值方式
+                return false;
+            }
+            $num = $obj->num;
+            $flight->yanzhi = $face + (int)$num;
+            $flight->save();
+            return true;
+        }
+    }
+
+
+    /*获取某用户相关信息，基本信息+研值，点赞，关注，被关注等！*/
+    public static function getAllMessage($uid)
+    {
+        $userObj = UserModel::get($uid)->toArray();
+        $userObj['thumb_num'] = ThumbModel::where('thumb.status', 1)
+            ->join('moment m', 'm.moment_id = thumb.moment_id', 'left')
+            ->where('m.user_id', $uid)
+            ->sum('thumb.times');
+        if (!$userObj['thumb_num']) {
+            $userObj['thumb_num'] = 0;
+        }
+
+        $userObj['collected_num'] = CollectionModel::where('collection.status', 1)
+            ->join('moment m', 'm.moment_id = collection.moment_id', 'left')
+            ->where('m.user_id', $uid)
+            ->count();
+
+        $userObj['collect_num'] = CollectionModel::where('collection.status', 1)
+            ->where('user_id', $uid)
+            ->where('moment_id', '<>', '')
+            ->count();
+
+        $userObj['subed_num'] = UserSubModel::where('sub_uid', $uid)
+            ->where('status', 1)
+            ->count();
+
+        $userObj['sub_num'] = UserSubModel::where('uid', $uid)
+            ->where('status', 1)
+            ->count();
+
+        return $userObj;
+    }
+
+}

@@ -1,0 +1,99 @@
+{include file='Default/common/header'}
+<div class="page-content">
+    <div class="container-fluid">
+        {include file='Default/common/path_link'}
+        <div id="dashboard">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption"><i class="icon-reorder"></i>编辑员工信息</div>
+                            <div class="tools">
+                                <a href="javascript:void(0);" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form action="{:url('/admin/human/saveStaff')}" method="post" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+
+                                <input type="hidden" name="staff_id" value="{$staffInfo['staff_id']}">
+                                <div class="control-group">
+                                    <label class="control-label">员工姓名：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" value="{$staffInfo['staff_name']}" name="staff_name" data-required="1" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">密　码：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input name="password" maxlength="18" value="{$staffInfo['password']}"  type="password" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">性　别：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="gender" data-placeholder="-请选择性别-" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="1" {if 1 == $staffInfo['gender']}selected{/if}>男</option>
+                                            <option value="2" {if 2 == $staffInfo['gender']}selected{/if}>女</option>
+                                            <option value="3" {if 3 == $staffInfo['gender']}selected{/if}>未知</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">头　像：</label>
+                                    <div class="controls">
+                                        <div class="new-btn-group">
+                                            <button class="btn green">上传头像</button>
+                                            <input type="file" name="header_img" value="{$staffInfo['header_img']}"/>
+                                            <span {if empty($staffInfo['header_img'])}style="display:none;"{/if}><i class="icon-ok-circle green-icon"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">　手机号：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input name="mobile" value="{$staffInfo['mobile']}" maxlength="11"  type="text" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">　状　态：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="status" data-placeholder="-请选择门店-" tabindex="1">
+                                            <option value=""></option>
+                                            <option value="1" {if 1 == $staffInfo['status']}selected{/if}>正常</option>
+                                            <option value="2" {if 2 == $staffInfo['status']}selected{/if}>休假</option>
+                                            <option value="3" {if 3 == $staffInfo['status']}selected{/if}>离职</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">角色选择：<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select class="select_info chosen" data-with-diselect="1" name="role_id" data-placeholder="-请选择角色-" tabindex="1">
+                                            <option value=""></option>
+                                            {foreach $roleList as $role}
+                                            <option value="{$role['role_id']}" {if $role['role_id'] == $staffInfo['role_id']}selected{/if} >{$role['role_name']}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn green">save</button>
+                                    <a href="javascript:window.history.go(-1)" class="btn">return</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.new-btn-group').delegate('input[type="file"]','change',function(){
+        $('.new-btn-group span').show();
+    });
+</script>
+{include file='Default/common/footer'}

@@ -1,0 +1,3 @@
+<?php
+//000000000060a:15:{s:8:"staff_id";i:2;s:8:"staff_no";s:16:"2017082510054998";s:10:"staff_name";s:5:"li442";s:8:"password";s:32:"e10adc3949ba59abbe56e057f20f883e";s:8:"store_id";i:1;s:6:"gender";i:1;s:10:"header_img";s:54:"\uploads\20170801\44ca691b811d162c85d1f9b1ddd761ab.png";s:6:"mobile";s:11:"13655551111";s:10:"subject_id";i:8;s:6:"status";i:1;s:6:"add_ts";i:0;s:7:"last_ts";i:1504538380;s:14:"staff_birthday";i:-520848000;s:7:"role_id";i:1;s:6:"openid";s:6:"123456";}
+?>

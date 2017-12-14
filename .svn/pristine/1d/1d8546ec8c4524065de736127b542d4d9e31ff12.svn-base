@@ -1,0 +1,19 @@
+$(function(){
+	$('.i_prev_url').click(function(){
+		history.back();
+	})
+
+
+	$('textarea').keyup(function(){
+		var val = $(this).val();
+		if (val != '') {
+			$('.sendBtn').addClass('button-active');
+		} else {
+			$('.sendBtn').removeClass('button-active');
+		}
+	})
+
+	$('.comment-right-content').click(function(){
+		$('textarea').attr('placeholder', '回复'+$(this).prev().find('.crt-name').html());
+	})
+})
