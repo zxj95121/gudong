@@ -35,20 +35,19 @@
     	}
     	#center-image{
     		margin-top: 1rem !important;
-    		display: flex;
-    		flex-direction: row;
-    		flex-wrap: wrap;
-    		justify-content: space-between;
     	}
     	#center-image a{
-    		width: 49%;
-		    height: 13rem;
-		    border: 1px solid #ccc;
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    overflow: hidden;
-		    margin-top: 0.6rem;
+    		width: 13rem;
+    height: 13rem;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    float: left;
+    margin-top: 1rem;
     	}
     	#center-image a img{
     		width: 100%;

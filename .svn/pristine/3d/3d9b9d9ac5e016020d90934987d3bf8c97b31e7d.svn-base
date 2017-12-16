@@ -12,7 +12,6 @@ use app\common\model\ProvinceModel;
 use app\common\model\CityModel;
 use app\common\model\AreaModel;
 use app\common\model\GiftModel;
-use app\common\model\GiftOrderModel;
 use app\common\service\helperService;
 use think\Db;
 use think\Validate;
@@ -699,9 +698,6 @@ class Index extends Base
         foreach ($momentsObj as $value) {
             $data[] = MomentModel::getMomentDetail($value['moment_id']);
         }
-        $giftOrderModel=  new GiftOrderModel();
-        $giftCount = $giftOrderModel->getCount(['status'=>1,'uid'=>$user_id]);
-        $this->assign('giftCount',$giftCount);
         $this->assign('momentsObj', $data);
 
         $userModel=  new UserModel();
@@ -728,7 +724,7 @@ class Index extends Base
         $photoObj = MomentModel::getPhotos($photo_page);
         $this->assign('photoObj', $photoObj);
         $this->assign('photo_page', $photo_page);
-        // exit;
+
         // return $this->fetch($this->_layout . "/index/center");
         return $this->fetch($this->_layout . "/index_new/center");
 
@@ -741,8 +737,8 @@ class Index extends Base
         $page = (int)$params['page'];
         /*获取照片集信息*/
         $photoObj = MomentModel::getPhotos($page);
-        return json(['errcode'=>0,'msg'=>'success','result'=>$photoObj,'photo_page'=>$page+1]);
-/*        return $this->json(['errcode'=>0,'result'=>$photoObj,'photo_page'=>$page+1]);*/
+        
+        return $this->json(['errcode'=>0,'result'=>$photoObj,'photo_page'=>$page+1]);
     }
 
 

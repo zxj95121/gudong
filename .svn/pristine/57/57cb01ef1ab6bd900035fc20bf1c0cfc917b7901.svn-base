@@ -171,14 +171,14 @@ class MomentModel extends BaseModel
         
     }
 
-    public static function getPhotos($page){
+    public static function getPhotos($page = 1, $pageSize= 6){
         $get = array_merge($_GET, array( 'page'=> $page));
         $_GET = $get;
         $variable = MomentModel::where('status', 1)
             ->where('user_id', Session::get('uid'))
             ->order('add_ts desc')
             // ->select('moment_id, img')
-            ->paginate(100);
+            ->paginate($pageSize);
 
         $result = array();
         foreach ($variable as $key => $value) {

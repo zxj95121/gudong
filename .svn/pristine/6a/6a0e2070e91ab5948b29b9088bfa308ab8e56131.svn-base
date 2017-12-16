@@ -728,7 +728,7 @@ class Index extends Base
         $photoObj = MomentModel::getPhotos($photo_page);
         $this->assign('photoObj', $photoObj);
         $this->assign('photo_page', $photo_page);
-        // exit;
+
         // return $this->fetch($this->_layout . "/index/center");
         return $this->fetch($this->_layout . "/index_new/center");
 
@@ -741,7 +741,7 @@ class Index extends Base
         $page = (int)$params['page'];
         /*获取照片集信息*/
         $photoObj = MomentModel::getPhotos($page);
-        return json(['errcode'=>0,'msg'=>'success','result'=>$photoObj,'photo_page'=>$page+1]);
+        HelperService::returnJson(['errcode'=>0,'msg'=>'success','result'=>$photoObj,'photo_page'=>$page+1]);
 /*        return $this->json(['errcode'=>0,'result'=>$photoObj,'photo_page'=>$page+1]);*/
     }
 

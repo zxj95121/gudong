@@ -30,10 +30,10 @@ class Base extends Controller
         $showTop = Config::get('top');
         $this->assign('base_path', '/static/index');
         $this->assign('showTop', $showTop);
-        //设置用户session;方便本地测试
+        //设置用户session;
         if(strpos($this->request->domain(), 'u.dong')) {
             Session::set('openid', 'oY_EK1S_s1Gcji46K7f22mniA8cQ');
-            Session::set('uid', '1');
+            Session::set('uid', '5');
         }
 
         if (Session::get('urlParam')) {

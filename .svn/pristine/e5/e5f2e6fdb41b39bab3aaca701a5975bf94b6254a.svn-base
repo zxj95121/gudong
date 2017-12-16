@@ -1,0 +1,101 @@
+$('.gd-type-child').click(function(){
+	var href = $(this).attr('href');
+	$('.center-content').hide();
+	$(href).show();
+
+	var index = $(this).index('.gd-type-child');
+	$('.gd-type-child').each(function(){
+		var name = $(this).attr('name');
+		$(this).find('img').attr('src', '/static/index/images/'+name+'_80_blue.png');
+	})
+	var name = $('.gd-type-child').eq(index).attr('name')
+	$('.gd-type-child').eq(index).find('img').attr('src', '/static/index/images/'+name+'_80.png')
+})
+
+window.currentPage = 1;
+
+
+/*----------------------------------------加载更多---------------------------------------*/
+window.loading = false;
+$(function(){
+	    		var curPage=0;
+    		$.ajax({
+			            url: '/index/index/ajaxgetPhotos',
+			            type: 'GET',
+			            async:false,
+			            data:{page:curPage+1},
+			            dataType:'json',
+			            success: function (val) {
+			            	curPage++;
+			            	var data= val.result;
+			            	var html="";
+			            	$.each(data, function(i,v){
+			            		html+="<a><img onclick='seeDetail("+v.id+")' src='"+v.img+"'></a>"
+			            	} )
+			            	$("#center-image").append(html);
+			            }
+			        })
+/*    		$('#center-image').unbind("scroll").bind("scroll", function(e){
+    			alert("1111");
+			    var sum = this.scrollHeight; 
+			    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+			    	if (window.load_all) {
+			    		return false;
+			    	}
+			    	$('#PullUp').show();
+			    	if (!window.loading) {
+			    		window.loading = true;
+				    	$.ajax({
+						            url: '/index/index/ajaxgetPhotos',
+						            type: 'GET',
+						            async:false,
+						            data:{page:curPage+1},
+						            dataType:'json',
+						            success: function (val) {
+						            	var data= val.result;
+						            	var html="";
+						            	$.each(data, function(i,v){
+						            		html+="<a><img onclick='seeDetail("+v.id+")' src='"+v.img+"'></a>"
+						            	} )
+						            	$("#center-image").append(html);
+						            }
+						        })
+				    }
+			    }
+			});*/
+})
+$(window).unbind("scroll").bind("scroll", function(e){
+    var sum = $(document).height(); 
+    console.log(sum);
+    console.log($(this).scrollTop());
+    if (sum <= $(this).scrollTop() + $(this).height()+100) {
+    	if (!window.loading) {
+    		$('#PullUp').show();
+    		window.loading = true;
+	    	$.ajax({
+	    		url: '/index/index/nextMyMoment',
+	    		dataType: 'html',
+	    		type: 'get',
+	    		data: {
+	    			page: window.currentPage+1
+	    		},
+	    		success: function(data) {
+	    			if (data.trim()){
+		    			$('#PullUp').before(data);
+		    			$('#PullUp').hide();
+		    			window.currentPage = window.currentPage+1;
+		    			window.loading = false;
+		    		} else {
+		    			layer.msg('没有更多说说了');
+		    			window.loading = true;
+		    			$('#PullUp').hide();
+		    		}
+	    		}
+	    	})
+	    	// $('#moment1').load('/index/index/nextZhanshi?page='+(window.currentPage+1), function(){
+	    	// 	$('#PullUp').hide();
+	    	// 	window.loading = false;
+	    	// });
+	    }
+    }
+});
