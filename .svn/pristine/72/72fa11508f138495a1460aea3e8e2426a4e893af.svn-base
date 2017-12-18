@@ -119,15 +119,6 @@ class MomentModel extends BaseModel
     }
 
 
-    /*对说说的阅读量加1*/
-    public static function addReadNum($mid)
-    {
-        $flight = MomentModel::get($mid);
-        $flight->read_num = $flight->read_num + 1;
-        $flight->save();
-    }
-
-
     public static function delOneMoment($mid)
     {
         //删除这个说说

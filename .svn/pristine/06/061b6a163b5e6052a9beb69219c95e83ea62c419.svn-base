@@ -305,10 +305,6 @@ class Moment extends Base
         $user_id = $request['uid'];
         $uid = Session::get('uid');
 
-        if ($user_id == $uid) {
-            return json(array('errcode' => 1));
-        }
-
         $flight = new UserNoseeModel();
         $flight->uid = $uid;
         $flight->nosee_id = $user_id;
@@ -316,29 +312,6 @@ class Moment extends Base
         $flight->save();
 
         return json(array('errcode' => 0));
-    }
-
-    /**
-     * [moment_see description]
-     * @author wells
-     * @return [int] [mid]
-     */
-    public function moment_see()
-    {
-        $request = $this->request->param();
-        $mid = $request['mid'];
-        $see = $request['see'];
-
-        $flight = MomentModel::get($mid);
-
-        if (Session::get('uid') != $flight->user_id) {
-            //非正常用户发起请求
-            return json(['errcode' => 1]);
-        }
-
-        $flight->see = $see;
-        $flight->save();
-        return json(['errcode' => 0]);
     }
 
     //用户点赞

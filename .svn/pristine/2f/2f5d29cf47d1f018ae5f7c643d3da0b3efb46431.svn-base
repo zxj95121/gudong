@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/static/index/js/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="/static/index/css/new/rem.css">
     <link rel="stylesheet" type="text/css" href="/static/index/css/new/show_common.css">
-    <link rel="stylesheet" type="text/css" href="/static/index/css/new/moment.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/static/index/css/new/moment.css">
     <style>
     	.mui-popup-title{
     		display: none;
@@ -228,7 +228,7 @@
     	identity = {$identity};
     </script>
     <script type="text/javascript" src="/static/index/js/new/show_common.js?v=3"></script>
-    <script type="text/javascript" src="/static/index/js/new/moment.js?v=2"></script>
+    <script type="text/javascript" src="/static/index/js/new/moment.js"></script>
 	{include file="Default/index_new/foot" /}
     <script type="text/javascript">
     	$("#yi span").css("color","black");

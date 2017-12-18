@@ -13,7 +13,6 @@ use app\common\model\CityModel;
 use app\common\model\AreaModel;
 use app\common\model\GiftModel;
 use app\common\model\GiftOrderModel;
-use app\common\model\UserNoseeModel;
 use app\common\service\helperService;
 use think\Db;
 use think\Validate;
@@ -231,7 +230,6 @@ class Index extends Base
             })
             ->alias('m')
             ->join('user u', 'u.user_id = m.user_id', 'right')
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->order('m.add_ts desc')
             ->paginate(4);
@@ -240,7 +238,6 @@ class Index extends Base
 
         $data = array();
         foreach ($momentsObj as $value) {
-            MomentModel::addReadNum($value['moment_id']);
             $data[] = MomentModel::getMomentDetail($value['moment_id']);
         }
         $this->assign('momentsObj', $data);
@@ -281,8 +278,6 @@ class Index extends Base
                     });
             })
             ->alias('m')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->order('m.add_ts desc')
             ->where('m.moment_id', '>', $mid)
             ->count();
@@ -299,8 +294,6 @@ class Index extends Base
             })
             ->alias('m')
             ->join('user u', 'u.user_id = m.user_id', 'right')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->order('m.add_ts desc')
             ->limit($count+1, 4)
@@ -309,7 +302,6 @@ class Index extends Base
 
         $data = array();
         foreach ($momentsObj as $value) {
-            MomentModel::addReadNum($value['moment_id']);
             $data[] = MomentModel::getMomentDetail($value['moment_id']);
         }
         $this->assign('momentsObj', $data);
@@ -345,8 +337,6 @@ class Index extends Base
             ->alias('m')
             ->order('m.add_ts desc')
             ->join('user u', 'u.user_id = m.user_id', 'left')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->where($genderWhere)
             ->where('m.moment_id', '>', $mid)
@@ -366,8 +356,6 @@ class Index extends Base
             })
             ->alias('m')
             ->join('user u', 'u.user_id = m.user_id', 'right')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->where($genderWhere)
             ->order('m.add_ts desc')
@@ -377,7 +365,6 @@ class Index extends Base
 
         $data = array();
         foreach ($momentsObj as $value) {
-            MomentModel::addReadNum($value['moment_id']);
             $data[] = MomentModel::getMomentDetail($value['moment_id']);
         }
         $this->assign('momentsObj', $data);
@@ -410,8 +397,6 @@ class Index extends Base
             })
             ->alias('m')
             ->join('user u', 'u.user_id = m.user_id', 'left')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->order('m.add_ts desc')
             ->where($cityWhere)
@@ -424,7 +409,6 @@ class Index extends Base
         }
 
         $momentsObj = MomentModel::where(['m.status' => 1])
-            /*看对所有人可见的说说，但又不包括自己的*/
             ->where(function ($query) {
                 $query->where('m.see', 1)
                     ->whereOr(function ($q) {
@@ -434,8 +418,6 @@ class Index extends Base
             })
             ->alias('m')
             ->join('user u', 'u.user_id = m.user_id', 'left')
-            /*不看此人*/
-            ->whereNotIn('m.user_id', UserNoseeModel::where(['uid' => Session::get('uid'), 'status' => 1])->column('nosee_id user_id'))
             ->where('u.status', 1)
             ->where($cityWhere)
             ->order('m.add_ts desc')
@@ -445,7 +427,6 @@ class Index extends Base
 
         $data = array();
         foreach ($momentsObj as $value) {
-            MomentModel::addReadNum($value['moment_id']);
             $data[] = MomentModel::getMomentDetail($value['moment_id']);
         }
         $this->assign('momentsObj', $data);

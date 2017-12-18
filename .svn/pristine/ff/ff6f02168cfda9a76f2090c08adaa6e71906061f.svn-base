@@ -1,0 +1,122 @@
+$('.gd-type-child').click(function(){
+	var href = $(this).attr('href');
+	$('.center-content').hide();
+	$(href).show();
+
+	var index = $(this).index('.gd-type-child');
+	$('.gd-type-child').each(function(){
+		var name = $(this).attr('name');
+		$(this).find('img').attr('src', '/static/index/images/'+name+'_80_blue.png');
+	})
+	var name = $('.gd-type-child').eq(index).attr('name')
+	$('.gd-type-child').eq(index).find('img').attr('src', '/static/index/images/'+name+'_80.png')
+})
+
+window.currentPage = 1;
+
+
+/*----------------------------------------加载更多---------------------------------------*/
+window.loading = false;
+window.loading_image = false;
+$(function(){
+	var curPage = parseInt($('#center-image').attr('curPage'));
+	$.ajax({
+        url: '/index/index/ajaxgetPhotos',
+        type: 'post',
+        // async:false,
+        data:{page:curPage++},
+        dataType:'json',
+        success: function (data) {
+        	$('#center-image').attr('curPage', curPage);
+        	var html = "";
+        	console.log(data);
+        	var lastMonth = $('#center-image').attr('month');
+        	$.each(data.result, function(i,v){
+        		if (i != lastMonth) {
+        			lastMonth = i;
+        			html += '<div id="image-month">'+i+'</div>';
+        		}
+        		$.each(v, function(p, q) {
+    				html += "<a style=\"background-image:url('"+q.img+"');\"><img onclick='seeDetail("+q.id+")' src='"+q.img+"'></a>"
+    			})
+        	})
+        	$('#center-image').attr('month', lastMonth);
+        	$("#center-image .fill-bottom").before(html);
+        }
+    })
+})
+$(window).unbind("scroll").bind("scroll", function(e){
+    var sum = $('.gd-message').height() + $('.gd-type').height() + $('.gd-header').height() + 16 + $('.gd-bg').height(); 
+    // console.log(sum);
+    // console.log($(this).scrollTop());
+    if ($('#center-moment').css('display') != 'none') {
+    	//这个是刷新加载说说
+    	sum = $('#center-moment').height() + sum;
+	    if (sum <= $(window).scrollTop() + $(window).height()+100) {
+	    	if (!window.loading) {
+	    		$('#PullUp').show();
+	    		window.loading = true;
+		    	$.ajax({
+		    		url: '/index/index/nextMyMoment',
+		    		dataType: 'html',
+		    		type: 'get',
+		    		data: {
+		    			page: window.currentPage+1
+		    		},
+		    		success: function(data) {
+		    			if (data.trim()){
+			    			$('#PullUp').before(data);
+			    			$('#PullUp').hide();
+			    			window.currentPage = window.currentPage+1;
+			    			window.loading = false;
+			    		} else {
+			    			layer.msg('没有更多说说了');
+			    			window.loading = true;
+			    			$('#PullUp').hide();
+			    		}
+		    		}
+		    	})
+		    }
+	    }
+	} else if ($('#center-image').css('display') != 'none') {
+    	//这个是刷新加载说说
+    	sum = $('#center-image').height() + sum;
+	    if (sum <= $(window).scrollTop() + $(window).height()+80) {
+	    	if (!window.loading_image) {
+	    		$('#PullUp_image').show();
+	    		window.loading_image = true;
+	    		var curPage = parseInt($('#center-image').attr('curPage'));
+		    	$.ajax({
+		    		url: '/index/index/ajaxgetPhotos',
+		    		dataType: 'json',
+		    		type: 'post',
+		    		data: {
+		    			page: curPage++
+		    		},
+		    		success: function(data) {
+		    			$('#center-image').attr('curPage', curPage);
+			        	var html = "";
+			        	// console.log(data);
+			        	var lastMonth = $('#center-image').attr('month');
+			        	$.each(data.result, function(i,v){
+			        		if (i != lastMonth) {
+			        			lastMonth = i;
+			        			html += '<div id="image-month">'+i+'</div>';
+			        		}
+			        		$.each(v, function(p, q) {
+			    				html += "<a style=\"background-image:url('"+q.img+"');\"><img onclick='seeDetail("+q.id+")' src='"+q.img+"'></a>"
+			    			})
+			        	})
+			        	$('#center-image').attr('month', lastMonth);
+			        	$("#center-image .fill-bottom").before(html);
+		    			if (data.result.length == 0){
+			    			layer.msg('没有更多照片了');
+			    			window.loading_image = true;
+			    			$('#PullUp_image').hide();
+			    		}
+		    		}
+		    	})
+		    }
+	    }
+	}
+});

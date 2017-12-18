@@ -265,9 +265,9 @@
 				<!--<div class="gd-popover-operate" see="delete">
 		        	删除此说说
 		        </div>-->
-<!-- 		        <div class="gd-popover-operate" see="moment_see">
+		        <div class="gd-popover-operate" see="moment_see">
 		        	仅自己可见
-		        </div> -->
+		        </div>
 		        <div class="gd-popover-operate" see="collect">
 		        	收藏
 		        </div>

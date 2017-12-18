@@ -265,9 +265,9 @@
 				<!--<div class="gd-popover-operate" see="delete">
 		        	删除此说说
 		        </div>-->
-<!-- 		        <div class="gd-popover-operate" see="moment_see">
+		        <div class="gd-popover-operate" see="moment_see">
 		        	仅自己可见
-		        </div> -->
+		        </div>
 		        <div class="gd-popover-operate" see="collect">
 		        	收藏
 		        </div>
@@ -286,8 +286,8 @@
     	identity = {$identity};
     </script>
     <!-- <script type="text/javascript" src="/static/index/js/new/show_common.js"></script> -->
-    <script type="text/javascript" src="/static/index/js/new/center.js?v=5"></script>
-    <script type="text/javascript" src="/static/index/js/new/moment.js?v=1"></script>
+    <script type="text/javascript" src="/static/index/js/new/center.js?v=2"></script>
+    <script type="text/javascript" src="/static/index/js/new/moment.js?v=3"></script>
 
     <script type="text/javascript">
     	$(function(){
