@@ -1,0 +1,2547 @@
+---------------------------------------------------------------
+[ 2017-11-28T11:27:27+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/zhanshi.html?c=0
+[ info ] gudong.com/index/index/zhanshi.html?c=0 [运行时间：2.149891s][吞吐率：0.47req/s] [内存消耗：3,648.85kb] [文件加载：67]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'zhanshi',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/center.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+  'c' => '0',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->zhanshi[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\zhanshi.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'momentsObj',
+  4 => 'identity',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056031s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.040151s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038154s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.039703s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 LIMIT 1 [ RunTime:0.041073s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 ORDER BY m.add_ts desc LIMIT 0,4 [ RunTime:0.040428s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 173 LIMIT 1 [ RunTime:0.039501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `comment` [ RunTime:0.038678s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 173  AND `status` = 1 [ RunTime:0.038538s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.038134s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 244 LIMIT 1 [ RunTime:0.040006s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.041125s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `thumb` [ RunTime:0.039161s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 173  AND `status` = 1 LIMIT 1 [ RunTime:0.037125s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 173  AND `status` = 1 LIMIT 1 [ RunTime:0.038391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `collection` [ RunTime:0.044863s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 173  AND `status` = 1 LIMIT 1 [ RunTime:0.041964s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 173  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.048444s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 173  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.040154s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_sub` [ RunTime:0.042830s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 229  AND `status` = 1 LIMIT 1 [ RunTime:0.038180s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 172 LIMIT 1 [ RunTime:0.037401s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 172  AND `status` = 1 [ RunTime:0.038718s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.038572s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 172  AND `status` = 1 LIMIT 1 [ RunTime:0.038733s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 172  AND `status` = 1 LIMIT 1 [ RunTime:0.039637s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 172  AND `status` = 1 LIMIT 1 [ RunTime:0.040085s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 172  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.039185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 172  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.039008s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 229  AND `status` = 1 LIMIT 1 [ RunTime:0.040455s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 171 LIMIT 1 [ RunTime:0.039375s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 171  AND `status` = 1 [ RunTime:0.041318s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.039577s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 171  AND `status` = 1 LIMIT 1 [ RunTime:0.038028s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 171  AND `status` = 1 LIMIT 1 [ RunTime:0.040219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 171  AND `status` = 1 LIMIT 1 [ RunTime:0.039028s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 171  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.038145s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 171  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.038710s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 229  AND `status` = 1 LIMIT 1 [ RunTime:0.037486s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 170 LIMIT 1 [ RunTime:0.040874s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 170  AND `status` = 1 [ RunTime:0.038935s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.038901s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 170  AND `status` = 1 LIMIT 1 [ RunTime:0.038989s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 170  AND `status` = 1 LIMIT 1 [ RunTime:0.039460s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 170  AND `status` = 1 LIMIT 1 [ RunTime:0.039977s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 170  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.049735s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 170  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.038093s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 229  AND `status` = 1 LIMIT 1 [ RunTime:0.040653s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.039307s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:29:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/center.html
+[ info ] gudong.com/index/index/center.html [运行时间：2.946227s][吞吐率：0.34req/s] [内存消耗：3,745.75kb] [文件加载：69]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'center',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=0',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->center[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\center.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'momentsObj',
+  4 => 'user',
+  5 => 'identity',
+  6 => 'invite_yanzhi',
+  7 => 'userObj',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069484s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042512s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041721s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.040270s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND `m`.`user_id` = '228'  AND `u`.`status` = 1 LIMIT 1 [ RunTime:0.041090s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND `m`.`user_id` = '228'  AND `u`.`status` = 1 ORDER BY m.add_ts desc LIMIT 0,4 [ RunTime:0.043254s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 160 LIMIT 1 [ RunTime:0.041694s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `comment` [ RunTime:0.044541s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 160  AND `status` = 1 [ RunTime:0.043875s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.040988s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.041712s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041599s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041108s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041638s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `thumb` [ RunTime:0.042331s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 160  AND `status` = 1 LIMIT 1 [ RunTime:0.041809s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 160  AND `status` = 1 LIMIT 1 [ RunTime:0.041290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `collection` [ RunTime:0.041376s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 160  AND `status` = 1 LIMIT 1 [ RunTime:0.041701s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 160  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.041428s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 160  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.040937s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 159 LIMIT 1 [ RunTime:0.041624s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 159  AND `status` = 1 [ RunTime:0.041828s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.042077s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.047863s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.043815s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.042821s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.044812s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 229 LIMIT 1 [ RunTime:0.043079s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041650s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 159  AND `status` = 1 LIMIT 1 [ RunTime:0.047262s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 159  AND `status` = 1 LIMIT 1 [ RunTime:0.040615s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 159  AND `status` = 1 LIMIT 1 [ RunTime:0.044996s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 159  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.043382s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 159  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.045795s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 142 LIMIT 1 [ RunTime:0.041618s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 142  AND `status` = 1 [ RunTime:0.041935s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041781s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.046151s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 142  AND `status` = 1 LIMIT 1 [ RunTime:0.041981s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 142  AND `status` = 1 LIMIT 1 [ RunTime:0.043608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 142  AND `status` = 1 LIMIT 1 [ RunTime:0.060269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 142  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.043173s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 142  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.043516s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 141 LIMIT 1 [ RunTime:0.041588s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 141  AND `status` = 1 [ RunTime:0.042493s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041121s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 141  AND `status` = 1 LIMIT 1 [ RunTime:0.042189s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 141  AND `status` = 1 LIMIT 1 [ RunTime:0.053961s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 141  AND `status` = 1 LIMIT 1 [ RunTime:0.043667s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 141  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.056915s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 141  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.041628s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `user_id` = 228 LIMIT 1 [ RunTime:0.041286s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.053484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `add_face_info` [ RunTime:0.042684s ]
+[ sql ] [ SQL ] SELECT * FROM `add_face_info` WHERE  `type` = 'invite' LIMIT 1 [ RunTime:0.040681s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.050556s ]
+[ sql ] [ SQL ] SELECT SUM(thumb.times) AS tp_sum FROM `thumb` LEFT JOIN `moment` `m` ON `m`.`moment_id`=`thumb`.`moment_id` WHERE  `thumb`.`status` = 1  AND `m`.`user_id` = '228' LIMIT 1 [ RunTime:0.058920s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` LEFT JOIN `moment` `m` ON `m`.`moment_id`=`collection`.`moment_id` WHERE  `collection`.`status` = 1  AND `m`.`user_id` = '228' LIMIT 1 [ RunTime:0.041437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_sub` [ RunTime:0.060709s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `sub_uid` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.050385s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.043547s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:29:07+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20171116/956786cd26beb7bbc46db2f50bf51518.JPG
+[ info ] gudong.com/uploads/20171116/956786cd26beb7bbc46db2f50bf51518.JPG [运行时间：0.037468s][吞吐率：26.69req/s] [内存消耗：1,430.82kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171116',
+    2 => '956786cd26beb7bbc46db2f50bf51518.JPG',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/center.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.187279s][吞吐率：5.34req/s] [内存消耗：3,013.88kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058337s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037620s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.037610s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/myMoment
+[ info ] gudong.com/index/moment/myMoment [运行时间：0.359094s][吞吐率：2.78req/s] [内存消耗：3,228.45kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'myMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->myMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index\myMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'identity',
+  4 => 'momentList',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058548s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039645s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.040300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.039503s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `user_id` = 228  AND `status` = 1 ORDER BY add_ts desc [ RunTime:0.041958s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041589s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171124/601e519171f6b31dde6bfd84c0797394.jpg
+[ info ] gudong.com/uploads/img/20171124/601e519171f6b31dde6bfd84c0797394.jpg [运行时间：0.038550s][吞吐率：25.94req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171124',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171124/600101a05d861b96f6566f3c0f64507e.jpg
+[ info ] gudong.com/uploads/img/20171124/600101a05d861b96f6566f3c0f64507e.jpg [运行时间：0.038575s][吞吐率：25.92req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171124',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171120/a6306be54f637a8b972cd17cf704d889.png
+[ info ] gudong.com/uploads/img/20171120/a6306be54f637a8b972cd17cf704d889.png [运行时间：0.041560s][吞吐率：24.06req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171120',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171117/905ed4c82842bd3239100d0648ad1fdc.JPG
+[ info ] gudong.com/uploads/img/20171117/905ed4c82842bd3239100d0648ad1fdc.JPG [运行时间：0.044284s][吞吐率：22.58req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171117',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171117/248e77a85b485723847278d49bce4d99.png
+[ info ] gudong.com/uploads/img/20171117/248e77a85b485723847278d49bce4d99.png [运行时间：0.073837s][吞吐率：13.54req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171117',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171116/fadf4c28f5251a201060963303ff574a.JPG
+[ info ] gudong.com/uploads/img/20171116/fadf4c28f5251a201060963303ff574a.JPG [运行时间：0.055228s][吞吐率：18.11req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171116',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171117/e33cd4381941922eac55dd904c218867.jpg
+[ info ] gudong.com/uploads/img/20171117/e33cd4381941922eac55dd904c218867.jpg [运行时间：0.064165s][吞吐率：15.58req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171117',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171120/d843ed0de9ad6fd79f66780161d3820f.jpg
+[ info ] gudong.com/uploads/img/20171120/d843ed0de9ad6fd79f66780161d3820f.jpg [运行时间：0.133567s][吞吐率：7.49req/s] [内存消耗：1,430.70kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171120',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171116/9844e64ba7886e85afa81268d215f17d.JPG
+[ info ] gudong.com/uploads/img/20171116/9844e64ba7886e85afa81268d215f17d.JPG [运行时间：0.068454s][吞吐率：14.61req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171116',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171116/b8943545af2da7ffdfd81f36f387ad00.JPG
+[ info ] gudong.com/uploads/img/20171116/b8943545af2da7ffdfd81f36f387ad00.JPG [运行时间：0.031507s][吞吐率：31.74req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171116',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:18+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171116/aaddfd3cbe4c04bf459a7af58a95a86a.JPG
+[ info ] gudong.com/uploads/img/20171116/aaddfd3cbe4c04bf459a7af58a95a86a.JPG [运行时间：0.047767s][吞吐率：20.93req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171116',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:19+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/img/20171116/ccd682bf410619632bd3bebc51c8a8e8.jpg
+[ info ] gudong.com/uploads/img/20171116/ccd682bf410619632bd3bebc51c8a8e8.jpg [运行时间：0.036378s][吞吐率：27.49req/s] [内存消耗：1,430.68kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'img',
+    2 => '20171116',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/moment/myMoment',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-28T11:29:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.168084s][吞吐率：5.95req/s] [内存消耗：2,873.90kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049894s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.034124s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.034771s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:29:53+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.184652s][吞吐率：5.42req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054295s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038119s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036073s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:30:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.192257s][吞吐率：5.20req/s] [内存消耗：2,874.14kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056623s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042840s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.037882s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.172102s][吞吐率：5.81req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048960s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.033074s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036096s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.193288s][吞吐率：5.17req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056385s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035263s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.035368s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.175217s][吞吐率：5.71req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048908s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.034555s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.034607s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:27+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.169163s][吞吐率：5.91req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046231s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038219s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033869s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:28+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.207708s][吞吐率：4.81req/s] [内存消耗：2,874.14kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069259s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.044074s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041951s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.173020s][吞吐率：5.78req/s] [内存消耗：2,874.14kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056437s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036197s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.035269s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:31:50+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.174498s][吞吐率：5.73req/s] [内存消耗：2,874.14kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052955s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038955s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033595s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:32:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.204313s][吞吐率：4.89req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060705s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042135s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041772s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:34:27+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.181848s][吞吐率：5.50req/s] [内存消耗：2,874.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054349s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038506s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036946s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:34:44+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.194399s][吞吐率：5.14req/s] [内存消耗：3,014.23kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054761s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037734s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.037305s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:35:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.207362s][吞吐率：4.82req/s] [内存消耗：2,874.09kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061922s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.043886s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.045084s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:35:16+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.174073s][吞吐率：5.74req/s] [内存消耗：2,874.09kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048899s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037099s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033426s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:35:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.200221s][吞吐率：4.99req/s] [内存消耗：2,874.15kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058745s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.050474s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.042035s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:35:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.177431s][吞吐率：5.64req/s] [内存消耗：2,874.15kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062370s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.034747s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.034265s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:36:41+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.194075s][吞吐率：5.15req/s] [内存消耗：3,014.23kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059115s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038751s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036789s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:43:14+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.194092s][吞吐率：5.15req/s] [内存消耗：3,014.39kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056826s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.037661s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:43:49+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.198165s][吞吐率：5.05req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060568s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041461s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041721s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.212672s][吞吐率：4.70req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065456s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.034747s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.056516s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:44:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.209430s][吞吐率：4.77req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068950s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041120s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041744s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:44:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.173151s][吞吐率：5.78req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049308s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035030s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033349s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:44:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.193745s][吞吐率：5.16req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057619s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.039437s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038122s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:44:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.191484s][吞吐率：5.22req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050952s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035168s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038459s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:46:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.193306s][吞吐率：5.17req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053773s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037336s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038313s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:46:53+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.188569s][吞吐率：5.30req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.051485s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035002s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041784s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:47:01+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.180508s][吞吐率：5.54req/s] [内存消耗：2,874.11kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049355s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.032717s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033888s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:53:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.201110s][吞吐率：4.97req/s] [内存消耗：3,014.59kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058855s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041995s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041071s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:53:56+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.219976s][吞吐率：4.55req/s] [内存消耗：3,014.91kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063928s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.041545s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.041398s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:54:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.223222s][吞吐率：4.48req/s] [内存消耗：3,014.88kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063406s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.042688s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.044028s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:54:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.198892s][吞吐率：5.03req/s] [内存消耗：3,014.89kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052463s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038007s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036426s ]
+---------------------------------------------------------------
+[ 2017-11-28T11:59:00+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：1.057388s][吞吐率：0.95req/s] [内存消耗：3,014.87kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.536058s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.216348s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.241085s ]
+---------------------------------------------------------------
+[ 2017-11-28T12:01:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.171454s][吞吐率：5.83req/s] [内存消耗：2,874.05kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=42if3aeljkiucudb3f5pk8eoc7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048170s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037333s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.032103s ]
+---------------------------------------------------------------
+[ 2017-11-28T13:51:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：1.785461s][吞吐率：0.56req/s] [内存消耗：2,849.52kb] [文件加载：55]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:1.485134s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037141s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038391s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:28:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.402038s][吞吐率：2.49req/s] [内存消耗：3,065.41kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=hog3tr7396ic1ddq73arq6ls92',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058168s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.037944s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.039558s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:28:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.509069s][吞吐率：1.96req/s] [内存消耗：2,922.94kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057188s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.266754s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038814s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:32:57+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：5.027307s][吞吐率：0.20req/s] [内存消耗：3,065.77kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g8s28elvqm24loktardg13v6o1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:4.464715s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.355997s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.058903s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:34:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：3.962022s][吞吐率：0.25req/s] [内存消耗：3,066.98kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g8s28elvqm24loktardg13v6o1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057088s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.503012s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.262227s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:34:41+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.269745s][吞吐率：3.71req/s] [内存消耗：2,923.22kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g8s28elvqm24loktardg13v6o1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056717s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036830s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.038020s ]
+---------------------------------------------------------------
+[ 2017-11-28T14:36:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment.html
+[ info ] gudong.com/index/moment/proMoment.html [运行时间：0.944726s][吞吐率：1.06req/s] [内存消耗：2,922.98kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/0.7.0 MicroMessenger/6.3.9 Language/zh_CN webview/0',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=g8s28elvqm24loktardg13v6o1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.286692s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.262322s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.042102s ]
+---------------------------------------------------------------
+[ 2017-11-28T18:10:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.983327s][吞吐率：1.02req/s] [内存消耗：3,075.66kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060906s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.038239s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.039224s ]

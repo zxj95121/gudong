@@ -1,0 +1,439 @@
+---------------------------------------------------------------
+[ 2017-12-02T13:06:58+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] gu.dong/ [运行时间：1.808559s][吞吐率：0.55req/s] [内存消耗：2,348.08kb] [文件加载：56]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'gu.dong',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\start.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061711s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.060823s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.038329s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.037901s ]
+---------------------------------------------------------------
+[ 2017-12-02T13:07:01+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] gu.dong/ [运行时间：0.295084s][吞吐率：3.39req/s] [内存消耗：2,401.07kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://gu.dong/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'gu.dong',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054970s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036849s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.036993s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.038099s ]
+---------------------------------------------------------------
+[ 2017-12-02T13:07:33+08:00 ] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] gu.dong/admin [运行时间：0.468614s][吞吐率：2.13req/s] [内存消耗：1,959.02kb] [文件加载：52]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\new_exe\xampp\htdocs\gudong\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/admin\view\Default\index\index.html [ array (
+  0 => 'website_title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: _SideMenu[D:\new_exe\xampp\htdocs\gudong\runtime\temp\b226f8ed9f29e7cd662604eb2ca9bcf3.php:75]
+---------------------------------------------------------------
+[ 2017-12-02T13:07:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/login
+[ info ] gu.dong/admin/index/login [运行时间：0.150443s][吞吐率：6.65req/s] [内存消耗：1,897.04kb] [文件加载：48]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->login[ D:\new_exe\xampp\htdocs\gudong\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/admin\view\Default\index\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-02T13:07:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/bg/jiant.png
+[ info ] gu.dong/static/admin/image/bg/jiant.png [运行时间：0.135806s][吞吐率：7.36req/s] [内存消耗：1,430.78kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gu.dong/static/admin/css/style-metro.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+  'bg' => 'jiant.png',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-02T13:07:42+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ info ] gu.dong/captcha.html [运行时间：0.604573s][吞吐率：1.65req/s] [内存消耗：1,456.96kb] [文件加载：39]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gu.dong/admin/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\new_exe\xampp\htdocs\gudong\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-02T13:07:42+08:00 ] 127.0.0.1 127.0.0.1 GET /static/admin/image/favicon.ico
+[ info ] gu.dong/static/admin/image/favicon.ico [运行时间：0.028544s][吞吐率：35.03req/s] [内存消耗：1,430.38kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'image',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gu.dong/admin/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-02T13:07:47+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/Index/loginIn.html
+[ info ] gu.dong/admin/Index/loginIn.html [运行时间：0.316041s][吞吐率：3.16req/s] [内存消耗：2,870.80kb] [文件加载：57]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'loginIn',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'content-length' => '42',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://gu.dong',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gu.dong/admin/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'check_code' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Index->loginIn[ D:\new_exe\xampp\htdocs\gudong\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055142s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.051576s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_name` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.043889s ]
+---------------------------------------------------------------
+[ 2017-12-02T13:07:48+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/user/index.html
+[ info ] gu.dong/admin/user/index.html [运行时间：0.827748s][吞吐率：1.21req/s] [内存消耗：3,348.02kb] [文件加载：62]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gu.dong/admin/index/login',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ D:\new_exe\xampp\htdocs\gudong\application\admin\controller\User.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/admin\view\Default\User\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'userList',
+  11 => 'my_rule',
+  12 => 'user_no',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.051279s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.036604s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.036168s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.034468s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.041420s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035906s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035684s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.035603s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035702s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.037389s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.035894s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.035563s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY add_ts desc LIMIT 0,10 [ RunTime:0.035885s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 0,1 [ RunTime:0.035545s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1  AND `mobile` <> '' [ RunTime:0.035706s ]
+---------------------------------------------------------------
+[ 2017-12-02T13:07:58+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/moment/index.html
+[ info ] gu.dong/admin/moment/index.html [运行时间：0.801841s][吞吐率：1.25req/s] [内存消耗：3,415.70kb] [文件加载：63]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'moment',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gu.dong',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gu.dong/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=m6fa6mk0tvqf0r1etp17sh35o4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Moment->index[ D:\new_exe\xampp\htdocs\gudong\application\admin\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/admin\view\Default\Moment\index.html [ array (
+  0 => 'backUrl',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'language',
+  4 => 'website_title',
+  5 => 'copy_right',
+  6 => '_SideMenu',
+  7 => 'base_path',
+  8 => 'page',
+  9 => 'list',
+  10 => 'my_rule',
+  11 => 'page_no',
+  12 => 'userList',
+  13 => 'user_no',
+  14 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046055s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.032426s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.031963s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `menu` [ RunTime:0.032358s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 0  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.032001s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.032512s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 54  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.032448s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.030339s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 4  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.031583s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` WHERE  `staff_id` = 4 LIMIT 1 [ RunTime:0.032004s ]
+[ sql ] [ SQL ] SELECT `menu`.*,rel_role_menu.role_id as rel_role_id FROM `menu` `menu` LEFT JOIN `rel_role_menu` `rel_role_menu` ON `rel_role_menu`.`menu_id`=menu.menu_id and role_id = '1' WHERE  `parent_menu_id` = 75  AND `is_show` = 1  AND `rel_role_menu`.`role_id` IS NOT NULL ORDER BY list_order desc,menu_id asc [ RunTime:0.034054s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.031097s ]
+[ sql ] [ SQL ] SELECT `moment`.*,`user`.`user_name` FROM `moment` `moment` LEFT JOIN `user` `user` ON `user`.`user_id`=`moment`.`user_id` LIMIT 0,10 [ RunTime:0.031854s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `moment` `moment` LIMIT 0,1 [ RunTime:0.040521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.032078s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `status` = 1 [ RunTime:0.033607s ]

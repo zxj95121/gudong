@@ -1,0 +1,495 @@
+---------------------------------------------------------------
+[ 2017-11-29T09:00:46+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：1.420978s][吞吐率：0.70req/s] [内存消耗：3,077.95kb] [文件加载：60]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.108944s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.069654s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.034731s ]
+---------------------------------------------------------------
+[ 2017-11-29T09:01:38+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.373092s][吞吐率：2.68req/s] [内存消耗：2,928.91kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.117112s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.086674s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.036043s ]
+---------------------------------------------------------------
+[ 2017-11-29T09:02:24+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/zhanshi.html?c=2
+[ info ] gudong.com/index/index/zhanshi.html?c=2 [运行时间：2.441879s][吞吐率：0.41req/s] [内存消耗：3,671.50kb] [文件加载：67]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'zhanshi',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+  'c' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->zhanshi[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\zhanshi.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'momentsObj',
+  4 => 'identity',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060039s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.033239s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.034322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.036863s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 LIMIT 1 [ RunTime:0.095360s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 ORDER BY m.add_ts desc LIMIT 0,4 [ RunTime:0.039342s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 198 LIMIT 1 [ RunTime:0.033274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `comment` [ RunTime:0.092578s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 198  AND `status` = 1 [ RunTime:0.050733s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.035300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `thumb` [ RunTime:0.042773s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 198  AND `status` = 1 LIMIT 1 [ RunTime:0.040344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 198  AND `status` = 1 LIMIT 1 [ RunTime:0.052692s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `collection` [ RunTime:0.052495s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 198  AND `status` = 1 LIMIT 1 [ RunTime:0.044215s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 198  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.033480s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 198  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.034071s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_sub` [ RunTime:0.094629s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 197 LIMIT 1 [ RunTime:0.033476s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 197  AND `status` = 1 [ RunTime:0.033039s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.033721s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.033649s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.032413s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.040744s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 197  AND `status` = 1 LIMIT 1 [ RunTime:0.033460s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 197  AND `status` = 1 LIMIT 1 [ RunTime:0.033364s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 197  AND `status` = 1 LIMIT 1 [ RunTime:0.034093s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 197  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.033691s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 197  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.033111s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.032699s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 196 LIMIT 1 [ RunTime:0.033189s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 196  AND `status` = 1 [ RunTime:0.034570s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.035186s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.094289s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.030961s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.033271s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 196  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.035440s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 196  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.053756s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.032975s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 195 LIMIT 1 [ RunTime:0.033337s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 195  AND `status` = 1 [ RunTime:0.033421s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.033479s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 195  AND `status` = 1 LIMIT 1 [ RunTime:0.033337s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 195  AND `status` = 1 LIMIT 1 [ RunTime:0.033198s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 195  AND `status` = 1 LIMIT 1 [ RunTime:0.033636s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 195  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.032974s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 195  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.033055s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.033139s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033356s ]
+---------------------------------------------------------------
+[ 2017-11-29T09:02:25+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG
+[ info ] gudong.com/uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG [运行时间：0.399201s][吞吐率：2.51req/s] [内存消耗：1,430.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171128',
+    2 => '898c14e3dca9d4f599990113c08e989a.JPG',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-29T09:02:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index/index/nextZhanshi?page=2
+[ info ] gudong.com/index/index/nextZhanshi?page=2 [运行时间：2.226927s][吞吐率：0.45req/s] [内存消耗：3,610.27kb] [文件加载：67]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'nextZhanshi',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->nextZhanshi[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\zhanshi_load.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'momentsObj',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055166s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.083559s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.073606s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.038683s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 LIMIT 1 [ RunTime:0.036886s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` `m` RIGHT JOIN `user` `u` ON `u`.`user_id`=`m`.`user_id` WHERE  `m`.`status` = 1  AND (  `m`.`see` = 1 OR (  `m`.`see` = 0  AND `m`.`user_id` = '228' ) )  AND `u`.`status` = 1 ORDER BY m.add_ts desc LIMIT 4,4 [ RunTime:0.037170s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 194 LIMIT 1 [ RunTime:0.093949s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `comment` [ RunTime:0.038402s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 194  AND `status` = 1 [ RunTime:0.040973s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.037736s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `thumb` [ RunTime:0.090886s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 194  AND `status` = 1 LIMIT 1 [ RunTime:0.037527s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 194  AND `status` = 1 LIMIT 1 [ RunTime:0.037874s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `collection` [ RunTime:0.036473s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 194  AND `status` = 1 LIMIT 1 [ RunTime:0.090829s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 194  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.038552s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 194  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.036789s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 193 LIMIT 1 [ RunTime:0.035762s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 193  AND `status` = 1 [ RunTime:0.040421s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.036046s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 193  AND `status` = 1 LIMIT 1 [ RunTime:0.037128s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 193  AND `status` = 1 LIMIT 1 [ RunTime:0.041263s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 193  AND `status` = 1 LIMIT 1 [ RunTime:0.050304s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 193  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.036454s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 193  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.035858s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_sub` [ RunTime:0.038713s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.038132s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 192 LIMIT 1 [ RunTime:0.036470s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 192  AND `status` = 1 [ RunTime:0.037019s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.041042s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 192  AND `status` = 1 LIMIT 1 [ RunTime:0.040215s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 192  AND `status` = 1 LIMIT 1 [ RunTime:0.042265s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 192  AND `status` = 1 LIMIT 1 [ RunTime:0.039835s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 192  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.036199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 192  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.035443s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.036066s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 191 LIMIT 1 [ RunTime:0.036274s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 191  AND `status` = 1 [ RunTime:0.039395s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.036534s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.040128s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 191  AND `status` = 1 LIMIT 1 [ RunTime:0.037971s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 191  AND `status` = 1 LIMIT 1 [ RunTime:0.035849s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 191  AND `status` = 1 LIMIT 1 [ RunTime:0.091947s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 191  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.039461s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 191  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.036268s ]
+---------------------------------------------------------------
+[ 2017-11-29T09:02:37+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20171128/b9b7771345b7209e9bad9287ce2d44b9.jpg
+[ info ] gudong.com/uploads/20171128/b9b7771345b7209e9bad9287ce2d44b9.jpg [运行时间：0.036095s][吞吐率：27.70req/s] [内存消耗：1,430.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171128',
+    2 => 'b9b7771345b7209e9bad9287ce2d44b9.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-29T09:02:37+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG
+[ info ] gudong.com/uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG [运行时间：0.044877s][吞吐率：22.28req/s] [内存消耗：1,430.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171128',
+    2 => '898c14e3dca9d4f599990113c08e989a.JPG',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-29T09:02:38+08:00 ] 127.0.0.1 127.0.0.1 GET /index/see/seeMoment?mid=196
+[ info ] gudong.com/index/see/seeMoment?mid=196 [运行时间：1.828322s][吞吐率：0.55req/s] [内存消耗：3,311.77kb] [文件加载：64]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'see',
+    2 => 'seeMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/index/zhanshi.html?c=2',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+  'mid' => '196',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\See->seeMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\See.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\seeMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'identity',
+  4 => 'momentsObj',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049773s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.032362s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.033676s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.035422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `moment` [ RunTime:0.083732s ]
+[ sql ] [ SQL ] SELECT * FROM `moment` WHERE  `moment_id` = 196 LIMIT 1 [ RunTime:0.097791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `comment` [ RunTime:0.033941s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 196  AND `status` = 1 [ RunTime:0.034378s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 245 LIMIT 1 [ RunTime:0.445175s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `thumb` [ RunTime:0.036822s ]
+[ sql ] [ SQL ] SELECT SUM(times) AS tp_sum FROM `thumb` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.034356s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `comment` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.037315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `collection` [ RunTime:0.036762s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 196  AND `status` = 1 LIMIT 1 [ RunTime:0.033498s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `thumb` WHERE  `moment_id` = 196  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.031340s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `collection` WHERE  `moment_id` = 196  AND `user_id` = 228  AND `status` = 1 LIMIT 1 [ RunTime:0.031737s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_sub` [ RunTime:0.034088s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user_sub` WHERE  `uid` = 228  AND `sub_uid` = 245  AND `status` = 1 LIMIT 1 [ RunTime:0.031472s ]
+[ sql ] [ SQL ] SELECT * FROM `comment` WHERE  `moment_id` = 196  AND `status` = 1 [ RunTime:0.031813s ]
+---------------------------------------------------------------
+[ 2017-11-29T09:02:38+08:00 ] 127.0.0.1 127.0.0.1 GET /uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG
+[ info ] gudong.com/uploads/20171128/898c14e3dca9d4f599990113c08e989a.JPG [运行时间：0.038356s][吞吐率：26.07req/s] [内存消耗：1,430.84kb] [文件加载：40]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20171128',
+    2 => '898c14e3dca9d4f599990113c08e989a.JPG',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://gudong.com/index/see/seeMoment?mid=196',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-29T09:03:51+08:00 ] 127.0.0.1 127.0.0.1 GET /index/moment/proMoment
+[ info ] gudong.com/index/moment/proMoment [运行时间：0.311508s][吞吐率：3.21req/s] [内存消耗：2,928.78kb] [文件加载：58]
+[ info ] [ LANG ] D:\new_exe\xampp\htdocs\gudong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'moment',
+    2 => 'proMoment',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'gudong.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=65bbin0bo91d81pomm17msoji3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Moment->proMoment[ D:\new_exe\xampp\htdocs\gudong\application\index\controller\Moment.php ]
+[ info ] [ VIEW ] D:\new_exe\xampp\htdocs\gudong\public/../application/index\view\Default\index_new\proMoment.html [ array (
+  0 => 'base_path',
+  1 => 'showTop',
+  2 => 'uid',
+  3 => 'signature',
+  4 => 'timestamp',
+  5 => 'nonceStr',
+  6 => 'appId',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048278s ] mysql:dbname=gudong;host=121.40.80.26;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.034817s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `user_id` = 228 LIMIT 1 [ RunTime:0.087460s ]
